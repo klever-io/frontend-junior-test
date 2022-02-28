@@ -1,4 +1,4 @@
-# Klever Junior Frontend Test
+# Klever - Junior Frontend Test
 
 Hello, this is the Frontend test for junior developers from Klever. The objective is to analyze the skills of candidates, focusing on the core fundamentals of HTML, CSS, and JS.
 
@@ -34,7 +34,7 @@ All the pages image are in the `./screens` folder
 #### Bonus
 
 - The Token name should be unique, the user shouldn't has token names repeated
-- Display the error messages from form to the user
+- Display the error messages from the form to the user
 
 ### 3) Edit Token
 

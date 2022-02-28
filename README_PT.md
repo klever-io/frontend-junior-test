@@ -1,19 +1,25 @@
-# Teste Frontend Klever Junior
+# Klever - Teste Frontend Junior
 
 Olá, este é o teste Frontend para desenvolvedores juniores da Klever. O objetivo é analisar as habilidades dos candidatos, com foco nos fundamentos básicos de HTML, CSS e JS.
 
 ## Páginas
 
-### Home
+Todas as imagens das páginas estão na pasta `./screens`
+
+### 1) Home
+
+![Home](https://github.com/klever-io/frontend-junior-test/blob/master/screens/Home.jpg)
 
 #### Ações
 
 - Ao clicar no botão "Add Token" vá para a página "Add Token"
-- Ao clicar no ícone "Editar" vá para a página "Edit Token"
+- Ao clicar no ícone "Edit" vá para a página "Edit Token"
 
-### Add token
+### 2) Add token
 
-#### A partir de
+![Adicionar token](https://github.com/klever-io/frontend-junior-test/blob/master/screens/AddToken.jpg)
+
+#### Forma
 
 - O campo Token é obrigatório
 - O campo Balance é obrigatório
@@ -30,32 +36,38 @@ Olá, este é o teste Frontend para desenvolvedores juniores da Klever. O objeti
 - O nome do Token deve ser único, o usuário não deve ter nomes de token repetidos
 - Exibir as mensagens de erro do formulário para o usuário
 
-### Edit token
+### 3) Edit token
+
+![Editar token](https://github.com/klever-io/frontend-junior-test/blob/master/screens/EditToken.jpg)
 
 #### Ações
 
 - Ao clicar no botão "Back" vá para a página "Home"
 - Ao clicar no botão "Save"
   - Salve os dados no localStorage
-  - Navegar o usuário para a página inicial
+  - Navegar o usuário para a página Home
 - Ao clicar no botão "Remove"
   - Remova a data do armazenamento local
-  - Navegar o usuário para a página inicial
+  - Navegar o usuário para a página Home
 
 #### Bônus
 
-- Quando o usuário clicar no botão "Remove" deverá exibir um alerta para usuário confirmar a remoção.
+- Quando o usuário clicar no botão "Remove" deverá exibir um alerta ao usuário para confirmar a remoção.
   - Se confirmado, o token deve ser excluído
-  - Se negado, o alerta fecha e o token não é excluído
+  - Se negado, o alerta fecha e o token não deve ser excluído,
 
-## Bonus
+## Assets
 
-- Usar o Framework React
+Todos os ativos estão na pasta `./assets`
+
+## Bônus
+
+- Use o React Framework
 - Testes Unitários
 
-## PERGUNTAS COMUNS
+## PERGUNTAS FREQUENTES
 
-1. Posso apenas usar HTML, CSS, JS?
+1. Posso usar HTML, CSS, JS?
 
 - Sim
 
@@ -65,4 +77,4 @@ Olá, este é o teste Frontend para desenvolvedores juniores da Klever. O objeti
 
 3. Posso usar algum framework CSS como Bootstrap, Material UI?
 
-- Sim, e tente seguir o design proposto
+- Sim e tente seguir o design proposto
