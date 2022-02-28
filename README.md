@@ -4,7 +4,9 @@ Hello, this is the Frontend test for junior developers from Klever. The objectiv
 
 ## Pages
 
-### Home
+All the pages image are in the `./screens` folder
+
+### 1) Home
 
 ![Home](https://github.com/klever-io/frontend-junior-test/blob/master/Screens/Home.jpg)
 
@@ -13,9 +15,11 @@ Hello, this is the Frontend test for junior developers from Klever. The objectiv
 - When clicking on the "Add Token" button go to the "Add Token" page
 - When click on the icon "Edit" go to the "Edit Token" page
 
-### Add Token
+### 2) Add Token
 
-#### From
+![Add Token](https://github.com/klever-io/frontend-junior-test/blob/master/Screens/AddToken.jpg)
+
+#### Form
 
 - The Token field is required
 - The Balance field is required
@@ -32,7 +36,9 @@ Hello, this is the Frontend test for junior developers from Klever. The objectiv
 - The Token name should be unique, the user shouldn't has token names repeated
 - Display the error messages from form to the user
 
-### Edit Token
+### 3) Edit Token
+
+![Edit Token](https://github.com/klever-io/frontend-junior-test/blob/master/Screens/EditToken.jpg)
 
 #### Actions
 
@@ -49,6 +55,10 @@ Hello, this is the Frontend test for junior developers from Klever. The objectiv
 - When the user clicks on the "Remove" button should display an alert to the user to confirm the remotion.
   - If confirmed, the token should be deleted
   - If denied, the alert closes and the token not should be deleted,
+
+## Assets
+
+All assets are in the `./assets` folder
 
 ## Bonus
 
