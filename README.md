@@ -8,7 +8,7 @@ All the pages image are in the `./screens` folder
 
 ### 1) Home
 
-![Home](https://github.com/klever-io/frontend-junior-test/blob/master/Screens/Home.jpg)
+![Home](https://github.com/klever-io/frontend-junior-test/blob/master/screens/Home.jpg)
 
 #### Actions
 
@@ -17,7 +17,7 @@ All the pages image are in the `./screens` folder
 
 ### 2) Add Token
 
-![Add Token](https://github.com/klever-io/frontend-junior-test/blob/master/Screens/AddToken.jpg)
+![Add Token](https://github.com/klever-io/frontend-junior-test/blob/master/screens/AddToken.jpg)
 
 #### Form
 
@@ -38,7 +38,7 @@ All the pages image are in the `./screens` folder
 
 ### 3) Edit Token
 
-![Edit Token](https://github.com/klever-io/frontend-junior-test/blob/master/Screens/EditToken.jpg)
+![Edit Token](https://github.com/klever-io/frontend-junior-test/blob/master/screens/EditToken.jpg)
 
 #### Actions
 
