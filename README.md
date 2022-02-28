@@ -52,3 +52,17 @@ Hello, this is the Frontend test for junior developers from Klever. The objectiv
 
 - Use the React Framework
 - Unit Tests
+
+## FAQ
+
+1. Can I just use HTML, CSS, JS?
+
+- Yes
+
+2. Can I use other javascript frameworks?
+
+- Yes
+
+3. Can I use some CSS framework like Bootstrap, Material UI?
+
+- Yes, and try to follow the proposed design

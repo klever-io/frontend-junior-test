@@ -52,3 +52,17 @@ Olá, este é o teste Frontend para desenvolvedores juniores da Klever. O objeti
 
 - Usar o Framework React
 - Testes Unitários
+
+## PERGUNTAS COMUNS
+
+1. Posso apenas usar HTML, CSS, JS?
+
+- Sim
+
+2. Posso usar outros frameworks javascript?
+
+- Sim
+
+3. Posso usar algum framework CSS como Bootstrap, Material UI?
+
+- Sim, e tente seguir o design proposto
