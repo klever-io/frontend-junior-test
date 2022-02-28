@@ -6,6 +6,8 @@ Hello, this is the Frontend test for junior developers from Klever. The objectiv
 
 ### Home
 
+![Home](https://github.com/klever-io/frontend-junior-test/blob/master/Screens/Home.jpg)
+
 #### Actions
 
 - When clicking on the "Add Token" button go to the "Add Token" page
