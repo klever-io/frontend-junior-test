@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import AddToken from './pages/Add';
+import Home from './screens/Home';
+import AddToken from './screens/AddToken';
 
 const Router = () => {
     return (

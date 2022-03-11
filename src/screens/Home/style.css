@@ -12,14 +12,14 @@
        
     }
     .home-content-wrapper{
-        width: 600px;
+        width: 800px;
         display: flex;
         justify-content: center;
     }
     .home-content{
         width: 100%;
         max-height: 50px;
-        padding: 0px 40px;
+        padding: 0px 50px;
         display: flex;
         justify-content: space-between;
         align-items: center;

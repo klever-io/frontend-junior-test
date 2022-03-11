@@ -9,7 +9,7 @@ const AddToken = () => {
         <>
             <div className="klever-container-add">
                 <div className="klever-form-wrapper">
-                    <div className="klever-star-wrapper">
+                    <div className="klever-wallet-wrapper">
                         <Wallet />
                     </div>
                     <div className="klever-button-wrapper">
@@ -17,7 +17,9 @@ const AddToken = () => {
                         <Button>Back</Button>
                     </div>
                     <Form />
-                    <Button primary={true}>Save</Button>
+                    <div className="primary-btn-wrapper">
+                        <Button primary={true}>Save</Button>
+                    </div>
                 </div>
             </div>
         </>

@@ -1,0 +1,28 @@
+{
+    "root": true,
+    "extends": ["eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:prettier/recommended",
+        "prettier/prettier"
+        ],
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "plugins": ["react","react-hooks", "prettier"],
+    "rules": {
+      "prettier/prettier": ["error"],
+      "arrow-body-style": "off",
+      "prefer-arrow-callback": "off",
+      "react/jsx-uses-react": "error",
+      "react/prop-types": "off",
+        "no-undef": "off",
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn"
+    }
+}
+   

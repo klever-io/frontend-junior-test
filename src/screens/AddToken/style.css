@@ -7,9 +7,21 @@
 }
 
 .klever-form-wrapper{
-    width: 500px;
+    width: 750px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+}
+.klever-wallet-wrapper{
+    width: 100%;
+    display: block;
+    align-items: left;
+    margin-top: 53px;
+    margin-bottom: 50px;
+}
+.klever-button-wrapper{
+    font-size: 2em;
+    padding: 0px 80px;
+    margin-bottom: 50px;
 }

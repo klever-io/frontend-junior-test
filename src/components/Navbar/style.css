@@ -1,11 +1,11 @@
 .nav-container{
     width: 100vw;
-    height: 140px;
+    height: 210px;
     background-color: #13152A;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .nav-container img{
-    width: 200px;
+    width: 270px;
 }

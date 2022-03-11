@@ -1,8 +1,7 @@
 {
-  "name": "frontend-junior-test",
-  "version": "1.0.0",
-  "description": "Hello, this is the Frontend test for junior developers from Klever. The objective is to analyze the skills of candidates, focusing on the core fundamentals of HTML, CSS, and JS.",
-  "main": "index.js",
+  "name": "klever-test",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",
@@ -44,16 +43,5 @@
     "eslint-plugin-react": "^7.29.3",
     "eslint-plugin-react-hooks": "^4.3.0",
     "prettier": "^2.5.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/luc4sFernando/frontend-junior-test.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/luc4sFernando/frontend-junior-test/issues"
-  },
-  "homepage": "https://github.com/luc4sFernando/frontend-junior-test#readme"
+  }
 }
