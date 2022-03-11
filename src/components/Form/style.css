@@ -1,0 +1,19 @@
+.klever-form{
+    width: 100%;
+    color: white;
+   
+}
+.klever-input{
+    margin: 0 auto;
+    width: 80%;
+    height: 45px;
+    display: block;
+    padding: 0px 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+.klever-form label{
+    margin: 10px 50px;
+    font-family: "montserrat";
+    font-size: 13px;
+}

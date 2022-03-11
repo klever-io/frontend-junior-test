@@ -1,0 +1,15 @@
+.klever-container-add{
+    background-color: #13152A;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.klever-form-wrapper{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
