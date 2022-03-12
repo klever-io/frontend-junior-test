@@ -1,23 +1,12 @@
-import React, { useState } from 'react';
-import useLocalStorage from '../../hooks/useLocalStorage';
+import React from 'react';
+
+import useHandleFormData from '../../hooks/useHandleFormData';
+
 import './style.css';
 
 const Form = () => {
-    const [, setValue] = useLocalStorage();
-    const [token, setToken] = useState('');
-    const [balance, setBalance] = useState('');
+    const [token, setToken, balance, setBalance, handleForm] = useHandleFormData();
 
-    const handleFormDatas = (e) => {
-        e.preventDefault();
-        if (token.length < 2 || balance.length == 0) {
-            console.log('Os dados precisam ser enviados');
-            return;
-        } else {
-            const result = setValue({ name: token, balance });
-            console.log(result);
-            return;
-        }
-    };
     return (
         <>
             <form className="klever-form">
@@ -36,8 +25,8 @@ const Form = () => {
                     onChange={(e) => setBalance(e.target.value)}
                 />
                 <div className="primary-btn-wrapper">
-                    <button type="submit" onClick={handleFormDatas}>
-                        Enviar
+                    <button className="klever-primary-btn" type="submit" onClick={handleForm}>
+                        Save
                     </button>
                 </div>
             </form>

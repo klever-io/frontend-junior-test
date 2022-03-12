@@ -12,6 +12,11 @@
     margin-bottom: 45px;
     border-radius: 6px;
     border: none;
+    font-family: "montserrat";
+    font-size: 1.6em;
+    font-weight: 700;
+    color: black;
+    
 }
 .klever-form label{
     padding: 20px 80px;
@@ -31,4 +36,17 @@
     justify-content: right;
     padding: 0 80px;
     
+}
+.klever-primary-btn{
+    min-width: 150px;
+height: 50px;
+background-color: #AA33B5;
+border-radius: 8px;
+border: none;
+color: #fff;
+font-weight: 700;
+line-height: 40px;
+padding: 0px 24px;
+cursor: pointer;
+font-size: 1.2em;
 }

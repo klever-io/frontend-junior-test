@@ -2,13 +2,16 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        
     }
+   
     .home-container{
         background-color: #13152A;
-        width: 100vw;
+        width: 100%;
         height: 100vh;
         display: flex;
-        justify-content: center;
+        align-items: center;
+        flex-direction: column;
        
     }
     .home-content-wrapper{
@@ -16,10 +19,10 @@
         display: flex;
         justify-content: center;
     }
-    .home-content{
+    .home-wallet-wrapper{
         width: 100%;
         max-height: 50px;
-        padding: 0px 50px;
+        padding: 0px 70px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -35,3 +38,42 @@
     justify-content: left;
     }
 
+.home-content{
+    width: 700px;
+    margin-top: 80px;
+}
+.home-content-tokens{
+    width: 100%;
+}
+.content-title{
+    width: 100%;
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: space-between;
+    font-family: "montserrat";
+    font-size: 1.4em;
+    font-weight: 600;
+    color: white;
+    padding-left: 100px;
+    padding-right: 20px;
+}
+
+.content{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-family: "montserrat";
+    color: white;
+    font-size: 2.4em;
+    font-weight: 900;
+    margin-bottom: 35px;
+    align-items: center;
+    padding: 0px 20px;
+    padding-left: 30px;
+
+}
+ .content > p:nth-child(2){
+  flex:1;
+  margin-left: 30px;
+
+}
