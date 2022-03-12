@@ -18,5 +18,17 @@
     font-family: "montserrat";
     font-size: 23px;
     font-weight: 700;
+ 
 
+}
+.klever-form button{
+    align-content: flex-end;
+    justify-content: right;
+}
+.primary-btn-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    padding: 0 80px;
+    
 }

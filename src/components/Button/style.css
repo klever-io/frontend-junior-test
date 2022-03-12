@@ -29,10 +29,3 @@ font-size: 0.7em;
     background-color: #aa33b5bd;
     transition: background-color ease-in 0.2s;
 }
-.primary-btn-wrapper{
-    width: 100%;
-    display: flex;
-    justify-content: right;
-    padding: 0 80px;
-    
-}

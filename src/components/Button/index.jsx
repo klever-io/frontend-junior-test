@@ -8,9 +8,11 @@ const Button = ({ primary, children, pathTo }) => {
     const handleNavigate = () => navigate(pathTo);
     const handleClassName = primary ? 'klever-primary-btn' : 'klever-btn';
     return (
-        <button className={handleClassName} onClick={handleNavigate}>
-            {children}
-        </button>
+        <>
+            <button className={handleClassName} onClick={handleNavigate} type="button">
+                {children}
+            </button>
+        </>
     );
 };
 
@@ -18,5 +20,7 @@ Button.propTypes = {
     children: PropTypes.string,
     primary: PropTypes.bool,
     pathTo: PropTypes.string,
+    type: PropTypes.string,
+    dispatch: PropTypes.object,
 };
 export default Button;

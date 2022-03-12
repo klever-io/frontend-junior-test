@@ -14,12 +14,9 @@ const AddToken = () => {
                     </div>
                     <div className="klever-button-wrapper">
                         <p>Add Token</p>
-                        <Button>Back</Button>
+                        <Button pathTo="/">Back</Button>
                     </div>
                     <Form />
-                    <div className="primary-btn-wrapper">
-                        <Button primary={true}>Save</Button>
-                    </div>
                 </div>
             </div>
         </>
