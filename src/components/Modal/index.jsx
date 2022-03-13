@@ -1,6 +1,5 @@
 import React from 'react';
 import useLocalStorage from '../../hooks/useLocalStorage';
-// import useNavigated from '../../hooks/useNavigate';
 import Button from '../Button';
 import './style.css';
 const Modal = ({ toogleIsOpen }) => {
@@ -8,11 +7,11 @@ const Modal = ({ toogleIsOpen }) => {
         toogleIsOpen(false);
     };
     const [, , deleteValue] = useLocalStorage();
-    // const navigateTo = useNavigated('/');
+
     return (
         <div className="alert-container">
             <div className="alert-wrapper">
-                <div className="top"></div>
+                <div className="alert-top"></div>
                 <p>Tem certeza que deseja remover o usuário?</p>
                 <div className="btn-control-wrapper">
                     <Button style="remove" onClick={deleteValue}>

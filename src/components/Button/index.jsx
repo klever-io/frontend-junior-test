@@ -1,8 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import './style.css';
 
 const Button = ({ style, children, onClick, hidden }) => {
+    const showButton = {
+        visibility: hidden,
+    };
     let handleClassName;
     switch (style) {
         case 'remove':
@@ -16,23 +19,11 @@ const Button = ({ style, children, onClick, hidden }) => {
     }
     return (
         <>
-            <button
-                className={handleClassName}
-                onClick={onClick}
-                type="button"
-                style={{ visibility: hidden }}
-            >
+            <button className={handleClassName} onClick={onClick} type="button" style={showButton}>
                 {children}
             </button>
         </>
     );
 };
 
-Button.propTypes = {
-    children: PropTypes.string,
-    primary: PropTypes.bool,
-    pathTo: PropTypes.string,
-    type: PropTypes.string,
-    dispatch: PropTypes.object,
-};
 export default Button;

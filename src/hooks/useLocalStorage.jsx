@@ -18,12 +18,16 @@ const useLocalStorage = () => {
     const setValue = useCallback(
         (value) => {
             // confere se o token que está sendo criado pelo form já existe no storage
-            const searchInStorage = storage.find((val) => val.name === value.name);
-            //
+            const searchInStorage = storage.find(
+                (val) => val.name.toUpperCase() === value.name.toUpperCase()
+            );
+            console.log(searchInStorage);
             if (!searchInStorage) {
                 if (routePathName == '/edit' && routeState) {
                     // se a rota for edit, busca o valor atual do estado
-                    const searchInStorage = storage.find((val) => val.name == routeState.name);
+                    const searchInStorage = storage.find(
+                        (val) => val.name.toUpperCase() == routeState.name.toUpperCase()
+                    );
                     const arr = [...storage];
                     arr[arr.indexOf(searchInStorage)] = value;
                     const result = localStorage.setItem('tokens', JSON.stringify(arr));
@@ -35,19 +39,18 @@ const useLocalStorage = () => {
                 setStorage(result);
                 return storage;
             } else {
-                throw new Error('Este token já está cadastrado');
+                throw new Error('This token already exists');
             }
         },
         [routePathName, routeState, storage]
     );
     const deleteValue = () => {
-        console.log(routeState);
         const arr = [...storage];
-        console.log(arr);
+
         const searchInStorage = storage.find((val) => val.name == routeState.name);
         arr.splice(arr.indexOf(searchInStorage), 1);
         const result = localStorage.setItem('tokens', JSON.stringify(arr));
-        console.log(result);
+
         setStorage(result);
         navigate('/');
     };

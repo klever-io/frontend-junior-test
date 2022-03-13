@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import useHandleFormData from '../../hooks/useHandleFormData';
+
 import Button from '../Button';
 
 import Modal from '../Modal';
@@ -8,16 +9,22 @@ import Modal from '../Modal';
 import './style.css';
 
 const Form = () => {
-    const [token, setToken, balance, setBalance, handleForm, formTokenError, fortmBalanceError] =
-        useHandleFormData();
+    const [token, setToken, balance, setBalance, handleForm, error] = useHandleFormData();
     const [isOpen, toogleIsOpen] = useState(false);
     const location = useLocation();
-    const renderButton = location.pathname == '/edit' ? true : false;
+    const showButton = location.pathname == '/edit' ? true : false;
     const toogle = () => {
         toogleIsOpen((prev) => !prev);
     };
     return (
         <>
+            {error?.length > 0 && (
+                <div className="error-container">
+                    {error.map((val, i) => {
+                        return <p key={i}>{val}</p>;
+                    })}
+                </div>
+            )}
             {isOpen && <Modal toogleIsOpen={toogleIsOpen} />}
 
             <form className="klever-form">
@@ -28,8 +35,7 @@ const Form = () => {
                     type="text"
                     value={token}
                     onChange={(e) => setToken(e.target.value)}
-                />{' '}
-                {formTokenError && <p className="error-message">{formTokenError}</p>}
+                />
                 <label htmlFor="balance">Balance</label>
                 <input
                     id="balance"
@@ -38,8 +44,7 @@ const Form = () => {
                     value={balance}
                     onChange={(e) => setBalance(e.target.value)}
                 />
-                {fortmBalanceError && <p className="error-message">{fortmBalanceError}</p>}
-                {renderButton ? (
+                {showButton ? (
                     <div className="remove-btn-wrapper">
                         <Button style="remove" onClick={toogle}>
                             Remove

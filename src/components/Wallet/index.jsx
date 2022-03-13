@@ -1,9 +1,9 @@
 import React from 'react';
 import './style.css';
-const StarDetail = () => {
+const WishWallet = () => {
     return (
         <>
-            <div className="detail-content">
+            <div className="wish-wallet-content">
                 <img src="/star.svg" alt="shooting-star" />
                 <p>Wish Wallet</p>
             </div>
@@ -11,4 +11,4 @@ const StarDetail = () => {
     );
 };
 
-export default StarDetail;
+export default WishWallet;

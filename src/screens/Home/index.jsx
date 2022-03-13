@@ -12,7 +12,7 @@ const Home = () => {
     const handleNavigate = () => {
         navigate('/add');
     };
-    console.log(tokens);
+
     return (
         <div className="home-container">
             <Navbar />
@@ -26,7 +26,7 @@ const Home = () => {
             </div>
             <div className="home-content">
                 <div className="home-content-tokens">
-                    {tokens.length > 0 && (
+                    {tokens?.length > 0 && (
                         <div className="content-title">
                             <p>Tokens</p>
                             <p>Balance</p>
