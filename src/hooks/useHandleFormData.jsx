@@ -9,27 +9,33 @@ const useHandleFormData = () => {
     const balanceInitialValue = location.state ? location.state.balance : '';
     const [token, setToken] = useState(tokenInitialValue);
     const [balance, setBalance] = useState(balanceInitialValue);
+    const [errorMessageToken, setErrorMessageToken] = useState('');
+    const [errorMessageBalance, setErrorMessageBalance] = useState('');
     const navigate = useNavigate();
-    console.log(token, balance);
 
     const handleForm = (e) => {
-        try {
-            e.preventDefault();
-            if (token.length < 2 || balance.length == 0) {
-                console.log('Os dados precisam ser enviados');
-                return;
-            } else {
-                const result = setValue({ name: token, balance });
-                console.log(result);
-                navigate('/');
-                return;
-            }
-        } catch (e) {
-            console.log(e.message);
+        e.preventDefault();
+        if (token.length < 2) {
+            setErrorMessageToken('This field needs to be filled');
+        }
+        if (balance.length == 0) {
+            setErrorMessageBalance('This field needs to be filled');
+        } else {
+            setValue({ name: token, balance });
+            navigate('/');
+            return;
         }
     };
 
-    return [token, setToken, balance, setBalance, handleForm];
+    return [
+        token,
+        setToken,
+        balance,
+        setBalance,
+        handleForm,
+        errorMessageToken,
+        errorMessageBalance,
+    ];
 };
 
 export default useHandleFormData;

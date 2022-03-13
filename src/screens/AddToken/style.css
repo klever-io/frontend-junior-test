@@ -1,7 +1,11 @@
-.klever-container-add{
-    background-color: #13152A;
-    width: 100%;
+.add-body{
+    width: 100vw;
     height: 100vh;
+    background-color: #13152A;
+}
+
+.klever-container-add{
+    width: 100%;
     display: flex;
     justify-content: center;
 }
@@ -21,7 +25,10 @@
    
 }
 .klever-button-wrapper{
-    font-size: 2em;
+    font-size: 1em;
     padding: 0px 80px;
     margin-bottom: 50px;
+}
+.klever-paragraph {
+    font-size: 1.7em;
 }

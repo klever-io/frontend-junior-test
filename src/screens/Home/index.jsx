@@ -5,26 +5,34 @@ import useGetLocalStorage from '../../hooks/useGetDatasLocalStorage';
 import { BiEdit } from 'react-icons/bi';
 import './style.css';
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../../components/Navbar';
 const Home = () => {
     const [tokens] = useGetLocalStorage();
     const navigate = useNavigate();
+    const handleNavigate = () => {
+        navigate('/add');
+    };
     console.log(tokens);
     return (
         <div className="home-container">
+            <Navbar />
             <div className="home-content-wrapper">
                 <div className="home-wallet-wrapper">
                     <Wallet />
-                    <Button primary={true} pathTo={'/add'}>
+                    <Button style="primary" onClick={handleNavigate}>
                         Add Token
                     </Button>
                 </div>
             </div>
             <div className="home-content">
                 <div className="home-content-tokens">
-                    <div className="content-title">
-                        <p>Tokens</p>
-                        <p>Balance</p>
-                    </div>
+                    {tokens.length > 0 && (
+                        <div className="content-title">
+                            <p>Tokens</p>
+                            <p>Balance</p>
+                        </div>
+                    )}
+
                     {tokens &&
                         tokens.map((val, i) => {
                             return (

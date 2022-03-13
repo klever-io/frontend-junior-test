@@ -1,15 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './style.css';
-import { useNavigate } from 'react-router-dom';
 
-const Button = ({ primary, children, pathTo }) => {
-    const navigate = useNavigate();
-    const handleNavigate = () => navigate(pathTo);
-    const handleClassName = primary ? 'klever-primary-btn' : 'klever-btn';
+const Button = ({ style, children, onClick, hidden }) => {
+    let handleClassName;
+    switch (style) {
+        case 'remove':
+            handleClassName = 'klever-remove-btn';
+            break;
+        case 'primary':
+            handleClassName = 'klever-primary-btn';
+            break;
+        case 'btn':
+            handleClassName = 'klever-btn';
+    }
     return (
         <>
-            <button className={handleClassName} onClick={handleNavigate} type="button">
+            <button
+                className={handleClassName}
+                onClick={onClick}
+                type="button"
+                style={{ visibility: hidden }}
+            >
                 {children}
             </button>
         </>
