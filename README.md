@@ -1,5 +1,13 @@
+
 # Klever - Junior Frontend Test
 
+## npm i
+download dependencies
+## npm start
+This will run the app in development mode.
+If browser window won't open, go to http://localhost:3000 to view it in your browser.
+
+## About
 Hello, this is the Frontend test for junior developers from Klever. The objective is to analyze the skills of candidates, focusing on the core fundamentals of HTML, CSS, and JS.
 
 ## Pages
