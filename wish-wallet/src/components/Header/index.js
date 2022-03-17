@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Image } from './styles';
 
-function Header(props) {
-  const { logo } = props
-
+function Header({ logo }) {
   return (
     <div>
-      <img src={ logo } alt='logo da klever'/>
+      <Image src={ logo } alt='logo da klever'/>
     </div>
   );
 }
