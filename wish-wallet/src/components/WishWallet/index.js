@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ContentImage, Image } from './styles';
 
 function WishWallet({ image, btn }) {
   const renderButton = () => {
@@ -9,8 +10,12 @@ function WishWallet({ image, btn }) {
   }
   return (
     <div>
-        <img src={ image } alt='start-logo'/>
+      <ContentImage>
+        <Image src={ image } alt='start-logo'/>
+        <h1>Whish Wallet</h1>
         { renderButton() }
+      </ContentImage>
+
     </div>
   );
 }
