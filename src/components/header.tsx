@@ -1,8 +1,11 @@
 import Image from 'next/image'
 import { Button } from '.'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const Header: React.FC = () => {
+  const router = useRouter()
+
   return (
     <header className="m-auto mb-14 flex w-10/12 max-w-xl flex-col items-center justify-center">
       <div className="my-14">
@@ -15,9 +18,13 @@ const Header: React.FC = () => {
           </div>
           <h1 className="text-3xl font-bold md:text-4xl">Wish Wallet</h1>
         </div>
-        <Link href="">
-          <Button title="Add Token" type="button" />
-        </Link>
+        {router.pathname === '/' && (
+          <Link href="/add-token">
+            <a>
+              <Button title="Add Token" type="button" />
+            </a>
+          </Link>
+        )}
       </div>
     </header>
   )

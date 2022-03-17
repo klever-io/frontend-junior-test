@@ -8,6 +8,7 @@ module.exports = {
       colors: {
         'eerie-black': '#14152C',
         'byzantine': '#AA33B5',
+        'granite-gray': '#646464',
       },
       fontFamily: {
         'mont': ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],

@@ -14,7 +14,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       onClick={onClick}
-      className={`cursor-pointer rounded-md bg-byzantine py-2 px-5 text-sm font-bold ${style}`}
+      className={`min-w-[118px] cursor-pointer rounded-md bg-byzantine py-2 px-5 text-sm font-bold ${style}`}
       type={type}
     >
       {title}

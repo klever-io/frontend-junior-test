@@ -8,11 +8,11 @@ interface TokenProps {
 
 const Token: React.FC<TokenProps> = ({ token, balance }) => {
   return (
-    <div className="my-8 flex items-center justify-between text-3xl font-bold md:text-4xl">
+    <div className="my-8 flex items-center justify-between text-2xl font-bold md:text-4xl">
       <div className="flex cursor-pointer items-center">
         <Link href="#">
           <>
-            <div className="mr-3">
+            <div className="mr-4">
               <Image src="/edit.png" width={20} height={20} />
             </div>
             <span>{token}</span>
