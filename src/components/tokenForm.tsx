@@ -1,6 +1,8 @@
 import { Button, Input } from '.'
 import Link from 'next/link'
 import { useState, useCallback, useEffect, FormEvent } from 'react'
+import { TokenSchema } from '../validators/tokenValidator'
+import Image from 'next/image'
 
 export interface FormData {
   token: string
@@ -27,6 +29,12 @@ const tokenForm: React.FC<FormProps> = ({ title, onSubmit, data }) => {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     setError('')
+
+    try {
+      await TokenSchema.validate(formData)
+    } catch (err: any) {
+      return setError(err.errors[0])
+    }
 
     onSubmit(formData)
   }
@@ -64,6 +72,14 @@ const tokenForm: React.FC<FormProps> = ({ title, onSubmit, data }) => {
           value={formData.balance}
           onChange={(value: string) => handleChange('balance', value)}
         />
+        {error && (
+          <span className="text- my-3 flex w-full max-w-xl items-center justify-start text-red-500">
+            <div className="mr-1 flex items-center">
+              <Image src="/error.svg" width="20px" height="20px" />{' '}
+            </div>
+            {error}
+          </span>
+        )}
         <Button title="Save" type="submit" style="self-end my-4" />
       </form>
     </>
