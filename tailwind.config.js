@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'eerie-black': '#14152C'
+        'eerie-black': '#14152C',
+        'byzantine': '#AA33B5',
       },
       fontFamily: {
         'mont': ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
