@@ -12,7 +12,7 @@ const Document: React.FC = () => {
           rel="stylesheet"
         ></link>
       </Head>
-      <body>
+      <body className="bg-eerie-black font-mont text-white">
         <Main />
         <NextScript />
       </body>
