@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 function WishWallet({ image, btn }) {
   const renderButton = () => {
     if (btn) {
-      <button>Add</button>
-    } 
+      return <button>Add</button>
+    }
   }
   return (
     <div>
         <img src={ image } alt='start-logo'/>
-        { renderButton }
+        { renderButton() }
     </div>
   );
 }
