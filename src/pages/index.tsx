@@ -1,6 +1,10 @@
+import { TokenList } from '../components'
+
 const Home: React.FC = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2"></div>
+    <div className="m-auto flex w-10/12 items-center justify-center">
+      <TokenList />
+    </div>
   )
 }
 
