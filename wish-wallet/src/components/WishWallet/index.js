@@ -8,7 +8,7 @@ function WishWallet({ image, btn }) {
     if (btn) {
       return(
         <Button
-          name='Add'
+          name='Add Token'
           type='button'
           color='#B039BF'
         />

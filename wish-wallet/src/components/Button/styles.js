@@ -5,7 +5,8 @@ export const Btn = styled.button`
   border: 1px solid #13152A;
   border-radius: 5px;
   color: white;
-  padding: 6px 30px;
+  width: 90px;
+  height: 28px
 `;
 
 export const Container = styled.div`
