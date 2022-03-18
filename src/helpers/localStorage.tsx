@@ -36,6 +36,19 @@ const LocalStorage = {
 
     this.store('wallet', updatedTokens)
   },
+  isTokenSet(tokenName: string | any) {
+    const tokens = this.load('wallet')
+    if (!tokens) return false
+
+    const token = tokens.filter(
+      (item: TokenInterface) =>
+        item.token.toLocaleLowerCase() === tokenName.toLocaleLowerCase()
+    )
+
+    if (token.length > 0) return true
+
+    return false
+  },
   storeToken(token: TokenInterface): void {
     const tokens = this.load('wallet')
     if (!tokens) {

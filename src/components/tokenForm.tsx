@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useState, useCallback, useEffect, FormEvent } from 'react'
 import { TokenSchema } from '../validators/tokenValidator'
 import Image from 'next/image'
+import { LocalStorage } from '../helpers'
 
 export interface FormData {
   token: string
@@ -42,6 +43,11 @@ const tokenForm: React.FC<FormProps> = ({
       await TokenSchema.validate(formData)
     } catch (err: any) {
       return setError(err.errors[0])
+    }
+
+    if (!isEdit) {
+      const isTokenSet = LocalStorage.isTokenSet(formData.token)
+      if (isTokenSet) return setError('Token already exists')
     }
 
     onSubmit(formData)
