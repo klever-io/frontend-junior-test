@@ -1,11 +1,12 @@
 import React from 'react';
-import Button from '../Button';
 import PropTypes from 'prop-types';
+import Button from '../Button';
+import { Container, FormContent } from './styles';
 
 function Form({ title }) {
   return (
-    <div>
-      <form>
+    <Container>
+      <FormContent>
         <p>{ title }</p>
         <Button
           name='Voltar'
@@ -32,8 +33,8 @@ function Form({ title }) {
             name='balance-input'
             />
         </label>
-      </form>
-    </div>
+      </FormContent>
+    </Container>
   );
 }
 
