@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Container, Btn } from './styles';
 
 function Button({ name, type, color }) {
   return (
-    <div>
-      <button
+    <Container>
+      <Btn
+        color={ color }
         name={ name }
         type={ type }
       >
         { name }
-      </button>
-    </div>
+      </Btn>
+    </Container>
   );
 }
 
