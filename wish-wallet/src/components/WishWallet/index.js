@@ -11,6 +11,8 @@ function WishWallet({ image, btn }) {
           name='Add Token'
           type='button'
           color='#B039BF'
+          link='cadastrar'
+          redirectPage={ true }
         />
       )
     }
@@ -29,7 +31,6 @@ function WishWallet({ image, btn }) {
 
 WishWallet.propTypes = {
   image: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired,
   btn: PropTypes.bool.isRequired,
 };
 

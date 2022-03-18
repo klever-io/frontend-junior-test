@@ -6,7 +6,7 @@ import starLogo from '../images/shooting-star.svg';
 function Home() {
   return (
     <div>
-      <Header kleverLogo={ kleverLogo } starLogo={ starLogo }/>
+      <Header kleverLogo={ kleverLogo } starLogo={ starLogo } btn={ true }/>
     </div>
   );
 }
