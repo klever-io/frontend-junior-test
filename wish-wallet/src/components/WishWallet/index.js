@@ -1,11 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ContentImage, Image } from './styles';
+import Button from '../Button';
 
 function WishWallet({ image, btn }) {
   const renderButton = () => {
     if (btn) {
-      return <button>Add</button>
+      return(
+        <Button
+          name='Add'
+          type='button'
+          color='#B039BF'
+        />
+      )
     }
   }
   return (
