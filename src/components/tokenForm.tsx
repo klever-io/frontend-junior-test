@@ -94,7 +94,7 @@ const tokenForm: React.FC<FormProps> = ({
             <Button
               title="Remove"
               onClick={onRemoveBtnClick}
-              type="submit"
+              type="button"
               style="bg-venetian-red my-4"
             />
           )}

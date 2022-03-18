@@ -1,4 +1,4 @@
-import { TokenForm } from '../../components'
+import { TokenForm, ModalConfirm } from '../../components'
 import { LocalStorage } from '../../helpers'
 import { FormData } from '../../components/tokenForm'
 import Router, { useRouter } from 'next/router'
@@ -8,6 +8,7 @@ const addToken: React.FC = () => {
   const router = useRouter()
   const { tokenName } = router.query
   const [token, setToken] = useState({})
+  const [displayModal, setDisplayModal] = useState(false)
 
   useEffect(() => {
     if (tokenName) {
@@ -17,7 +18,11 @@ const addToken: React.FC = () => {
     }
   }, [tokenName])
 
-  const onRemoveBtnClick = () => {
+  const handleRemoveBtnClick = () => {
+    setDisplayModal(true)
+  }
+
+  const onModalConfirm = () => {
     LocalStorage.removeToken(tokenName)
     Router.push('/')
   }
@@ -29,12 +34,19 @@ const addToken: React.FC = () => {
 
   return (
     <div className="m-auto flex w-10/12 max-w-xl items-center justify-center">
-      <TokenForm
-        title="Add Token"
-        onSubmit={handleFormSubmit}
-        data={token}
-        onRemoveBtnClick={onRemoveBtnClick}
-        isEdit
+      {'token' in token && (
+        <TokenForm
+          title="Add Token"
+          onSubmit={handleFormSubmit}
+          data={token}
+          onRemoveBtnClick={handleRemoveBtnClick}
+          isEdit
+        />
+      )}
+      <ModalConfirm
+        show={displayModal}
+        onClose={() => setDisplayModal(false)}
+        onBtnYes={onModalConfirm}
       />
     </div>
   )

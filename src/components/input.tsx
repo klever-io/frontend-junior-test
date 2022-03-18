@@ -12,7 +12,7 @@ const Input: React.FC<InputProps> = ({ label, name, value, onChange }) => {
         {label}
       </label>
       <input
-        className="bg-yankees-blue rounded-md px-4 py-2 text-black outline-none"
+        className="rounded-md px-4 py-2 text-black outline-none"
         name={name}
         value={value}
         type="text"
