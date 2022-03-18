@@ -8,7 +8,7 @@ Todas as imagens das páginas estão na pasta `./screens`
 
 ### 1) Home
 
-![Home](https://github.com/klever-io/frontend-junior-test/blob/master/screens/Home.jpg)
+![Home](/public/screens/Home.jpg)
 
 #### Ações
 
@@ -17,7 +17,7 @@ Todas as imagens das páginas estão na pasta `./screens`
 
 ### 2) Add token
 
-![Adicionar token](https://github.com/klever-io/frontend-junior-test/blob/master/screens/AddToken.jpg)
+![Adicionar token](/public/screens/AddToken.jpg)
 
 #### Forma
 
@@ -38,7 +38,7 @@ Todas as imagens das páginas estão na pasta `./screens`
 
 ### 3) Edit token
 
-![Editar token](https://github.com/klever-io/frontend-junior-test/blob/master/screens/EditToken.jpg)
+![Editar token](/public/screens/EditToken.jpg)
 
 #### Ações
 

@@ -1,5 +1,27 @@
 # Klever - Junior Frontend Test
 
+- [See live project](http://frontend-junior-test.vercel.app/)
+
+## ⚡️ Start
+
+First, run the development server
+
+```
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Built with
+
+- [Next.Js](https://nextjs.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Typescript](https://www.typescriptlang.org/)
+- [React.Js](https://reactjs.org/)
+- [YUP](https://github.com/jquense/yup)
+
+## Test Description
+
 Hello, this is the Frontend test for junior developers from Klever. The objective is to analyze the skills of candidates, focusing on the core fundamentals of HTML, CSS, and JS.
 
 ## Pages
@@ -8,7 +30,7 @@ All the pages image are in the `./screens` folder
 
 ### 1) Home
 
-![Home](https://github.com/klever-io/frontend-junior-test/blob/master/screens/Home.jpg)
+![Home](/public/screens/Home.jpg)
 
 #### Actions
 
@@ -17,7 +39,7 @@ All the pages image are in the `./screens` folder
 
 ### 2) Add Token
 
-![Add Token](https://github.com/klever-io/frontend-junior-test/blob/master/screens/AddToken.jpg)
+![Add Token](/public/screens/AddToken.jpg)
 
 #### Form
 
@@ -38,7 +60,7 @@ All the pages image are in the `./screens` folder
 
 ### 3) Edit Token
 
-![Edit Token](https://github.com/klever-io/frontend-junior-test/blob/master/screens/EditToken.jpg)
+![Edit Token](/public/screens/EditToken.jpg)
 
 #### Actions
 
