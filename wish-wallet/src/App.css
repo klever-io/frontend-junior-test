@@ -3,7 +3,7 @@ body {
   color: white;
   justify-content: center;
   margin: auto;
-  width: 50%;
+  width: 35%;
 }
 
 @media screen and (max-width: 500px) {
