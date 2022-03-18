@@ -1,5 +1,27 @@
 # Klever - Junior Frontend Test
 
+- [See live project](http://frontend-junior-test.vercel.app/)
+
+## ⚡️ Start
+
+First, run the development server
+
+```
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Built with
+
+- [Next.Js](https://nextjs.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Typescript](https://www.typescriptlang.org/)
+- [React.Js](https://reactjs.org/)
+- [YUP](https://github.com/jquense/yup)
+
+## Test Description
+
 Hello, this is the Frontend test for junior developers from Klever. The objective is to analyze the skills of candidates, focusing on the core fundamentals of HTML, CSS, and JS.
 
 ## Pages
