@@ -12,7 +12,7 @@ function WishWallet({ image, btn }) {
     <div>
       <ContentImage>
         <Image src={ image } alt='start-logo'/>
-        <h2>Whish Wallet</h2>
+        <h2>Wish Wallet</h2>
         { renderButton() }
       </ContentImage>
 
