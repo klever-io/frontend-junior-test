@@ -11,11 +11,19 @@ export interface FormData {
 
 interface FormProps {
   title: string
-  data?: FormData
+  data?: FormData | any
+  isEdit?: boolean
   onSubmit: (formData: FormData) => void
+  onRemoveBtnClick?: () => void
 }
 
-const tokenForm: React.FC<FormProps> = ({ title, onSubmit, data }) => {
+const tokenForm: React.FC<FormProps> = ({
+  title,
+  onSubmit,
+  data,
+  isEdit = false,
+  onRemoveBtnClick,
+}) => {
   const [error, setError] = useState('')
   const [formData, setFormData] = useState({
     token: '',
@@ -80,7 +88,17 @@ const tokenForm: React.FC<FormProps> = ({ title, onSubmit, data }) => {
             {error}
           </span>
         )}
-        <Button title="Save" type="submit" style="self-end my-4" />
+        <div className="flex w-full flex-row-reverse items-center justify-between">
+          <Button title="Save" type="submit" style="my-4" />
+          {isEdit && (
+            <Button
+              title="Remove"
+              onClick={onRemoveBtnClick}
+              type="submit"
+              style="bg-venetian-red my-4"
+            />
+          )}
+        </div>
       </form>
     </>
   )

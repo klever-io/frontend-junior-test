@@ -8,6 +8,34 @@ const LocalStorage = {
   store(key: string, value: string) {
     localStorage.setItem(key, JSON.stringify(value))
   },
+  loadToken(tokenName: string | any): TokenInterface | any {
+    const tokens = this.load('wallet')
+    if (!tokens) return {}
+
+    const token = tokens.filter(
+      (item: TokenInterface) =>
+        item.token.toLocaleLowerCase() === tokenName.toLocaleLowerCase()
+    )
+
+    if (token.length === 0) return null
+
+    return token[0]
+  },
+  updateToken(tokenName: string | any, token: TokenInterface) {
+    this.removeToken(tokenName)
+    this.storeToken(token)
+  },
+  removeToken(tokenName: string | any) {
+    const tokens = this.load('wallet')
+    if (!tokens) return
+
+    const updatedTokens = tokens.filter(
+      (item: TokenInterface) =>
+        item.token.toLocaleLowerCase() !== tokenName.toLocaleLowerCase()
+    )
+
+    this.store('wallet', updatedTokens)
+  },
   storeToken(token: TokenInterface): void {
     const tokens = this.load('wallet')
     if (!tokens) {
