@@ -1,9 +1,20 @@
 import React from 'react';
+import Button from '../Button';
+import PropTypes from 'prop-types';
 
-function Form() {
+function Form({ title }) {
   return (
     <div>
       <form>
+        <p>{ title }</p>
+        <Button
+          name='Voltar'
+          type='button'
+          color='#616161'
+          link='/'
+          redirectPage={ true }
+        />
+
         <label>
           Token
           <input
@@ -25,5 +36,10 @@ function Form() {
     </div>
   );
 }
+
+
+Button.propTypes = {
+  title: PropTypes.string.isRequired,
+};
 
 export default Form;
