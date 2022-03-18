@@ -31,11 +31,12 @@ export const FormContent = styled.form`
   }
 
   && input {
-    height: 25px;
-    width: 98%;
+    width: 95.8%;
     margin-top: 5px;
     border: 0;
     border-radius: 5px;
-    padding: 3px;
+    padding: 8px 2%;
+    font-weight: bold;
+    text-transform:uppercase;
   }
 `;
