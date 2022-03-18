@@ -10,7 +10,8 @@ export const ContentImage = styled.div`
   justify-content: flex-start;
 
   & h2 {
-    margin-right: 30%;
+    width: 350px;
+    margin-right: 10%;
     margin-left: 5px;
-  } 
+  }
   `;

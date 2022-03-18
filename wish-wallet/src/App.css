@@ -3,5 +3,13 @@ body {
   color: white;
   justify-content: center;
   margin: auto;
-  width: 70%;
+  width: 50%;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+  margin: auto;
+  justify-content: center;
+  width: 85%;
+  }
 }
