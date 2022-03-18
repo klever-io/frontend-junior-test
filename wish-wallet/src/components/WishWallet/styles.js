@@ -7,10 +7,10 @@ export const Image = styled.img`
 export const ContentImage = styled.div`
   display: flex;
   margin: auto;
-  justify-content: center;
+  justify-content: flex-start;
 
   & h2 {
-    margin-right: 20%;
+    margin-right: 30%;
     margin-left: 5px;
   } 
   `;

@@ -6,10 +6,8 @@ import WishWallet from '../WishWallet';
 function Header({ kleverLogo, starLogo }) {
   return (
     <div>
-      <div>
-        <Image src={ kleverLogo } alt='logo da klever'/>
-        <WishWallet image={ starLogo } btn={ true } />
-      </div>
+      <Image src={ kleverLogo } alt='logo da klever'/>
+      <WishWallet image={ starLogo } btn={ true } />
     </div>
   );
 }
