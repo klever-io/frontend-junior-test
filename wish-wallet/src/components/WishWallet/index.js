@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ContentImage, Image } from './styles';
+import { Content, ContentImage, Image } from './styles';
 import Button from '../Button';
 
 function WishWallet({ image, btn }) {
@@ -18,14 +18,14 @@ function WishWallet({ image, btn }) {
     }
   }
   return (
-    <div>
+    <Content>
       <ContentImage>
         <Image src={ image } alt='start-logo'/>
         <h2>Wish Wallet</h2>
-        { renderButton() }
       </ContentImage>
+        { renderButton() }
 
-    </div>
+    </Content>
   );
 }
 

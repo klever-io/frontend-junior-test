@@ -6,12 +6,16 @@ export const Image = styled.img`
 
 export const ContentImage = styled.div`
   display: flex;
-  margin: auto;
   justify-content: flex-start;
 
   & h2 {
-    width: 350px;
-    margin-right: 10%;
     margin-left: 5px;
   }
   `;
+
+
+export const Content = styled.div`
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+`;
