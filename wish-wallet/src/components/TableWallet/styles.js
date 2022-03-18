@@ -19,6 +19,7 @@ export const Container = styled.div`
     && td {
     padding: 9px 0;
     font-weight: bold;
+    font-size: 19px;
     width: 100%;
   }
 
