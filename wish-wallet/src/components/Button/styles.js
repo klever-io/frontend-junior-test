@@ -6,7 +6,8 @@ export const Btn = styled.button`
   border-radius: 5px;
   color: white;
   width: 90px;
-  height: 28px
+  height: 28px;
+  cursor: pointer;
 `;
 
 export const Container = styled.div`
