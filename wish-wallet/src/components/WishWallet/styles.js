@@ -15,9 +15,9 @@ export const ContentImage = styled.div`
 
 
 export const Content = styled.div`
+  margin-bottom: 25px;
   display: flex;
   justify-content: ${(({ btn }) => btn ? 'space-between' : 'flex-start')};
-  margin: auto;
 `;
 
 // refernce change color:

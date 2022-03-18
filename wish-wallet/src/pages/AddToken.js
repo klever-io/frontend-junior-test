@@ -8,7 +8,7 @@ function AddToken() {
   return (
     <div>
       <Header kleverLogo={ kleverLogo } starLogo={ starLogo } btn={ false }/>
-      <Form />
+      <Form title='Add Token' />
     </div>
   );
 }

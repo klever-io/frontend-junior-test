@@ -38,7 +38,7 @@ function Form({ title }) {
 }
 
 
-Button.propTypes = {
+Form.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
