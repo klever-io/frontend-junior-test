@@ -7,32 +7,31 @@ function Form({ title }) {
   return (
     <Container>
       <FormContent>
-        <p>{ title }</p>
-        <Button
-          name='Voltar'
-          type='button'
-          color='#616161'
-          link='/'
-          redirectPage={ true }
-        />
+        <div>
+          <p>{ title }</p>
 
-        <label>
-          Token
+          <Button
+            name='Voltar'
+            type='button'
+            color='#616161'
+            link='/'
+            redirectPage={ true }
+            />
+        </div>
+
+        <label htmlFor='token-input'>Token</label>
           <input
             type='text'
             id='token-input'
             name='token-input'
             />
-        </label>
 
-        <label>
-          Balance
+        <label htmlFor='balance-input'>Balance</label>
           <input
             type='text'
             id='balance-input'
             name='balance-input'
             />
-        </label>
       </FormContent>
     </Container>
   );
