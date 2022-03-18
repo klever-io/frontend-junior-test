@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from './styles';
+import { Container, Table } from './styles';
 
 function TableWallet() {
 
@@ -11,7 +11,7 @@ function TableWallet() {
 
   return (
     <Container>
-      <table>
+      <Table>
         <thead>
           <tr>
             <th>&nbsp;</th>
@@ -19,20 +19,20 @@ function TableWallet() {
             <th>Balance</th>
           </tr>
         </thead>
+        <tbody>
           {
             walletMock.map(({ token, value }, i) => (
-              <tbody key={ i }>
-                <tr>
+                <tr key={ i }>
                   <td>
                     <button>edit</button>
                   </td>
                   <td>{ token }</td>
                   <td>{ value }</td>
                 </tr>
-              </tbody>
             ))
           }
-      </table>
+          </tbody>
+      </Table>
     </Container>
   );
 }
