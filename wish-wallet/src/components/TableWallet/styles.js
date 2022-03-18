@@ -1,24 +1,33 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin: auto;
+  margin-top: 25px;
   `;
   
   export const Table = styled.table`
-  margin-top: 25px;
-  /* margin: auto; */
-  
-  && th {
-    font-size: 14px;
-  }
-  
-  && td {
+    margin: auto;
+
+    && th {
+      font-size: 13px;
+      text-align: start;
+    }
+
+    && th:last-child {
+      text-align: end;
+    }
+    
+    && td {
+    padding: 9px 0;
     font-weight: bold;
-    padding: 7px;
-    width: 29px
+    width: 100%;
   }
-  
-  && tr {
-    display: flex:
-}
+
+  && td:first-child {
+    width: 5px;
+    padding: 0 15px;
+  }
+
+  && td:last-child {
+    text-align: end;
+  }
 `;
