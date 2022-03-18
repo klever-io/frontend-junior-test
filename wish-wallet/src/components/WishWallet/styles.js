@@ -6,7 +6,6 @@ export const Image = styled.img`
 
 export const ContentImage = styled.div`
   display: flex;
-  justify-content: flex-start;
 
   & h2 {
     margin-left: 5px;
@@ -16,6 +15,6 @@ export const ContentImage = styled.div`
 
 export const Content = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: ${(({ btn }) => btn ? 'space-between' : 'flex-start')};
   margin: auto;
 `;

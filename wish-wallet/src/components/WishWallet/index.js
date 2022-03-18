@@ -11,14 +11,14 @@ function WishWallet({ image, btn }) {
           name='Add Token'
           type='button'
           color='#B039BF'
-          link='cadastrar'
+          link='register'
           redirectPage={ true }
         />
       )
     }
   }
   return (
-    <Content>
+    <Content btn={ btn }>
       <ContentImage>
         <Image src={ image } alt='start-logo'/>
         <h2>Wish Wallet</h2>
