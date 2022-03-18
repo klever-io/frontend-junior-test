@@ -6,10 +6,10 @@ body {
   width: 35%;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 800px) {
   body {
   margin: auto;
   justify-content: center;
-  width: 85%;
+  width: 77%;
   }
 }
