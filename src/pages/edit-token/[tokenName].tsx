@@ -36,7 +36,7 @@ const addToken: React.FC = () => {
     <div className="m-auto flex w-10/12 max-w-xl items-center justify-center">
       {'token' in token && (
         <TokenForm
-          title="Add Token"
+          title="Edit Token"
           onSubmit={handleFormSubmit}
           data={token}
           onRemoveBtnClick={handleRemoveBtnClick}
