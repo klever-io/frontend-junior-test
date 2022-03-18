@@ -24,10 +24,19 @@ export const Container = styled.div`
 
   && td:first-child {
     width: 5px;
-    padding: 0 15px;
   }
 
   && td:last-child {
     text-align: end;
   }
+  
+  && button {
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+  }
+`;
+
+export const Img = styled.img`
+  width: 23px;
 `;

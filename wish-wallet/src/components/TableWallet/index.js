@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container, Table } from './styles';
+import { Container, Table, Img } from './styles';
+import editIcon from '../../images/edit-btn.png'
 
 function TableWallet() {
 
@@ -24,7 +25,9 @@ function TableWallet() {
             walletMock.map(({ token, value }, i) => (
                 <tr key={ i }>
                   <td>
-                    <button>edit</button>
+                    <button>
+                      <Img src={editIcon} alt='editIcon'/>
+                    </button>
                   </td>
                   <td>{ token }</td>
                   <td>{ value }</td>
@@ -40,3 +43,4 @@ function TableWallet() {
 export default TableWallet;
 
 // reference: https://www.homehost.com.br/blog/criar-sites/tabela-html/
+// https://www.kissclipart.com/article-icon-edit-icon-note-icon-8dlzn0/
