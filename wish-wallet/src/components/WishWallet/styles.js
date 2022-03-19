@@ -7,6 +7,7 @@ export const Image = styled.img`
 
 export const ContentImage = styled.div`
   display: flex;
+  width: 80%;
 
   & h2 {
     margin-left: 5px;
@@ -22,16 +23,9 @@ export const Content = styled.div`
 
   && div:last-child {
     display: flex;
-    width: 56%;
+    width: auto;
     justify-content: flex-end;
     margin: auto;
-    
-    @media screen and (max-width: 1040px) {
-      display: flex;
-      width: 48%;
-      justify-content: flex-end;
-      margin: auto;
-      }
     }
   }
 
