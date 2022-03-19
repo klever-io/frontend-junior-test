@@ -33,6 +33,7 @@ function Form({ title }) {
             name='balance-input'
             />
       </FormContent>
+
     </Container>
   );
 }

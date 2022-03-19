@@ -18,6 +18,14 @@ export const Content = styled.div`
   margin-bottom: 25px;
   display: flex;
   justify-content: ${(({ btn }) => btn ? 'space-between' : 'flex-start')};
+
+  && div:last-child {
+    display: flex;
+    width: 49.9%;
+    justify-content: flex-end;
+    margin: auto;
+    
+  }
 `;
 
 // refernce change color:

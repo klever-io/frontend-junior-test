@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-import { Container, Btn } from './styles';
+import { Btn } from './styles';
 
 function Button({ name, type, color, redirectPage, link }) {
   const navigate = useNavigate();
@@ -13,16 +13,14 @@ function Button({ name, type, color, redirectPage, link }) {
   }
 
   return (
-    <Container>
-      <Btn
-        color={ color }
-        name={ name }
-        type={ type }
-        onClick={ () => redirect() }
-      >
-        { name }
-      </Btn>
-    </Container>
+    <Btn
+      color={ color }
+      name={ name }
+      type={ type }
+      onClick={ () => redirect() }
+    >
+      { name }
+    </Btn>
   );
 }
 

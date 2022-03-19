@@ -23,7 +23,9 @@ function WishWallet({ image, btn }) {
         <Image src={ image } alt='start-logo'/>
         <h2>Wish Wallet</h2>
       </ContentImage>
+      <div>
         { renderButton() }
+      </div>
 
     </Content>
   );
