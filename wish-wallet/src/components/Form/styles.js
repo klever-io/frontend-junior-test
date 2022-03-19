@@ -38,6 +38,12 @@ export const FormContent = styled.form`
     font-weight: bold;
     text-transform:uppercase;
   }
+
+  && input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
 `;
 
 export const ContentButton = styled.div`
@@ -46,3 +52,5 @@ export const ContentButton = styled.div`
   width: 100%;
   justify-content: flex-end;
 `;
+
+// reference input: https://pt.stackoverflow.com/questions/177573/retirar-as-setas-no-campo-tipo-number

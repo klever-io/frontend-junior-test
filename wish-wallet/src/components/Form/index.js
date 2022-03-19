@@ -28,7 +28,7 @@ function Form({ title }) {
 
         <label htmlFor='balance-input'>Balance</label>
           <input
-            type='text'
+            type='number'
             id='balance-input'
             name='balance-input'
             />
