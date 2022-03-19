@@ -12,7 +12,7 @@ function WishWallet({ image, btn }) {
           type='button'
           color='#B039BF'
           link='register-token'
-          redirectPage={ true }
+          redirectPage={ () => true }
         />
       )
     }
