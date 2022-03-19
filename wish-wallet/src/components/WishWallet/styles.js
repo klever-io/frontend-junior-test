@@ -7,7 +7,7 @@ export const Image = styled.img`
 
 export const ContentImage = styled.div`
   display: flex;
-  width: 80%;
+  width: 90%;
 
   & h2 {
     margin-left: 5px;

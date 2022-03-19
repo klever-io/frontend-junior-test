@@ -24,6 +24,8 @@ function Form({ title }) {
             type='text'
             id='token-input'
             name='token-input'
+            maxLength={ 3 }
+            autoComplete="off"
             />
 
         <label htmlFor='balance-input'>Balance</label>
@@ -31,7 +33,7 @@ function Form({ title }) {
             type='number'
             id='balance-input'
             name='balance-input'
-            />
+          />
       </FormContent>
       <ContentButton>
         <Button
