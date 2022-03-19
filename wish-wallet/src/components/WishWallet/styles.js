@@ -10,6 +10,7 @@ export const ContentImage = styled.div`
 
   & h2 {
     margin-left: 5px;
+    font-size: 20px;
   }
   `;
 
@@ -21,11 +22,19 @@ export const Content = styled.div`
 
   && div:last-child {
     display: flex;
-    width: 49.9%;
+    width: 56%;
     justify-content: flex-end;
     margin: auto;
     
+    @media screen and (max-width: 1040px) {
+      display: flex;
+      width: 48%;
+      justify-content: flex-end;
+      margin: auto;
+      }
+    }
   }
+
 `;
 
 // refernce change color:

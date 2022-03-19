@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button';
-import { Container, FormContent } from './styles';
+import { Container, FormContent, ContentButton } from './styles';
 
 function Form({ title }) {
   return (
@@ -33,7 +33,15 @@ function Form({ title }) {
             name='balance-input'
             />
       </FormContent>
-
+      <ContentButton>
+        <Button
+          name='Save'
+          type='button'
+          color='#B039BF'
+          link='/'
+          redirectPage={ true }
+        />
+      </ContentButton>
     </Container>
   );
 }

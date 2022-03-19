@@ -1,18 +1,17 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    display: flex;
     width: 100%;
 `;
 
 export const FormContent = styled.form`
   margin: auto;
-  width: 100%;
-  padding: 0 15px;
+  width: 96%;
+  margin-left: 4%;
 
   && p {
     margin: 0;
-    width: 100%
+    width: 100%;
   }
   
   && div {
@@ -31,7 +30,7 @@ export const FormContent = styled.form`
   }
 
   && input {
-    width: 95.8%;
+    width: 96%;
     margin-top: 5px;
     border: 0;
     border-radius: 5px;
@@ -39,4 +38,11 @@ export const FormContent = styled.form`
     font-weight: bold;
     text-transform:uppercase;
   }
+`;
+
+export const ContentButton = styled.div`
+  margin-top: 25px;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
 `;
