@@ -2,12 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button';
 import { Container } from './styles';
-// import { setToken } from '../../Utils/saveToken';
+import { editToken } from '../../Utils/localStorageWallet';
 
 
 function EditTokenButton({ tokenValue, balanceValue }) {
-  const editToken = () => {
+  const editTokenStorage = () => {
     { tokenValue, balanceValue }
+    editToken({ token: tokenValue, balance: balanceValue });
+    // console.log(token);
+    return false;
   }
 
   return (
@@ -25,7 +28,7 @@ function EditTokenButton({ tokenValue, balanceValue }) {
         type='button'
         color='#B039BF'
         link='/'
-        redirectPage={ () => editToken() }
+        redirectPage={ () => editTokenStorage() }
       />
     </Container>
   );

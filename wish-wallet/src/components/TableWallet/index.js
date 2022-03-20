@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Table, Img } from './styles';
 import editIcon from '../../images/edit-btn.png'
-import { getToken } from '../../Utils/saveToken';
+import { getToken } from '../../Utils/localStorageWallet';
 import { useNavigate } from 'react-router-dom';
 
 function TableWallet() {

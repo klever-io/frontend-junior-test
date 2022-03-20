@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button';
-import { setToken } from '../../Utils/saveToken';
+import { setToken } from '../../Utils/localStorageWallet';
 
 
 function AddTokenButton({ tokenValue, balanceValue }) {
