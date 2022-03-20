@@ -4,7 +4,7 @@ import editIcon from '../../images/edit-btn.png'
 import { getToken } from '../../Utils/saveToken';
 
 function TableWallet() {
-  const wallet = getToken('wallet');
+  const wallet = getToken('wallet') || [];
 
   return (
     <Container>
