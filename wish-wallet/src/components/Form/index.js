@@ -60,7 +60,7 @@ function Form({ title }) {
             onChange={ ({ target: { value }}) => setBalanceValue(value) }
           />
       </FormContent>
-      <ContentButton title={ title }>
+      <ContentButton>
         { handleForm() }
       </ContentButton>
     </Container>

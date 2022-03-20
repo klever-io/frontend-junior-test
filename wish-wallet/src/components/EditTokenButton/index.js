@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button';
+import { Container } from './styles';
 // import { setToken } from '../../Utils/saveToken';
 
 
@@ -10,7 +11,7 @@ function EditTokenButton({ tokenValue, balanceValue }) {
   }
 
   return (
-    <div>
+    <Container>
       <Button
         name='Delete'
         type='button'
@@ -26,7 +27,7 @@ function EditTokenButton({ tokenValue, balanceValue }) {
         link='/'
         redirectPage={ () => editToken() }
       />
-    </div>
+    </Container>
   );
 }
 
