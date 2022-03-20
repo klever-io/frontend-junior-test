@@ -1,14 +1,10 @@
 import React from 'react';
 import { Container, Table, Img } from './styles';
 import editIcon from '../../images/edit-btn.png'
+import { getToken } from '../../Utils/saveToken';
 
 function TableWallet() {
-
-  const walletMock = [
-    { token: "KLV", value: "23,233.43" },
-    { token: "DVK", value: "28,260.42" },
-    { token: "KFI", value: "10" }
-  ]
+  const wallet = getToken('wallet') || [];
 
   return (
     <Container>
@@ -22,7 +18,7 @@ function TableWallet() {
         </thead>
         <tbody>
           {
-            walletMock.map(({ token, value }, i) => (
+            wallet.map(({ token, balance }, i) => (
                 <tr key={ i }>
                   <td>
                     <button>
@@ -30,7 +26,7 @@ function TableWallet() {
                     </button>
                   </td>
                   <td>{ token }</td>
-                  <td>{ value }</td>
+                  <td>{ balance }</td>
                 </tr>
             ))
           }

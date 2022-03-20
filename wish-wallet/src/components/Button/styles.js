@@ -11,6 +11,7 @@ export const Btn = styled.button`
 `;
 
 export const Container = styled.div`
+  display: inline;
   display: flex;
   align-items: center;
 `;

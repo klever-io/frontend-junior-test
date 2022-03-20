@@ -11,8 +11,8 @@ function WishWallet({ image, btn }) {
           name='Add Token'
           type='button'
           color='#B039BF'
-          link='register'
-          redirectPage={ true }
+          link='register-token'
+          redirectPage={ () => true }
         />
       )
     }
@@ -23,7 +23,9 @@ function WishWallet({ image, btn }) {
         <Image src={ image } alt='start-logo'/>
         <h2>Wish Wallet</h2>
       </ContentImage>
+      <div>
         { renderButton() }
+      </div>
 
     </Content>
   );

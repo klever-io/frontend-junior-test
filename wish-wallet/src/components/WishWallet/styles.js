@@ -7,17 +7,28 @@ export const Image = styled.img`
 
 export const ContentImage = styled.div`
   display: flex;
+  width: 90%;
 
   & h2 {
     margin-left: 5px;
+    font-size: 20px;
   }
   `;
 
 
 export const Content = styled.div`
+  margin-bottom: 25px;
   display: flex;
   justify-content: ${(({ btn }) => btn ? 'space-between' : 'flex-start')};
-  margin: auto;
+
+  && div:last-child {
+    display: flex;
+    width: auto;
+    justify-content: flex-end;
+    margin: auto;
+    }
+  }
+
 `;
 
 // refernce change color:
