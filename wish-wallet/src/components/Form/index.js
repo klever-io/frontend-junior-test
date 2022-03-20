@@ -8,6 +8,20 @@ function Form({ title }) {
   const [tokenValue, setTokenValue] = useState('');
   const [balanceValue, setBalanceValue] = useState('');
 
+  const handleForm = () => {
+    if (title === 'Add Token') {
+      return (
+        <AddTokenButton
+          tokenValue={ tokenValue }
+          balanceValue={ balanceValue }
+        />
+      );
+    }
+    return (
+      <p>EditComponent</p>
+    )
+  };
+
   return (
     <Container>
       <FormContent>
@@ -43,10 +57,7 @@ function Form({ title }) {
           />
       </FormContent>
       <ContentButton>
-        <AddTokenButton
-          tokenValue={ tokenValue }
-          balanceValue={ balanceValue }
-        />
+        { handleForm() }
       </ContentButton>
     </Container>
   );
