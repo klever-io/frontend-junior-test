@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Button from '../Button';
 import { Container, FormContent, ContentButton } from './styles';
 import AddTokenButton from '../AddTokenButton';
+import EditTokenButton from '../EditTokenButton';
 
 function Form({ title }) {
   const [tokenValue, setTokenValue] = useState('');
@@ -18,7 +19,10 @@ function Form({ title }) {
       );
     }
     return (
-      <p>EditComponent</p>
+      <EditTokenButton
+        tokenValue={ tokenValue }
+        balanceValue={ balanceValue }
+      />
     )
   };
 
@@ -56,7 +60,7 @@ function Form({ title }) {
             onChange={ ({ target: { value }}) => setBalanceValue(value) }
           />
       </FormContent>
-      <ContentButton>
+      <ContentButton title={ title }>
         { handleForm() }
       </ContentButton>
     </Container>

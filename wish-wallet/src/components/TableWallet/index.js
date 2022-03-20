@@ -2,9 +2,16 @@ import React from 'react';
 import { Container, Table, Img } from './styles';
 import editIcon from '../../images/edit-btn.png'
 import { getToken } from '../../Utils/saveToken';
+import { useNavigate } from 'react-router-dom';
 
 function TableWallet() {
+  const navigate = useNavigate();
+  const redirect = () => {
+    return navigate('edit-token');
+  }
+  
   const wallet = getToken('wallet') || [];
+  
 
   return (
     <Container>
@@ -21,8 +28,11 @@ function TableWallet() {
             wallet.map(({ token, balance }, i) => (
                 <tr key={ i }>
                   <td>
-                    <button>
-                      <Img src={editIcon} alt='editIcon'/>
+                    <button
+                      type='button'
+                      onClick={ redirect }
+                    >
+                      <Img src={editIcon} alt='editIcon'/> 
                     </button>
                   </td>
                   <td>{ token }</td>
