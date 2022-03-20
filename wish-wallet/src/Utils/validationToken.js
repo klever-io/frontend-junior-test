@@ -4,9 +4,7 @@ import { getToken } from "./localStorageWallet";
 const tokenExist = (token) => {
   const listTokens = getToken('wallet');
   if (!listTokens) return true;
-  
   const findToken = listTokens.some((item) => item.token === token);
-
   return !findToken;
 };
 

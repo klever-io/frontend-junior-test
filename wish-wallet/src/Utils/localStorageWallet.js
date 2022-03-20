@@ -15,7 +15,7 @@ export const setToken = ({ token, balance }) => {
 };
 
 
-export const editToken = (token, balance) => {
+export const editToken = ({token, balance}) => {
 
   }
 

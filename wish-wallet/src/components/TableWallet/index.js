@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container, Table, Img } from './styles';
 import editIcon from '../../images/edit-btn.png'
 import { getToken } from '../../Utils/localStorageWallet';
 import { useNavigate } from 'react-router-dom';
+import AppContext from '../Hooks/AppContext';
 
 function TableWallet() {
+  const { setEditItem } = useContext(AppContext);
   const navigate = useNavigate();
-  const redirect = () => {
+  const redirect = (e) => {
+    setEditItem(e)
     return navigate('edit-token');
   }
   
@@ -30,7 +33,7 @@ function TableWallet() {
                   <td>
                     <button
                       type='button'
-                      onClick={ redirect }
+                      onClick={ () => redirect(i) }
                     >
                       <Img src={editIcon} alt='editIcon'/> 
                     </button>

@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button';
 import { Container } from './styles';
-import { editToken } from '../../Utils/localStorageWallet';
+// import { editToken } from '../../Utils/localStorageWallet';
+import AppContext from '../Hooks/AppContext';
 
 
 function EditTokenButton({ tokenValue, balanceValue }) {
+  const { editItem } = useContext(AppContext);
+
   const editTokenStorage = () => {
     { tokenValue, balanceValue }
-    editToken({ token: tokenValue, balance: balanceValue });
+    console.log(editItem)
+    // editToken({ token: tokenValue, balance: balanceValue });
     // console.log(token);
+
     return false;
   }
 
