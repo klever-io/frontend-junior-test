@@ -14,6 +14,8 @@ const inputValidate = (token, balance) => {
 };
 
 export const validations = (token, balance) => {
-  tokenExist(token)
-  inputValidate(token, balance)
+  return (
+    tokenExist(token),
+    inputValidate(token, balance)
+  );
 };

@@ -3,13 +3,18 @@ import Button from '../Button';
 import { setToken } from '../../Utils/localStorageWallet';
 import AppContext from '../Hooks/AppContext';
 
-
 function AddTokenButton() {
-  const { tokenValue, balanceValue } = useContext(AppContext);
+  const { tokenValue, balanceValue, setMessageErro } = useContext(AppContext);
+
+  const messageErro = (message) => {
+    setMessageErro(message)
+    return false;
+  };
+
   const registerToken = () => {
     if (tokenValue === '' || balanceValue === '') return false;
     const register = setToken({ token: tokenValue, balance: balanceValue });
-    return register;
+    return typeof register === 'string' ? messageErro(register) : true;
   }
 
   return (
