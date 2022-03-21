@@ -8,25 +8,31 @@ import AppContext from '../Hooks/AppContext';
 
 function Form({ title }) {
 
-  const { 
-    setTokenValue, 
-    setBalanceValue,
-    tokenValue,
-    balanceValue,
-    messageErro
-  } = useContext(AppContext);
+const { 
+  setTokenValue, 
+  setBalanceValue,
+  tokenValue,
+  balanceValue,
+  messageErro,
+  setMessageErro
+} = useContext(AppContext);
+
+  const setMessage = () => (
+    messageErro !== '' ? setMessageErro('') : {}
+  );
+  setTimeout(setMessage, 3000);
 
   const handleForm = () => {
     const typeForm = (
       title === 'Add Token'
       ? <AddTokenButton />
       : <EditTokenButton />
-      )
-      return typeForm;
-    };
+    );
+    return typeForm;
+  };
     
-    return (
-      <Container>
+  return (
+    <Container>
       <FormContent>
         <div>
           <p>{ title }</p>
@@ -36,7 +42,7 @@ function Form({ title }) {
             color='#616161'
             link='/'
             redirectPage={ () => true }
-            />
+          />
         </div>
             { <p>{ messageErro }</p>}
         <label htmlFor='token-input'>Token</label>
@@ -48,7 +54,7 @@ function Form({ title }) {
             autoComplete="off"
             value={ tokenValue }
             onChange={ ({ target: { value }}) => setTokenValue(value.toLocaleUpperCase()) }
-            />
+          />
 
         <label htmlFor='balance-input'>Balance</label>
           <input
@@ -57,7 +63,7 @@ function Form({ title }) {
             name='balance-input'
             value={ balanceValue }
             onChange={ ({ target: { value }}) => setBalanceValue(value) }
-            />
+          />
       </FormContent>
       <ContentButton>
         { handleForm() }
@@ -65,7 +71,6 @@ function Form({ title }) {
     </Container>
   );
 }
-
 
 Form.propTypes = {
   title: PropTypes.string.isRequired,
