@@ -31,7 +31,7 @@ export const editToken = (token, balance, item) => {
   editWallet.push({ token, balance })
   storage(editWallet);
   return true;
-  };
+};
 
 
 // reference setToken:
