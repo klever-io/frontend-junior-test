@@ -4,7 +4,6 @@ export const getToken = (item) => {
   return JSON.parse(localStorage.getItem(item));
 };
 
-
 export const setToken = ({ token, balance }) => {
   if (!validations(token, balance)) return false;
 
@@ -14,28 +13,14 @@ export const setToken = ({ token, balance }) => {
   return true;
 };
 
-
-export const editToken = ({token, balance}) => {
-  // const tok = 0;
+export const editToken = (token, balance, editItem) => {
   let editWallet = getToken('wallet')
-    .filter(item => item.token === token);
-
-    // return console.log(editWallet.token)
-
+  editWallet.splice(editItem, 1)
   editWallet.push({ token, balance })
-  
-  console.log(editWallet)
-
-  // sobrescribe o objeto todo
-  // editWallet.token = token
-  // editWallet.balance = balance
-  // console.log(editWallet)
-
-
-  // return localStorage.setItem("wallet", JSON.stringify(editWallet))
+  return localStorage.setItem("wallet", JSON.stringify(editWallet))
   }
-
-
 
 // reference setToken:
 // https://pt.stackoverflow.com/questions/371520/gravar-items-e-recuperar-valores-com-localstorage
+// reference remove: 
+// https://stackoverflow.com/questions/38748298/remove-array-item-from-localstorage

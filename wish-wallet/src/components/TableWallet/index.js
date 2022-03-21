@@ -14,7 +14,6 @@ function TableWallet() {
   };
   
   const wallet = getToken('wallet') || [];
-  
 
   return (
     <Container>

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import Button from '../Button';
 import { Container } from './styles';
-import { getToken } from '../../Utils/localStorageWallet';
+import { editToken, getToken } from '../../Utils/localStorageWallet';
 import AppContext from '../Hooks/AppContext';
 
 
@@ -15,14 +15,12 @@ function EditTokenButton() {
     setBalanceValue(storage.balance);
   }
   
-    useEffect(() => {
-      saveInput()
-    }, [])
+  useEffect(() => {
+    saveInput()
+  }, []);
 
   const editTokenStorage = () => {
-    { tokenValue, balanceValue }
-    console.log(editItem)
-    // editToken({ token: tokenValue, balance: balanceValue });
+    editToken(tokenValue, balanceValue, editItem);
     // console.log(token);
 
     return false;
