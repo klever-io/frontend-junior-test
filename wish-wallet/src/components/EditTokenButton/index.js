@@ -6,7 +6,13 @@ import AppContext from '../Hooks/AppContext';
 
 
 function EditTokenButton() {
-  const { editItem, tokenValue, setTokenValue, balanceValue, setBalanceValue } = useContext(AppContext);
+  const { 
+    editItem,
+    tokenValue,
+    setTokenValue,
+    balanceValue,
+    setBalanceValue
+  } = useContext(AppContext);
   
   const saveInput = () => {
     if (editItem === undefined) return false;
