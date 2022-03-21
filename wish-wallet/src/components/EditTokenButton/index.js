@@ -26,10 +26,8 @@ function EditTokenButton() {
   }, []);
 
   const editTokenStorage = () => {
-    editToken(tokenValue, balanceValue, editItem);
-    // console.log(token);
-
-    return false;
+    const edit = editToken(tokenValue, balanceValue, editItem);
+    return edit;
   }
 
   return (

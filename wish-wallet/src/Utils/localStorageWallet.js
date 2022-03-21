@@ -17,15 +17,16 @@ export const removeToken = (item) => {
   let walletToken = getToken('wallet');
   walletToken.splice(item, 1);
   return walletToken;
-}
+};
 
 export const editToken = (token, balance, item) => {
+  if (!validations(token, balance)) return false;
+
   const remove = removeToken(item);
-  // let editWallet = getToken('wallet')
-  // editWallet.splice(editItem, 1)
   remove.push({ token, balance })
-  return localStorage.setItem("wallet", JSON.stringify(remove))
-  }
+  localStorage.setItem("wallet", JSON.stringify(remove))
+  return true;
+  };
 
 // reference setToken:
 // https://pt.stackoverflow.com/questions/371520/gravar-items-e-recuperar-valores-com-localstorage
