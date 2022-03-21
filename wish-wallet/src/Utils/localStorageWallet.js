@@ -16,7 +16,23 @@ export const setToken = ({ token, balance }) => {
 
 
 export const editToken = ({token, balance}) => {
+  // const tok = 0;
+  let editWallet = getToken('wallet')
+    .filter(item => item.token === token);
 
+    // return console.log(editWallet.token)
+
+  editWallet.push({ token, balance })
+  
+  console.log(editWallet)
+
+  // sobrescribe o objeto todo
+  // editWallet.token = token
+  // editWallet.balance = balance
+  // console.log(editWallet)
+
+
+  // return localStorage.setItem("wallet", JSON.stringify(editWallet))
   }
 
 

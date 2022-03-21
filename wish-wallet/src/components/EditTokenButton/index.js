@@ -1,13 +1,22 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext, useEffect } from 'react';
 import Button from '../Button';
 import { Container } from './styles';
 // import { editToken } from '../../Utils/localStorageWallet';
 import AppContext from '../Hooks/AppContext';
 
 
-function EditTokenButton({ tokenValue, balanceValue }) {
-  const { editItem } = useContext(AppContext);
+function EditTokenButton() {
+  const { editItem, tokenValue, setTokenValue, balanceValue, setBalanceValue } = useContext(AppContext);
+  
+  const save = () => {
+    const storage = JSON.parse(localStorage.getItem('wallet'))[editItem]
+    setTokenValue(storage.token);
+    setBalanceValue(storage.balance);
+  }
+  
+    useEffect(() => {
+      save()
+    }, [])
 
   const editTokenStorage = () => {
     { tokenValue, balanceValue }
@@ -38,11 +47,5 @@ function EditTokenButton({ tokenValue, balanceValue }) {
     </Container>
   );
 }
-
-
-EditTokenButton.propTypes = {
-  tokenValue: PropTypes.string.isRequired,
-  balanceValue: PropTypes.string.isRequired,
-};
 
 export default EditTokenButton;

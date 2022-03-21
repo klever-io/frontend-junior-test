@@ -4,12 +4,16 @@ import PropTypes from 'prop-types';
 
 const Provider = ({ children }) => {
   const [editItem, setEditItem] = useState();
-  const [stateB, setStateB] = useState('initialStateB');
+  const [tokenValue, setTokenValue] = useState('');
+  const [balanceValue, setBalanceValue] = useState('');
+
   const contextValue = {
     editItem,
     setEditItem,
-    stateB,
-    setStateB,
+    tokenValue,
+    setTokenValue,
+    balanceValue,
+    setBalanceValue
   };
 
   return (
