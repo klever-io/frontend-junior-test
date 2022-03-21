@@ -16,8 +16,9 @@ const inputValidate = (token, balance) => {
 };
 
 export const validations = (token, balance) => {
-  return (
-    tokenExist(token),
-    inputValidate(token, balance)
-  );
-};
+  const input = inputValidate(token, balance);
+  const tokenWallet = tokenExist(token)
+  if (typeof input === 'string') return input;
+  if (typeof tokenWallet === 'string') return tokenWallet;
+  return true;
+}
