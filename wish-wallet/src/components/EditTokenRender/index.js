@@ -5,13 +5,14 @@ import { editToken, getToken, removeToken } from '../../Utils/localStorageWallet
 import AppContext from '../Hooks/AppContext';
 import { confirmRemove } from '../../Utils/confirmRemove';
 
-function EditTokenButton() {
+function EditTokenRender() {
   const { 
     editItem,
     tokenValue,
     setTokenValue,
     balanceValue,
-    setBalanceValue
+    setBalanceValue,
+    setMessageErro,
   } = useContext(AppContext);
 
   const saveInput = () => {
@@ -21,9 +22,14 @@ function EditTokenButton() {
     setBalanceValue(storage.balance);
   }
 
+  const messageErroValidate = (message) => {
+    setMessageErro(message);
+    return false;
+  };
+
   const editTokenStorage = () => {
     const edit = editToken(tokenValue, balanceValue, editItem);
-    return edit;
+    return typeof edit === 'string' ? messageErroValidate(edit) : true;
   };
 
   const removeTokenStorage = () => {
@@ -56,4 +62,4 @@ function EditTokenButton() {
   );
 }
 
-export default EditTokenButton;
+export default EditTokenRender;

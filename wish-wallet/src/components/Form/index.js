@@ -2,28 +2,36 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button';
 import { Container, FormContent, ContentButton } from './styles';
-import AddTokenButton from '../AddTokenButton';
-import EditTokenButton from '../EditTokenButton';
+import AddTokenButton from '../AddTokenRender';
+import EditTokenButton from '../EditTokenRender';
 import AppContext from '../Hooks/AppContext';
 
 function Form({ title }) {
 
-  const { 
-    setTokenValue, 
-    setBalanceValue,
-    tokenValue,
-    balanceValue
-  } = useContext(AppContext);
+const { 
+  setTokenValue, 
+  setBalanceValue,
+  tokenValue,
+  balanceValue,
+  messageErro,
+  setMessageErro
+} = useContext(AppContext);
+
+  const setMessage = () => (
+    messageErro !== '' ? setMessageErro('') : {}
+  );
+  const SECONDS = 2000;
+  setTimeout(setMessage, SECONDS);
 
   const handleForm = () => {
     const typeForm = (
-    title === 'Add Token'
+      title === 'Add Token'
       ? <AddTokenButton />
       : <EditTokenButton />
-    )
+    );
     return typeForm;
   };
-
+    
   return (
     <Container>
       <FormContent>
@@ -37,7 +45,7 @@ function Form({ title }) {
             redirectPage={ () => true }
           />
         </div>
-
+          { <p>{ messageErro }</p>}
         <label htmlFor='token-input'>Token</label>
           <input
             type='text'
@@ -47,7 +55,7 @@ function Form({ title }) {
             autoComplete="off"
             value={ tokenValue }
             onChange={ ({ target: { value }}) => setTokenValue(value.toLocaleUpperCase()) }
-            />
+          />
 
         <label htmlFor='balance-input'>Balance</label>
           <input
@@ -64,7 +72,6 @@ function Form({ title }) {
     </Container>
   );
 }
-
 
 Form.propTypes = {
   title: PropTypes.string.isRequired,

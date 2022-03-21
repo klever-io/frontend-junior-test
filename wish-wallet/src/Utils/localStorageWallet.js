@@ -9,8 +9,8 @@ const storage = (wallet) => {
 };
 
 export const setToken = ({ token, balance }) => {
-  if (!validations(token, balance)) return false;
-
+  const isValid = validations(token, balance);
+  if (typeof isValid === 'string') return isValid;
   let setWallet = localStorage['wallet'] ? JSON.parse(localStorage['wallet']) : [];
   setWallet.push({ token, balance });
   storage(setWallet);
@@ -25,7 +25,8 @@ export const removeToken = (item) => {
 };
 
 export const editToken = (token, balance, item) => {
-  if (!validations(token, balance)) return false;
+  const isValid = validations(token, balance);
+  if (typeof isValid === 'string') return isValid;
 
   const editWallet = removeToken(item);
   editWallet.push({ token, balance })

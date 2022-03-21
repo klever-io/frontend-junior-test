@@ -3,13 +3,17 @@ import Button from '../Button';
 import { setToken } from '../../Utils/localStorageWallet';
 import AppContext from '../Hooks/AppContext';
 
+function AddTokenRender() {
+  const { tokenValue, balanceValue, setMessageErro } = useContext(AppContext);
 
-function AddTokenButton() {
-  const { tokenValue, balanceValue } = useContext(AppContext);
+  const messageErroValidate = (message) => {
+    setMessageErro(message);
+    return false;
+  };
+
   const registerToken = () => {
-    if (tokenValue === '' || balanceValue === '') return false;
     const register = setToken({ token: tokenValue, balance: balanceValue });
-    return register;
+    return typeof register === 'string' ? messageErroValidate(register) : true;
   }
 
   return (
@@ -23,4 +27,4 @@ function AddTokenButton() {
   );
 }
 
-export default AddTokenButton;
+export default AddTokenRender;

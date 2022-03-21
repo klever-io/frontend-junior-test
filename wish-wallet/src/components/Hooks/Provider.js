@@ -6,6 +6,7 @@ const Provider = ({ children }) => {
   const [editItem, setEditItem] = useState();
   const [tokenValue, setTokenValue] = useState('');
   const [balanceValue, setBalanceValue] = useState('');
+  const [messageErro, setMessageErro] = useState('');
 
   const contextValue = {
     editItem,
@@ -13,7 +14,9 @@ const Provider = ({ children }) => {
     tokenValue,
     setTokenValue,
     balanceValue,
-    setBalanceValue
+    setBalanceValue,
+    messageErro,
+    setMessageErro,
   };
 
   return (
