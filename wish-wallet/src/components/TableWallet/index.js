@@ -8,10 +8,10 @@ import AppContext from '../Hooks/AppContext';
 function TableWallet() {
   const { setEditItem } = useContext(AppContext);
   const navigate = useNavigate();
-  const redirect = (e) => {
-    setEditItem(e)
+  const redirect = (item) => {
+    setEditItem(item)
     return navigate('edit-token');
-  }
+  };
   
   const wallet = getToken('wallet') || [];
   
@@ -28,12 +28,12 @@ function TableWallet() {
         </thead>
         <tbody>
           {
-            wallet.map(({ token, balance }, i) => (
-                <tr key={ i }>
+            wallet.map(({ token, balance }, index) => (
+                <tr key={ index }>
                   <td>
                     <button
                       type='button'
-                      onClick={ () => redirect(i) }
+                      onClick={ () => redirect(index) }
                     >
                       <Img src={editIcon} alt='editIcon'/> 
                     </button>
