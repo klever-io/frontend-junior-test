@@ -20,7 +20,8 @@ const {
   const setMessage = () => (
     messageErro !== '' ? setMessageErro('') : {}
   );
-  setTimeout(setMessage, 3000);
+  const SECONDS = 2000;
+  setTimeout(setMessage, SECONDS);
 
   const handleForm = () => {
     const typeForm = (
@@ -44,7 +45,7 @@ const {
             redirectPage={ () => true }
           />
         </div>
-            { <p>{ messageErro }</p>}
+          { <p>{ messageErro }</p>}
         <label htmlFor='token-input'>Token</label>
           <input
             type='text'

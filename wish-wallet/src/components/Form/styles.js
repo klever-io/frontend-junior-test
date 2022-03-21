@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     width: 100%;
+    && p:nth-child(2) {
+      margin-top: 3px;
+      color: red;
+    }
 `;
 
 export const FormContent = styled.form`
