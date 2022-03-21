@@ -9,8 +9,10 @@ const tokenExist = (token) => {
 };
 
 const inputValidate = (token, balance) => {
-  const walletLength = token.length >= 3 && balance.length >= 1;
-  return walletLength ? walletLength : 'Compos obrigatorios';
+  if (token === '' || balance === '') return 'Compos obrigatorios';
+  if (token.length < 3) return 'token deve ter 3 carateres'; 
+  if (balance.length < 1) return 'minimo de balance deve ser 1';
+  return true;
 };
 
 export const validations = (token, balance) => {

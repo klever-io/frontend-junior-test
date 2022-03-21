@@ -12,7 +12,6 @@ function AddTokenButton() {
   };
 
   const registerToken = () => {
-    if (tokenValue === '' || balanceValue === '') return false;
     const register = setToken({ token: tokenValue, balance: balanceValue });
     return typeof register === 'string' ? messageErroValidate(register) : true;
   }
