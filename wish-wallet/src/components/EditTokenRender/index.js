@@ -5,7 +5,7 @@ import { editToken, getToken, removeToken } from '../../Utils/localStorageWallet
 import AppContext from '../Hooks/AppContext';
 import { confirmRemove } from '../../Utils/confirmRemove';
 
-function EditTokenButton() {
+function EditTokenRender() {
   const { 
     editItem,
     tokenValue,
@@ -62,4 +62,4 @@ function EditTokenButton() {
   );
 }
 
-export default EditTokenButton;
+export default EditTokenRender;

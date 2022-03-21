@@ -3,7 +3,7 @@ import Button from '../Button';
 import { setToken } from '../../Utils/localStorageWallet';
 import AppContext from '../Hooks/AppContext';
 
-function AddTokenButton() {
+function AddTokenRender() {
   const { tokenValue, balanceValue, setMessageErro } = useContext(AppContext);
 
   const messageErroValidate = (message) => {
@@ -27,4 +27,4 @@ function AddTokenButton() {
   );
 }
 
-export default AddTokenButton;
+export default AddTokenRender;
