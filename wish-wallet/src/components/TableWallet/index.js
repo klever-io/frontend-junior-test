@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container, Table, Img } from './styles';
 import editIcon from '../../images/edit-btn.png'
-import { getToken } from '../../Utils/saveToken';
+import { getToken } from '../../Utils/localStorageWallet';
+import { useNavigate } from 'react-router-dom';
+import AppContext from '../Hooks/AppContext';
 
 function TableWallet() {
+  const { setEditItem } = useContext(AppContext);
+  const navigate = useNavigate();
+  const redirect = (item) => {
+    setEditItem(item)
+    return navigate('edit-token');
+  };
+  
   const wallet = getToken('wallet') || [];
 
   return (
@@ -18,11 +27,14 @@ function TableWallet() {
         </thead>
         <tbody>
           {
-            wallet.map(({ token, balance }, i) => (
-                <tr key={ i }>
+            wallet.map(({ token, balance }, index) => (
+                <tr key={ index }>
                   <td>
-                    <button>
-                      <Img src={editIcon} alt='editIcon'/>
+                    <button
+                      type='button'
+                      onClick={ () => redirect(index) }
+                    >
+                      <Img src={editIcon} alt='editIcon'/> 
                     </button>
                   </td>
                   <td>{ token }</td>

@@ -1,25 +1,27 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button';
 import { Container, FormContent, ContentButton } from './styles';
 import AddTokenButton from '../AddTokenButton';
+import EditTokenButton from '../EditTokenButton';
+import AppContext from '../Hooks/AppContext';
 
 function Form({ title }) {
-  const [tokenValue, setTokenValue] = useState('');
-  const [balanceValue, setBalanceValue] = useState('');
+
+  const { 
+    setTokenValue, 
+    setBalanceValue,
+    tokenValue,
+    balanceValue
+  } = useContext(AppContext);
 
   const handleForm = () => {
-    if (title === 'Add Token') {
-      return (
-        <AddTokenButton
-          tokenValue={ tokenValue }
-          balanceValue={ balanceValue }
-        />
-      );
-    }
-    return (
-      <p>EditComponent</p>
+    const typeForm = (
+    title === 'Add Token'
+      ? <AddTokenButton />
+      : <EditTokenButton />
     )
+    return typeForm;
   };
 
   return (

@@ -1,10 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
 import Button from '../Button';
-import { setToken } from '../../Utils/saveToken';
+import { setToken } from '../../Utils/localStorageWallet';
+import AppContext from '../Hooks/AppContext';
 
 
-function AddTokenButton({ tokenValue, balanceValue }) {
+function AddTokenButton() {
+  const { tokenValue, balanceValue } = useContext(AppContext);
   const registerToken = () => {
     if (tokenValue === '' || balanceValue === '') return false;
     const register = setToken({ token: tokenValue, balance: balanceValue });
@@ -21,11 +22,5 @@ function AddTokenButton({ tokenValue, balanceValue }) {
     />
   );
 }
-
-
-AddTokenButton.propTypes = {
-  tokenValue: PropTypes.string.isRequired,
-  balanceValue: PropTypes.string.isRequired,
-};
 
 export default AddTokenButton;
