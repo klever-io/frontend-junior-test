@@ -1,21 +1,22 @@
 import React, { useContext, useEffect } from 'react';
 import Button from '../Button';
 import { Container } from './styles';
-// import { editToken } from '../../Utils/localStorageWallet';
+import { getToken } from '../../Utils/localStorageWallet';
 import AppContext from '../Hooks/AppContext';
 
 
 function EditTokenButton() {
   const { editItem, tokenValue, setTokenValue, balanceValue, setBalanceValue } = useContext(AppContext);
   
-  const save = () => {
-    const storage = JSON.parse(localStorage.getItem('wallet'))[editItem]
+  const saveInput = () => {
+    if (editItem === undefined) return false;
+    const storage = getToken('wallet')[editItem]
     setTokenValue(storage.token);
     setBalanceValue(storage.balance);
   }
   
     useEffect(() => {
-      save()
+      saveInput()
     }, [])
 
   const editTokenStorage = () => {

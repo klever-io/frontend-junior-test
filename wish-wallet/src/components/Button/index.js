@@ -22,10 +22,10 @@ function Button({ name, type, color, redirectPage, link }) {
   return (
     <div>
       <Btn
-      color={ color }
-      name={ name }
-      type={ type }
-      onClick={ () => redirect() }
+        color={ color }
+        name={ name }
+        type={ type }
+        onClick={ () => redirect() }
       >
         { name }
       </Btn>
