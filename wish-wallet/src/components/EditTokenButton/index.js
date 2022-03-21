@@ -3,7 +3,7 @@ import Button from '../Button';
 import { Container } from './styles';
 import { editToken, getToken, removeToken } from '../../Utils/localStorageWallet';
 import AppContext from '../Hooks/AppContext';
-
+import { confirmRemove } from '../../Utils/confirmRemove';
 
 function EditTokenButton() {
   const { 
@@ -13,17 +13,13 @@ function EditTokenButton() {
     balanceValue,
     setBalanceValue
   } = useContext(AppContext);
-  
+
   const saveInput = () => {
     if (editItem === undefined) return false;
     const storage = getToken('wallet')[editItem]
     setTokenValue(storage.token);
     setBalanceValue(storage.balance);
   }
-  
-  useEffect(() => {
-    saveInput()
-  }, []);
 
   const editTokenStorage = () => {
     const edit = editToken(tokenValue, balanceValue, editItem);
@@ -31,11 +27,14 @@ function EditTokenButton() {
   };
 
   const removeTokenStorage = () => {
-    console.log(editItem)
     removeToken(editItem);
     return true;
   };
 
+  useEffect(() => {
+    saveInput()
+  }, []);
+  
   return (
     <Container>
       <Button
@@ -43,7 +42,7 @@ function EditTokenButton() {
         type='button'
         color='#8C0303'
         link='/'
-        redirectPage={ () => removeTokenStorage() }
+        redirectPage={ () => confirmRemove(removeTokenStorage) }
       />
 
       <Button
