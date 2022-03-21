@@ -13,11 +13,18 @@ export const setToken = ({ token, balance }) => {
   return true;
 };
 
-export const editToken = (token, balance, editItem) => {
-  let editWallet = getToken('wallet')
-  editWallet.splice(editItem, 1)
-  editWallet.push({ token, balance })
-  return localStorage.setItem("wallet", JSON.stringify(editWallet))
+export const removeToken = (item) => {
+  let walletToken = getToken('wallet');
+  walletToken.splice(item, 1);
+  return walletToken;
+}
+
+export const editToken = (token, balance, item) => {
+  const remove = removeToken(item);
+  // let editWallet = getToken('wallet')
+  // editWallet.splice(editItem, 1)
+  remove.push({ token, balance })
+  return localStorage.setItem("wallet", JSON.stringify(remove))
   }
 
 // reference setToken:
