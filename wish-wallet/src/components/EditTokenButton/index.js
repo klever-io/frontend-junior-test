@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import Button from '../Button';
 import { Container } from './styles';
-import { editToken, getToken } from '../../Utils/localStorageWallet';
+import { editToken, getToken, removeToken } from '../../Utils/localStorageWallet';
 import AppContext from '../Hooks/AppContext';
 
 
@@ -28,7 +28,13 @@ function EditTokenButton() {
   const editTokenStorage = () => {
     const edit = editToken(tokenValue, balanceValue, editItem);
     return edit;
-  }
+  };
+
+  const removeTokenStorage = () => {
+    console.log(editItem)
+    removeToken(editItem);
+    return true;
+  };
 
   return (
     <Container>
@@ -37,7 +43,7 @@ function EditTokenButton() {
         type='button'
         color='#8C0303'
         link='/'
-        redirectPage={ () => {} }
+        redirectPage={ () => removeTokenStorage() }
       />
 
       <Button
