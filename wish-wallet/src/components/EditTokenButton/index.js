@@ -11,7 +11,8 @@ function EditTokenButton() {
     tokenValue,
     setTokenValue,
     balanceValue,
-    setBalanceValue
+    setBalanceValue,
+    setMessageErro,
   } = useContext(AppContext);
 
   const saveInput = () => {
@@ -21,9 +22,14 @@ function EditTokenButton() {
     setBalanceValue(storage.balance);
   }
 
+  const messageErroValidate = (message) => {
+    setMessageErro(message);
+    return false;
+  };
+
   const editTokenStorage = () => {
     const edit = editToken(tokenValue, balanceValue, editItem);
-    return edit;
+    return typeof edit === 'string' ? messageErroValidate(edit) : true;
   };
 
   const removeTokenStorage = () => {

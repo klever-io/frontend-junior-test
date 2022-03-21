@@ -25,7 +25,8 @@ export const removeToken = (item) => {
 };
 
 export const editToken = (token, balance, item) => {
-  if (!validations(token, balance)) return false;
+  const isValid = validations(token, balance);
+  if (typeof isValid === 'string') return isValid;
 
   const editWallet = removeToken(item);
   editWallet.push({ token, balance })
