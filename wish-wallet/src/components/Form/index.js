@@ -12,20 +12,21 @@ function Form({ title }) {
     setTokenValue, 
     setBalanceValue,
     tokenValue,
-    balanceValue
+    balanceValue,
+    messageErro
   } = useContext(AppContext);
 
   const handleForm = () => {
     const typeForm = (
-    title === 'Add Token'
+      title === 'Add Token'
       ? <AddTokenButton />
       : <EditTokenButton />
-    )
-    return typeForm;
-  };
-
-  return (
-    <Container>
+      )
+      return typeForm;
+    };
+    
+    return (
+      <Container>
       <FormContent>
         <div>
           <p>{ title }</p>
@@ -35,9 +36,9 @@ function Form({ title }) {
             color='#616161'
             link='/'
             redirectPage={ () => true }
-          />
+            />
         </div>
-
+            { <p>{ messageErro }</p>}
         <label htmlFor='token-input'>Token</label>
           <input
             type='text'
@@ -56,7 +57,7 @@ function Form({ title }) {
             name='balance-input'
             value={ balanceValue }
             onChange={ ({ target: { value }}) => setBalanceValue(value) }
-          />
+            />
       </FormContent>
       <ContentButton>
         { handleForm() }

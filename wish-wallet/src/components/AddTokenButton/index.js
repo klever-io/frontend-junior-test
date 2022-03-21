@@ -6,15 +6,15 @@ import AppContext from '../Hooks/AppContext';
 function AddTokenButton() {
   const { tokenValue, balanceValue, setMessageErro } = useContext(AppContext);
 
-  const messageErro = (message) => {
-    setMessageErro(message)
+  const messageErroValidate = (message) => {
+    setMessageErro(message);
     return false;
   };
 
   const registerToken = () => {
     if (tokenValue === '' || balanceValue === '') return false;
     const register = setToken({ token: tokenValue, balance: balanceValue });
-    return typeof register === 'string' ? messageErro(register) : true;
+    return typeof register === 'string' ? messageErroValidate(register) : true;
   }
 
   return (
