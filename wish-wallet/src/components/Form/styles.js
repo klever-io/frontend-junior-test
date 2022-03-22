@@ -5,6 +5,7 @@ export const Container = styled.div`
     && p:nth-child(2) {
       margin-top: 3px;
       color: red;
+      font-weight: normal
     }
 `;
 

@@ -21,4 +21,4 @@ export const validations = (token, balance) => {
   if (typeof input === 'string') return input;
   if (typeof tokenWallet === 'string') return tokenWallet;
   return true;
-}
+};
