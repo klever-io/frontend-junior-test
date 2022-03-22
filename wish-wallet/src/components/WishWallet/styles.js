@@ -27,7 +27,6 @@ export const Content = styled.div`
     margin: auto;
     }
   }
-
 `;
 
 // refernce change color:

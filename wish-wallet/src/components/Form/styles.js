@@ -24,7 +24,7 @@ export const FormContent = styled.form`
     display: flex;
   }
 
-  && button:hover{
+  && button:hover {
     background:#78788c;
   }
 
