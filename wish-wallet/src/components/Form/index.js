@@ -63,6 +63,7 @@ const {
             id='balance-input'
             name='balance-input'
             value={ balanceValue }
+            required
             onChange={ ({ target: { value }}) => setBalanceValue(value) }
           />
       </FormContent>

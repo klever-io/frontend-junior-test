@@ -5,6 +5,8 @@ export const Container = styled.div`
   
   export const Table = styled.table`
     margin: auto;
+    justify-content: space-between;
+    width: 100%;
 
     && th {
       font-size: 13px;

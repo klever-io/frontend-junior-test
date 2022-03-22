@@ -11,10 +11,9 @@ export const ContentImage = styled.div`
 
   & h2 {
     margin-left: 5px;
-    font-size: 20px;
+    font-size: 23px;
   }
   `;
-
 
 export const Content = styled.div`
   margin-bottom: 25px;
@@ -28,7 +27,6 @@ export const Content = styled.div`
     margin: auto;
     }
   }
-
 `;
 
 // refernce change color:

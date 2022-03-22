@@ -4,6 +4,7 @@ body {
   justify-content: center;
   margin: auto;
   width: 35%;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 800px) {

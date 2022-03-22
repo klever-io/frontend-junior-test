@@ -17,7 +17,7 @@ function EditTokenRender() {
 
   const saveInput = () => {
     if (editItem === undefined) return false;
-    const storage = getToken('wallet')[editItem]
+    const storage = getToken('wallet')[editItem];
     setTokenValue(storage.token);
     setBalanceValue(storage.balance);
   }
@@ -44,7 +44,7 @@ function EditTokenRender() {
   return (
     <Container>
       <Button
-        name='Delete'
+        name='Remove'
         type='button'
         color='#8C0303'
         link='/'

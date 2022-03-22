@@ -34,7 +34,6 @@ export const editToken = (token, balance, item) => {
   return true;
 };
 
-
 // reference setToken:
 // https://pt.stackoverflow.com/questions/371520/gravar-items-e-recuperar-valores-com-localstorage
 // reference remove: 
