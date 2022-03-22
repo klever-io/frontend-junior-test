@@ -13,3 +13,19 @@ Nesste projeto foram repassados os conceitos de localStorage, ReactJs, HTML y CS
 - Style-Components
 - ESLint
 
+## Como instalar
+### Para iniciar o projeto deve seguir estos passos:
+
+Copie ssh do projeto: `git@github.com:MartinGBB/frontend-junior-test.git`
+
+Abra um terminal no seu computador e utilize os comandos a baixo na ordem que são apresentados:
+- Clone o repositorio: `git clone git@github.com:MartinGBB/frontend-junior-test.git`
+ 
+- Entre na pasta do repositorio:
+ `cd frontend-junior-test`
+
+- Entre na pasta da aplicação:
+ `cd wish-wallet`
+
+- Instale as dependencias: `npm install`
+- Inicia a app: `npm start`
