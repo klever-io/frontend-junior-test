@@ -36,5 +36,5 @@ Caso nâo seja iniciado, abra o navegador e digite no buscador `localhost:3000` 
 ## Contato
 ### Martin Brazón
 Linkedin: https://www.linkedin.com/in/martinbrazon/ <br/>
-Github: https://github.com/MartinGBB/ToDoList <br/>
+Github: https://github.com/MartinGBB/s <br/>
 Email: escorpmartin97@gmail.com

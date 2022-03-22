@@ -9,7 +9,7 @@ const tokenExist = (token) => {
 };
 
 const inputValidate = (token, balance) => {
-  if (token === '' || balance === '') return 'Compos obrigatorios';
+  if (token === '' || balance === '') return 'Campos obrigatorios';
   if (token.length < 3) return 'token deve ter 3 carateres'; 
   if (balance.length < 1) return 'minimo de balance deve ser 1';
   return true;
