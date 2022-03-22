@@ -30,8 +30,8 @@ Abra um terminal no seu computador e utilize os comandos a baixo na ordem que s�
 - Instale as dependencias: `npm install`
 - Inicia a app: `npm start`
 
-#### O projeto sera iniciado automaticamente no seu navegador.
-#### Caso nâo seja iniciado, abra o navegador e coloque no buscador `localhost:3000`
+O projeto sera iniciado automaticamente no seu navegador.<br>
+Caso nâo seja iniciado, abra o navegador e digite no buscador `localhost:3000` e a aplicação será iniciada.
 
 ## Contato
 ### Martin Brazón
