@@ -33,3 +33,8 @@ Abra um terminal no seu computador e utilize os comandos a baixo na ordem que s�
 #### O projeto sera iniciado automaticamente no seu navegador.
 #### Caso nâo seja iniciado, abra o navegador e coloque no buscador `localhost:3000`
 
+## Contato
+### Martin Brazón
+Linkedin: https://www.linkedin.com/in/martinbrazon/ <br/>
+Github: https://github.com/MartinGBB/ToDoList <br/>
+Email: escorpmartin97@gmail.com
