@@ -1,11 +1,13 @@
 import React from 'react';
-import useNavigated from '../../hooks/useNavigate';
+import { useNavigate } from 'react-router-dom';
+
 import './style.css';
 const Navbar = () => {
-    const navigateTo = useNavigated('/');
+    const navigate = useNavigate();
+    const handleNavigationForHomeRoute = () => navigate('/');
     return (
         <header className="nav-container">
-            <img src="/logo.svg" alt="brand" onClick={navigateTo} />
+            <img src="/logo.svg" alt="brand" onClick={handleNavigationForHomeRoute} />
         </header>
     );
 };

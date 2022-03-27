@@ -1,17 +1,16 @@
 import React from 'react';
+import { BiEdit } from 'react-icons/bi';
 import Button from '../../components/Button';
 import Wallet from '../../components/Wallet';
 import useGetLocalStorage from '../../hooks/useGetDatasLocalStorage';
-import { BiEdit } from 'react-icons/bi';
+import Navbar from '../../components/Navbar';
+
 import './style.css';
 import { useNavigate } from 'react-router-dom';
-import Navbar from '../../components/Navbar';
 const Home = () => {
     const [tokens] = useGetLocalStorage();
     const navigate = useNavigate();
-    const handleNavigate = () => {
-        navigate('/add');
-    };
+    const handleNavigationForAddRoute = () => navigate('/add');
 
     return (
         <div className="home-container">
@@ -19,7 +18,7 @@ const Home = () => {
             <div className="home-content-wrapper">
                 <div className="home-wallet-wrapper">
                     <Wallet />
-                    <Button style="primary" onClick={handleNavigate}>
+                    <Button style="primary" onClick={handleNavigationForAddRoute}>
                         Add Token
                     </Button>
                 </div>

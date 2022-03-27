@@ -1,12 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button';
 import Form from '../../components/Form';
 import Navbar from '../../components/Navbar';
 import Wallet from '../../components/Wallet';
-import useNavigated from '../../hooks/useNavigate';
+
 import './style.css';
 const EditToken = () => {
-    const navigateTo = useNavigated('/');
+    const navigate = useNavigate();
+    const handleNavigationForHomeRoute = () => navigate('/');
 
     return (
         <div className="edit-body">
@@ -18,7 +20,7 @@ const EditToken = () => {
                     </div>
                     <div className="klever-button-wrapper">
                         <p className="klever-paragraph">Edit Token</p>
-                        <Button style="btn" onClick={navigateTo}>
+                        <Button style="btn" onClick={handleNavigationForHomeRoute}>
                             Back
                         </Button>
                     </div>

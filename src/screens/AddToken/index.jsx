@@ -4,10 +4,11 @@ import Wallet from '../../components/Wallet';
 import Button from '../../components/Button';
 import Navbar from '../../components/Navbar';
 import './style.css';
-import useNavigated from '../../hooks/useNavigate';
+import { useNavigate } from 'react-router-dom';
 
 const AddToken = () => {
-    const navigateTo = useNavigated('/');
+    const navigate = useNavigate();
+    const handleNavigationForHomeRoute = () => navigate('/');
     return (
         <div className="add-body">
             <Navbar />
@@ -18,7 +19,7 @@ const AddToken = () => {
                     </div>
                     <div className="klever-button-wrapper">
                         <p className="klever-paragraph">Add Token</p>
-                        <Button style="btn" onClick={navigateTo}>
+                        <Button style="btn" onClick={handleNavigationForHomeRoute}>
                             Back
                         </Button>
                     </div>

@@ -10,36 +10,32 @@ const useHandleFormData = () => {
     const balanceInitialValue = location.state ? location.state.balance : '';
     const [token, setToken] = useState(tokenInitialValue);
     const [balance, setBalance] = useState(balanceInitialValue);
-    const [fieldFomrError, throwFieldError] = useState([]);
+    const [fieldFormError, throwFieldError] = useState([]);
 
     const handleForm = (e) => {
+        const TOKEN_INPUT_ERROR = 'This field token needs to be filled';
+        const BALANCE_INPUT_ERROR = 'This field balance needs to be filled';
         try {
             e.preventDefault();
+
             if (token.length < 2) {
-                const verifyError = fieldFomrError.find(
-                    (element) => element == 'This field token needs to be filled'
-                );
-                !verifyError &&
-                    throwFieldError([...fieldFomrError, 'This field token needs to be filled']);
+                const verifyError = fieldFormError.find((error) => error === TOKEN_INPUT_ERROR);
+                return !verifyError && throwFieldError([...fieldFormError, TOKEN_INPUT_ERROR]);
             }
 
             if (balance.length == 0) {
-                const verifyError = fieldFomrError.find(
-                    (element) => element == 'This field balance needs to be filled'
-                );
-
-                !verifyError &&
-                    throwFieldError([...fieldFomrError, 'This field balance needs to be filled']);
-            } else {
-                setValue({ name: token, balance });
-                return navigate('/');
+                const verifyError = fieldFormError.find((error) => error === BALANCE_INPUT_ERROR);
+                return !verifyError && throwFieldError([...fieldFormError, BALANCE_INPUT_ERROR]);
             }
+            setValue({ name: token, balance });
+            return navigate('/');
         } catch (e) {
-            return throwFieldError([...fieldFomrError, e.message]);
+            const verifyError = fieldFormError.find((error) => error === e.message);
+            return !verifyError && throwFieldError([...fieldFormError, e.message]);
         }
     };
 
-    return [token, setToken, balance, setBalance, handleForm, fieldFomrError];
+    return [token, setToken, balance, setBalance, handleForm, fieldFormError];
 };
 
 export default useHandleFormData;

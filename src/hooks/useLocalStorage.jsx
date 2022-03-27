@@ -21,7 +21,7 @@ const useLocalStorage = () => {
             const searchInStorage = storage.find(
                 (val) => val.name.toUpperCase() === value.name.toUpperCase()
             );
-            console.log(searchInStorage);
+
             if (!searchInStorage) {
                 if (routePathName == '/edit' && routeState) {
                     // se a rota for edit, busca o valor atual do estado
@@ -52,7 +52,7 @@ const useLocalStorage = () => {
         const result = localStorage.setItem('tokens', JSON.stringify(arr));
 
         setStorage(result);
-        navigate('/');
+        return navigate('/');
     };
     return [storage, setValue, deleteValue];
 };
