@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Button from '../../components/Button';
 import Form from '../../components/Form';
 import Navbar from '../../components/Navbar';
@@ -9,7 +9,8 @@ import './style.css';
 const EditToken = () => {
     const navigate = useNavigate();
     const handleNavigationForHomeRoute = () => navigate('/');
-
+    const { tokenName } = useParams();
+    console.log(tokenName);
     return (
         <div className="edit-body">
             <Navbar />
@@ -24,7 +25,7 @@ const EditToken = () => {
                             Back
                         </Button>
                     </div>
-                    <Form />
+                    <Form tokenName={tokenName} />
                 </div>
             </div>
         </div>

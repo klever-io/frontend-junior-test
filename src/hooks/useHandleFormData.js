@@ -1,20 +1,19 @@
 import { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import useLocalStorage from './useLocalStorage';
 
 const useHandleFormData = () => {
     const [, setValue] = useLocalStorage();
-    const location = useLocation();
     const navigate = useNavigate();
-    const tokenInitialValue = location.state ? location.state.name : '';
-    const balanceInitialValue = location.state ? location.state.balance : '';
-    const [token, setToken] = useState(tokenInitialValue);
-    const [balance, setBalance] = useState(balanceInitialValue);
     const [fieldFormError, throwFieldError] = useState([]);
-
+    console.log(fieldFormError);
     const handleForm = (e) => {
+        const data = new FormData(e.target);
+        const token = data.get('token');
+        const balance = data.get('balance');
         const TOKEN_INPUT_ERROR = 'This field token needs to be filled';
         const BALANCE_INPUT_ERROR = 'This field balance needs to be filled';
+
         try {
             e.preventDefault();
 
@@ -34,8 +33,7 @@ const useHandleFormData = () => {
             return !verifyError && throwFieldError([...fieldFormError, e.message]);
         }
     };
-
-    return [token, setToken, balance, setBalance, handleForm, fieldFormError];
+    return [handleForm, fieldFormError];
 };
 
 export default useHandleFormData;

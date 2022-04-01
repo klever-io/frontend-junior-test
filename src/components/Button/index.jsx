@@ -2,7 +2,7 @@ import React from 'react';
 
 import './style.css';
 
-const Button = ({ style, children, onClick, hidden }) => {
+const Button = ({ style, children, onClick, hidden, type }) => {
     const showButton = {
         visibility: hidden,
     };
@@ -19,7 +19,7 @@ const Button = ({ style, children, onClick, hidden }) => {
     }
     return (
         <>
-            <button className={handleClassName} onClick={onClick} type="button" style={showButton}>
+            <button className={handleClassName} onClick={onClick} type={type} style={showButton}>
                 {children}
             </button>
         </>

@@ -2,11 +2,12 @@ import React from 'react';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import Button from '../Button';
 import './style.css';
-const Modal = ({ toogleIsOpen }) => {
+const Modal = ({ toogleIsOpen, tokenName }) => {
+    const [, , deleteValue] = useLocalStorage();
+    const handleDeleteToken = () => deleteValue(tokenName);
     const modalToogle = () => {
         toogleIsOpen(false);
     };
-    const [, , deleteValue] = useLocalStorage();
 
     return (
         <div className="alert-container">
@@ -14,7 +15,7 @@ const Modal = ({ toogleIsOpen }) => {
                 <div className="alert-top"></div>
                 <p>Tem certeza que deseja remover o usuário?</p>
                 <div className="btn-control-wrapper">
-                    <Button style="remove" onClick={deleteValue}>
+                    <Button style="remove" onClick={handleDeleteToken}>
                         Remove
                     </Button>
                     <Button style="btn" onClick={modalToogle}>

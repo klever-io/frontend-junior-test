@@ -10,7 +10,7 @@ const Router = () => {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/add" element={<AddToken />} />
-                <Route path="/edit" element={<EditToken />} />
+                <Route path="/edit/:tokenName" element={<EditToken />} />
             </Routes>
         </>
     );

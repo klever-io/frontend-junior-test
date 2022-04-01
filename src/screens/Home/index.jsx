@@ -39,7 +39,7 @@ const Home = () => {
                                     <BiEdit
                                         style={{ cursor: 'pointer' }}
                                         onClick={() => {
-                                            navigate('/edit', {
+                                            navigate(`/edit/${val.name}`, {
                                                 state: {
                                                     name: val.name,
                                                     balance: val.balance,

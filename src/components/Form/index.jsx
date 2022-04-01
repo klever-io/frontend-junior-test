@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import useHandleFormData from '../../hooks/useHandleFormData';
+import useLocalStorage from '../../hooks/useLocalStorage';
 
 import Button from '../Button';
 
@@ -8,12 +9,20 @@ import Modal from '../Modal';
 
 import './style.css';
 
-const Form = () => {
-    const [token, setToken, balance, setBalance, handleForm, error] = useHandleFormData();
+const Form = ({ tokenName }) => {
+    const [, , , findToken] = useLocalStorage();
+    const tokenDatas = tokenName && findToken(tokenName);
+    console.log(tokenDatas, tokenName);
+    const [inputToken, setInputToken] = useState(tokenDatas ? tokenDatas.name.toUpperCase() : '');
+    const [inputBalance, setInputBalance] = useState(tokenDatas ? tokenDatas.balance : '');
+
+    const [handleForm, error] = useHandleFormData();
     const [isOpen, toogleIsOpen] = useState(false);
     const location = useLocation();
-    const showButton = location.pathname == '/edit' ? true : false;
-    const toogle = () => {
+    const showButton = location.pathname == `/edit/${tokenName}` ? true : false;
+
+    const toogle = (e) => {
+        e.preventDefault();
         toogleIsOpen((prev) => !prev);
     };
     return (
@@ -25,43 +34,75 @@ const Form = () => {
                     })}
                 </div>
             )}
-            {isOpen && <Modal toogleIsOpen={toogleIsOpen} />}
+            {isOpen && <Modal toogleIsOpen={toogleIsOpen} tokenName={tokenName} />}
 
-            <form className="klever-form">
-                <label htmlFor="token">Token</label>
-                <input
-                    id="token"
-                    className="klever-input"
-                    type="text"
-                    value={token}
-                    onChange={(e) => setToken(e.target.value)}
-                />
-                <label htmlFor="balance">Balance</label>
-                <input
-                    id="balance"
-                    className="klever-input"
-                    type="text"
-                    value={balance}
-                    onChange={(e) => setBalance(e.target.value)}
-                />
-                {showButton ? (
-                    <div className="remove-btn-wrapper">
-                        <Button style="remove" onClick={toogle}>
-                            Remove
-                        </Button>
+            {tokenName ? (
+                <form className="klever-form" onSubmit={handleForm}>
+                    <label htmlFor="token">Token</label>
+                    <input
+                        id="token"
+                        className="klever-input"
+                        type="text"
+                        name="token"
+                        value={inputToken}
+                        onChange={(e) => {
+                            setInputToken(e.target.value);
+                        }}
+                    />
+                    <label htmlFor="balance">Balance</label>
+                    <input
+                        id="balance"
+                        className="klever-input"
+                        type="text"
+                        name="balance"
+                        value={inputBalance}
+                        onChange={(e) => {
+                            setInputBalance(e.target.value);
+                        }}
+                    />
+                    {showButton ? (
+                        <div className="remove-btn-wrapper">
+                            <Button style="remove" onClick={toogle}>
+                                Remove
+                            </Button>
 
-                        <Button style="primary" type="submit" onClick={handleForm}>
-                            Save
-                        </Button>
-                    </div>
-                ) : (
-                    <div className="primary-btn-wrapper">
-                        <Button style="primary" type="submit" onClick={handleForm}>
-                            Save
-                        </Button>
-                    </div>
-                )}
-            </form>
+                            <Button style="primary" type="submit">
+                                Save
+                            </Button>
+                        </div>
+                    ) : (
+                        <div className="primary-btn-wrapper">
+                            <Button style="primary" type="submit">
+                                Save
+                            </Button>
+                        </div>
+                    )}
+                </form>
+            ) : (
+                <form className="klever-form" onSubmit={handleForm}>
+                    <label htmlFor="token">Token</label>
+                    <input id="token" className="klever-input" type="text" name="token" />
+                    <label htmlFor="balance">Balance</label>
+                    <input id="balance" className="klever-input" type="text" name="balance" />
+                    {showButton ? (
+                        <div className="remove-btn-wrapper">
+                            <Button style="remove" onClick={toogle} type="button">
+                                Remove
+                            </Button>
+
+                            <Button style="primary" type="submit">
+                                Save
+                            </Button>
+                        </div>
+                    ) : (
+                        <div className="primary-btn-wrapper">
+                            <Button style="primary" type="submit">
+                                Save
+                            </Button>
+                        </div>
+                    )}
+                </form>
+            )}
         </>
     );
 };
