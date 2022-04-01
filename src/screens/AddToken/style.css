@@ -1,0 +1,37 @@
+.add-body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #13152A;
+}
+
+.klever-container-add{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.klever-form-wrapper{
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.klever-wallet-wrapper{
+    width: 100%;
+    max-height: 50px;
+    padding: 0px 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 50px;
+   
+}
+.klever-button-wrapper{
+    font-size: 1em;
+    padding: 0px 80px;
+    margin-bottom: 50px;
+}
+.klever-paragraph {
+    font-size: 1.7em;
+}

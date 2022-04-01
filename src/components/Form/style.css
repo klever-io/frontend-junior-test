@@ -1,0 +1,99 @@
+.klever-form{
+    width: 100%;
+    color: white;
+   
+}
+.klever-input{
+    margin: 10px auto 0;
+    width: 80%;
+    height: 60px;
+    display: block;
+    padding: 0px 20px;
+    margin-bottom: 45px;
+    border-radius: 6px;
+    border: none;
+    font-family: "montserrat";
+    font-size: 1.6em;
+    font-weight: 700;
+    color: black;
+    
+}
+.klever-form label{
+    padding: 20px 80px;
+    font-family: "montserrat";
+    font-size: 23px;
+    font-weight: 700;
+ 
+
+}
+.klever-form button{
+    align-content: flex-end;
+    justify-content: right;
+}
+.primary-btn-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    padding: 0 80px;
+    
+}
+.remove-btn-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 80px;
+    
+}
+.klever-primary-btn{
+min-width: 150px;
+height: 50px;
+background-color: #AA33B5;
+border-radius: 8px;
+border: none;
+color: #fff;
+font-weight: 700;
+line-height: 40px;
+padding: 0px 24px;
+cursor: pointer;
+font-size: 1.2em;
+}
+
+.error-message{
+    padding-left: 80px;
+    margin-top: -35px;
+    margin-bottom: 20px;
+    color: #e72df8;
+   
+}
+.error-container{
+    width: 80%;
+    display: flex;
+    padding: 10px;
+    margin-bottom: 20px;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #b11119;
+    border-radius: 6px;
+    color: white;
+    font-family: "montserrat";
+    font-size: 20px;
+    text-align: center;
+    animation: error 0.2s;
+}
+.error-container p{
+    margin-bottom: 5px;
+}
+
+@keyframes error {
+ 0%{
+     transform: translateX(400px);
+     opacity: 0;
+ }
+ 50%{
+    opacity: 0.6;
+ }
+ 100%{
+     transform: rotateX(0);
+     opacity: 1;
+ }
+}
