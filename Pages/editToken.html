@@ -9,37 +9,41 @@
     <link rel="stylesheet" href="/CSS/style.css">
 </head>
 <body>
-    <main>
+    <main class="container d-flex align-items-center flex-column mt-5">
      
         <picture>
              <img src="/assets/logo.svg" alt="logo" width="250px">
         </picture>
-    
-             <div>
-                 <div>
-                     <img src="/assets/shooting-star.svg" alt="shooting-star" width="40px">
-                     <h1>Wish Wallet</h1>
+
+             <div class="flex mt-4">
+                 <div class=" d-flex mt-4">
+                     <img src="/assets/shooting-star.svg" alt="shooting-star" width="40px" class="star">
+                     <h1 class="txt m-auto">Wish Wallet</h1>
                  </div>
-    
-                 <div>
-                     <h1>Edit Token</h1>
-                     <a href="/index.html"><input type="button" value="Voltar"></a>
-                 </div>
-    
-                 <div>
-                     <h1>Token</h1>
-                     <input type="text">
-    
-                     <h1>Balance</h1>
-                     <input type="text">
-                 </div>
-    
-                 <div>
-                     <input type="button" value="Remove" id="btremove">
-                     <input type="button" value="Save" class="btsave">
-                 </div>
-    
              </div>
-    </main>
+
+             <div class="flex mt-4">
+
+                 <div class="mt-4 flex justify-content-center">
+                    <h1 class="txt mb-4">Edit Token</h1>
+                    <a href="/index.html"><input type="button" value="Voltar" class="button grey text-light"></a>
+                </div>
+             </div>
+
+        
+            <div class="mt-2">
+                <h1 class=" txt mt-2">Token</h1>
+                <input type="text" class="input">
+
+                <h1 class="txt mt-2">Balance</h1>
+                <input type="text" class="input">
+            </div>
+
+            <div class="mt-4">
+                <input type="button" value="Remove" class="btsave button red text-light">
+
+                <input type="button" value="Save" class="btsave button purple text-light ms-5">
+            </div>
+
 </body>
 </html>
