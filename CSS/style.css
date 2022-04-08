@@ -1,0 +1,94 @@
+body{
+    background-color: #13152a;
+}
+
+.container{
+
+    width: 100%;
+}
+
+.txt{
+    color: white;
+}
+
+
+.button{
+    width: 120px;
+    font-weight: bold;
+    height: 37px;
+    border: none;
+    border-radius: 5px;
+}
+
+
+
+.purple {
+
+    background-color: #aa33b5;
+}
+
+
+.purple:hover {
+
+    background-color: #9832a1;
+}
+
+
+
+.grey{
+ background-color: #646464;
+}
+
+
+.grey:hover{
+    background-color: #585555;
+   }
+
+
+   .red {
+
+    background-color: #920000;
+}
+
+.red:hover {
+
+    background-color: #710101;
+}
+
+.txt{
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+
+.star {
+    filter: invert(91%) sepia(9%) saturate(2341%) hue-rotate(13deg) brightness(102%) contrast(88%);
+}
+
+.flex{
+    display: flex;
+}
+
+@media (min-width:320px) and (max-width:557px) and (orientation:portrait) {
+    
+    .flex{
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
+
+@media (min-width:558px) and (orientation:landscape){
+
+    .txt {
+        margin-right: 6rem;
+    }
+
+    .button {
+        margin-bottom: 10px;
+    }
+
+    .input{
+        width: 320px;
+    }
+}
