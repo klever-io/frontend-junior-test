@@ -9,39 +9,36 @@
     <link rel="stylesheet" href="/CSS/style.css">
 </head>
 <body>
-    <main class="container d-flex align-items-center flex-column mt-4">
-     
-        <picture>
-             <img src="/assets/logo.svg" alt="logo" width="250px">
-        </picture>
-    
-             <div class="flex mt-4">
-                 <div class=" d-flex mt-4">
-                     <img src="/assets/shooting-star.svg" alt="shooting-star" width="40px" class="star">
-                     <h1 class="txt m-auto">Wish Wallet</h1>
+    <main>
+        <form class="container d-flex align-items-center flex-column mt-4">
+        
+            <picture>
+                 <img src="/assets/logo.svg" alt="logo" width="250px">
+            </picture>
+        
+                 <div class="flex mt-4">
+                     <div class=" d-flex mt-4">
+                         <img src="/assets/shooting-star.svg" alt="shooting-star" width="40px" class="star">
+                         <h1 class="txt m-auto">Wish Wallet</h1>
+                     </div>
                  </div>
-             </div>
-
-
-             <div class="mt-4 flex justify-content-center">
-                <div class="d-flex">
-                    <h1 class="txt mb-4">Edit Token</h1>
-                    <a href="/index.html"><input type="button" value="Voltar" class="button grey text-light ms-5"></a>
+                 <div class="mt-4 flex justify-content-center">
+                    <div class="d-flex">
+                        <h1 class="txt mb-4">Edit Token</h1>
+                        <a href="/index.html"><input type="button" value="Voltar" class="button grey text-light ms-5"></a>
+                    </div>
                 </div>
-            </div>
-
-            <div>
-                <h1 class="txt">Token</h1>
-                <input type="text" class="input">
-
-                <h1 class="txt">Balance</h1>
-                <input type="text" class="input">
-            </div>
-
-            <div class="mt-4">
-                <input type="button" value="Remove" id="btremove" class="button red text-light mr-5">
-                <input type="button" value="Save" class="btsave button purple text-light ms-5">
-            </div>
+                <div>
+                    <h1 class="txt">Token</h1>
+                    <input type="text" class="input">
+                    <h1 class="txt">Balance</h1>
+                    <input type="text" class="input">
+                </div>
+                <div class="mt-4">
+                    <input type="button" value="Remove" id="btremove" class="button red text-light mr-5">
+                    <input type="button" value="Save" class="btsave button purple text-light ms-5">
+                </div>
+        </form>
     </main>
 
     <script src="/localStorageAplication/wishWallet.js"></script>
