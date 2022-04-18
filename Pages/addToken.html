@@ -10,43 +10,54 @@
 
 </head>
 <body>
-    <main class="container d-flex align-items-center flex-column mt-4">
-     
-        <picture>
-             <img src="/assets/logo.svg" alt="logo" width="250px">
-        </picture>
-
-             <div class="flex mt-4">
-                 <div class=" d-flex mt-4">
-                     <img src="/assets/shooting-star.svg" alt="shooting-star" width="40px" class="star">
-                     <h1 class="txt m-auto">Wish Wallet</h1>
+    <main>
+        <div class="container d-flex align-items-center flex-column mt-4">
+        
+            <picture>
+                 <img src="/assets/logo.svg" alt="logo" width="250px">
+            </picture>
+                 <div class="flex mt-4">
+                     <div class=" d-flex mt-4">
+                         <img src="/assets/shooting-star.svg" alt="shooting-star" width="40px" class="star">
+                         <h1 class="txt m-auto">Wish Wallet</h1>
+                     </div>
                  </div>
-             </div>
-
-             <div class="flex mt-4">
-
-                 <div class="mt-4 flex justify-content-center">
-                    <div class="d-flex">
-                        <h1 class="txt mb-4">Add Token</h1>
-                        <a href="/index.html"><input type="button" value="Voltar" class="button grey text-light ms-5"></a>
+                 <div class="flex mt-4">
+                     <div class="mt-4 flex justify-content-center">
+                        <div class="d-flex">
+                            <h1 class="txt mb-4">Add Token</h1>
+                            <a href="/index.html"><input type="button" value="Voltar" class="button grey text-light ms-5"></a>
+                        </div>
+                    </div>
+                 </div>
+        
+                <form action="index.html">
+                    <div class="mt-2">
+                        <h1 class=" txt mt-2">Token</h1>
+                        <input type="text" class="firstInput input-width">
+                        <h1 class="txt mt-2">Balance</h1>
+                        <input type="text" class="secondInput input-width">
+                    </div>
+                    <div class="mt-4">
+                        <a href="/index.html"><input type="button" value="Save" class="btSave button purple text-light"></a>
                     </div>
                 </div>
-             </div>
+            </form>
+    </main>
 
-        
-            <div class="mt-2">
-                <h1 class=" txt mt-2">Token</h1>
-                <input type="text" class="firstInput">
+ <script>
+     const bt = document.querySelector('input.btSave').onclick = saveOnStorage
+     
+    function saveOnStorage() {
 
-                <h1 class="txt mt-2">Balance</h1>
-                <input type="text" class="secondInput">
-            </div>
+    const firstInput = document.querySelector('input.firstInput').value
+    const tokenList = localStorage.setItem('Tokens',firstInput)
 
-            <div class="mt-4">
-                <input type="button" value="Save" class="btSave button purple text-light">
-            </div>
- </main>
 
- <script src="/localStorageAplication/wishWallet.js"></script>
+    const secondInput = document.querySelector('input.secondInput').value
+    const balance = localStorage.setItem('Balance',secondInput)
+}
+
+ </script>
 </body>
 </html>

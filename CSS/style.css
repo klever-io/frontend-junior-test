@@ -1,3 +1,7 @@
+*{
+    list-style: none;
+}
+
 body{
     background-color: #13152a;
 }
@@ -69,14 +73,34 @@ body{
     display: flex;
 }
 
+
+
 @media (min-width:320px) and (max-width:557px) and (orientation:portrait) {
     
     .flex{
         display: flex;
         flex-direction: column;
     }
-    
+
+    .mr{
+        margin-right: 3rem;
+    }
+
+    .edit{
+        color: white;
+        font-size: 1.1rem;
+        margin-right: 5px;
+    }
+
+    .input-width{
+        width: 250px;
+    }
+
+   
+
+
 }
+
 
 @media (min-width:558px) and (orientation:landscape){
 
@@ -88,7 +112,38 @@ body{
         margin-bottom: 10px;
     }
 
-    .input{
+    .h1-small{
+        font-size: 1rem;
+    }
+    
+    .ml{
+        margin-left: 3rem;
+    }
+    
+    .mr{
+        margin-right: 3rem;
+    }
+    
+    
+    .input-width{
         width: 320px;
+    }
+    
+    .edit{
+        color: rgb(255, 255, 255);
+        font-size: 1rem;
+        margin-right: 2px;
+    }
+}
+
+
+
+
+
+
+@media (min-width:800px) {
+    .edit{
+        font-size: 1.5rem;
+        margin-right: 5px;
     }
 }

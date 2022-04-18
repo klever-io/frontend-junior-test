@@ -26,15 +26,53 @@
                      <a href="Pages/addToken.html"><input type="button" value="Add Token" class="button purple text-light"></a>
                  </div>
 
-                    <div id="result">
-
-                    </div>
                    
          </div>
+         
+         <div class="h1 mt-4 d-flex">
+             <h1 class=" h5 text-light mr">Tokens</h1>
+             <h1 class=" h5 text-light ml">Balance</h1>
+         </div>
+         <div class="h1 d-flex justify-content-center">
+
+             <ul id="tokenList" class="text-light">
+                
+             </ul>
+
+             <ul id="balanceList" class="text-light ml">
+                 
+             </ul>
+         </div>
+             
+            <script>
+                
+                function getStorage(){
+            
+        const tokens = localStorage.getItem('Tokens')
+
+        if(tokens) {
+            document.getElementById("tokenList").innerHTML = `<li><a href="Pages/editToken.html"><i class="fa-solid fa-pen-to-square edit"></i></a>${tokens}</li>`
+        }else {
+            document.getElementById("tokenList").innerHTML = `<h1 class = 'mr'>-</h1>`
+        }
+        
+
+        
+        const balance = localStorage.getItem('Balance')
+
+        if(balance) {
+            document.getElementById("balanceList").innerHTML = balance
+        }else {
+            document.getElementById("balanceList").innerHTML = `<h1 class = 'mr'>-</h1>`
+        }
+    }
+    getStorage()
+
+    
+                
+    </script>
+        
  </main>
-
- <script src="localStorageAplication/wishWallet.js"></script>
+ <script src="https://kit.fontawesome.com/d570c61dd8.js" crossorigin="anonymous"></script>
 </body>
-
-<script src="localStorageAplication/wishWallet.js"></script>
 </html>
