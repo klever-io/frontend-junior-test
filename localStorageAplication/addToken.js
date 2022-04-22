@@ -1,4 +1,4 @@
-const bt = document.querySelector('input.btSave').onclick = saveToken
+const saveTokenButton = document.querySelector('input.btSave').onclick = saveToken
 
 function saveToken(event) {
    /*Parâmetro event adicionado visto que o mesmo vem do html */
@@ -11,10 +11,31 @@ if(firstInput === '' || secondInput === ''){
     Swal.fire('Error','Token and Balance are required fields!','error')
     event.preventDefault()
    
-}else{
+}else if(firstInput !== '' && secondInput !== ''){
    const tokenList = localStorage.setItem('Tokens',firstInput)
    const balanceList = localStorage.setItem('Balance',secondInput)
-    }
+
+  }
+
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
 

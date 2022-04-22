@@ -36,7 +36,7 @@ function removeFromStorage(event){
         localStorage.removeItem('Tokens')
         localStorage.removeItem('Balance')
   } else if (result.isDenied) {
-    Swal.fire('Token changes are not saved', '', 'info')
+    Swal.fire('Token changes are not saved!', '', 'info')
   }
 })
 
