@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,12 +27,12 @@
                      <div class="mt-4 flex justify-content-center">
                         <div class="d-flex">
                             <h1 class="txt mb-4">Add Token</h1>
-                            <a href="/index.html"><input type="button" value="Voltar" class="button grey text-light ms-5"></a>
+                            <a href="/index.html"><input type="button" value="Voltar" class="btVoltar button grey text-light ms-5"></a>
                         </div>
                     </div>
                  </div>
         
-                <form action="index.html">
+                <form>
                     <div class="mt-2">
                         <h1 class=" txt mt-2">Token</h1>
                         <input type="text" class="firstInput input-width">
@@ -40,24 +41,13 @@
                     </div>
                     <div class="mt-4">
                         <a href="/index.html"><input type="button" value="Save" class="btSave button purple text-light"></a>
+                        
                     </div>
                 </div>
             </form>
     </main>
 
- <script>
-     const bt = document.querySelector('input.btSave').onclick = saveOnStorage
-     
-    function saveOnStorage() {
-
-    const firstInput = document.querySelector('input.firstInput').value
-    const tokenList = localStorage.setItem('Tokens',firstInput)
-
-
-    const secondInput = document.querySelector('input.secondInput').value
-    const balance = localStorage.setItem('Balance',secondInput)
-}
-
- </script>
+ <script src="/localStorageAplication/addToken.js"></script>
+ 
 </body>
 </html>

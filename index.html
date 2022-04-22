@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wish Wallet</title>
+    <link rel="shortcut icon" href="assets/kleverFavicon.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="/CSS/style.css">
 </head>
@@ -23,10 +25,10 @@
                  </div>
 
                  <div class="mt-4 d-flex justify-content-center">
-                     <a href="Pages/addToken.html"><input type="button" value="Add Token" class="button purple text-light"></a>
+                     <a href="Pages/addToken.html"><input type="button" value="Add Token" class="button purple text-light" ></a>
                  </div>
 
-                   
+                
          </div>
          
          <div class="h1 mt-4 d-flex">
@@ -35,42 +37,20 @@
          </div>
          <div class="h1 d-flex justify-content-center">
 
+
              <ul id="tokenList" class="text-light">
                 
              </ul>
+             
 
              <ul id="balanceList" class="text-light ml">
                  
              </ul>
-         </div>
-             
-            <script>
-                
-                function getStorage(){
-            
-        const tokens = localStorage.getItem('Tokens')
 
-        if(tokens) {
-            document.getElementById("tokenList").innerHTML = `<li><a href="Pages/editToken.html"><i class="fa-solid fa-pen-to-square edit"></i></a>${tokens}</li>`
-        }else {
-            document.getElementById("tokenList").innerHTML = `<h1 class = 'mr'>-</h1>`
-        }
-        
+            </div>
 
-        
-        const balance = localStorage.getItem('Balance')
 
-        if(balance) {
-            document.getElementById("balanceList").innerHTML = balance
-        }else {
-            document.getElementById("balanceList").innerHTML = `<h1 class = 'mr'>-</h1>`
-        }
-    }
-    getStorage()
-
-    
-                
-    </script>
+         <script src="/localStorageAplication/index.js"></script>
         
  </main>
  <script src="https://kit.fontawesome.com/d570c61dd8.js" crossorigin="anonymous"></script>

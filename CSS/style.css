@@ -96,13 +96,10 @@ body{
         width: 250px;
     }
 
-   
-
-
 }
 
 
-@media (min-width:558px) and (orientation:landscape){
+@media (min-width:558px){
 
     .txt {
         margin-right: 6rem;
@@ -135,10 +132,6 @@ body{
         margin-right: 2px;
     }
 }
-
-
-
-
 
 
 @media (min-width:800px) {
