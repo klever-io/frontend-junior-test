@@ -1,0 +1,142 @@
+*{
+    list-style: none;
+}
+
+body{
+    background-color: #13152a;
+}
+
+.container{
+
+    width: 100%;
+}
+
+.txt{
+    color: white;
+}
+
+
+.button{
+    width: 120px;
+    font-weight: bold;
+    height: 37px;
+    border: none;
+    border-radius: 4px;
+}
+
+
+
+.purple {
+
+    background-color: #aa33b5;
+}
+
+
+.purple:hover {
+
+    background-color: #9832a1;
+}
+
+
+
+.grey{
+ background-color: #646464;
+}
+
+
+.grey:hover{
+    background-color: #585555;
+   }
+
+
+   .red {
+
+    background-color: #920000;
+}
+
+.red:hover {
+
+    background-color: #710101;
+}
+
+.txt{
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+
+.star {
+    filter: invert(91%) sepia(9%) saturate(2341%) hue-rotate(13deg) brightness(102%) contrast(88%);
+}
+
+.flex{
+    display: flex;
+}
+
+
+
+@media (min-width:320px) and (max-width:557px) and (orientation:portrait) {
+    
+    .flex{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mr{
+        margin-right: 3rem;
+    }
+
+    .edit{
+        color: white;
+        font-size: 1.1rem;
+        margin-right: 5px;
+    }
+
+    .input-width{
+        width: 250px;
+    }
+
+}
+
+
+@media (min-width:558px){
+
+    .txt {
+        margin-right: 6rem;
+    }
+
+    .button {
+        margin-bottom: 10px;
+    }
+
+    .h1-small{
+        font-size: 1rem;
+    }
+    
+    .ml{
+        margin-left: 3rem;
+    }
+    
+    .mr{
+        margin-right: 3rem;
+    }
+    
+    
+    .input-width{
+        width: 320px;
+    }
+    
+    .edit{
+        color: rgb(255, 255, 255);
+        font-size: 1rem;
+        margin-right: 2px;
+    }
+}
+
+
+@media (min-width:800px) {
+    .edit{
+        font-size: 1.5rem;
+        margin-right: 5px;
+    }
+}
