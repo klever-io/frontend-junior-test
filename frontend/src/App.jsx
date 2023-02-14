@@ -1,8 +1,9 @@
+import WalletRoutes from './Routes';
 
 function App() {
   return (
-    <h1>Iniciando Projeto - Klever Wallet</h1>
+    <WalletRoutes />
   )
 }
 
-export default App
+export default App;
