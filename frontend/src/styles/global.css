@@ -78,11 +78,14 @@ body {
 
 table {
   width: 80%;
+  border-spacing: 0 20px;
 }
 
 table th {
   font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
   color: #ffffff;
+  margin-bottom: 10px;
 }
 
 table th:nth-child(2) {
@@ -95,6 +98,20 @@ table th:nth-child(3) {
 
 table td:nth-child(1) {
   width: 35px;
+}
+
+table td:nth-child(2) {
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  text-align: start;
+  font-size: 32px;
+}
+
+table td:nth-child(3) {
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  text-align: end;
+  font-size: 32px;
 }
 
 .edit-icon {
