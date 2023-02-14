@@ -75,3 +75,30 @@ body {
   opacity: 0.6;
   transition: 0.3s;
 }
+
+table {
+  width: 80%;
+}
+
+table th {
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+}
+
+table th:nth-child(2) {
+  text-align: start;
+}
+
+table th:nth-child(3) {
+  text-align: end;
+}
+
+table td:nth-child(1) {
+  width: 35px;
+}
+
+.edit-icon {
+  color:#ffffff;
+  font-size: 20px;
+  cursor: pointer;
+}
