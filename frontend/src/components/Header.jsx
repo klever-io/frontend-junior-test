@@ -1,12 +1,15 @@
 import React from 'react';
 import logoKlever from '../assets/logo.svg';
+
 function Header() {
   return (
-    <img 
-      src={logoKlever} 
-      alt="Klever"
-      className="logo-image" 
-    />
+    <div className="logo-container">
+      <img
+        src={logoKlever}
+        alt="Klever"
+        className="logo-image"
+      />
+    </div>
   );
 }
 
