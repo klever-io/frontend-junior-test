@@ -1,7 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import WishStar from '../assets/shooting-star.svg';
 
 function WishWallet() {
+  const navigate = useNavigate();
+
+  const handleAddTokenButton = () => {
+    navigate('/add-token');
+  }
+
   return (
     <div className="wish-wallet-container">
       <div className="star-container">
@@ -13,7 +20,12 @@ function WishWallet() {
         <span className="wish-label">Wish Wallet</span>
       </div>
       <div className="button-container">
-        <button className="button-add">Add Token</button>
+        <button 
+          className="button-add" 
+          onClick={handleAddTokenButton}
+        >
+          Add Token
+        </button>
       </div>
     </div>
   )
