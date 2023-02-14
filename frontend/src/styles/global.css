@@ -1,0 +1,24 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #13152A;
+  display: flex;
+  justify-content: center;
+}
+
+.formContainer {
+  width: 800px;
+  height: 800px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.logo-image {
+  width: 300px;
+  margin-top: 5px;
+}
