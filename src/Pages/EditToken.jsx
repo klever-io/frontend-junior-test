@@ -1,8 +1,11 @@
 import React from 'react'
+import Header from '../Components/Header'
 
 function EditToken() {
   return (
-    <div>EditToken</div>
+    <div>
+      <Header />
+    </div>
   )
 }
 

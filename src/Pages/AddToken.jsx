@@ -1,8 +1,9 @@
 import React from 'react'
+import Header from '../Components/Header'
 
 function AddToken() {
   return (
-    <div>AddToken</div>
+    <div><Header /></div>
   )
 }
 
