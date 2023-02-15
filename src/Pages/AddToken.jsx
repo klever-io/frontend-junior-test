@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Header from '../Components/Header'
 
@@ -7,6 +7,16 @@ function AddToken() {
 
   const [token, setToken] = useState('');
   const [balance, setBalance] = useState('');
+  const [disabled, setDisabled] = useState(true);
+
+  useMemo(() => {
+    if (token.length > 0 && balance.length > 0) {
+      setDisabled(false)
+    } else {
+      setDisabled(true)
+    }
+
+  }, [token, balance])
 
   return (
     <div>
@@ -45,6 +55,7 @@ function AddToken() {
         </form>
         <button
           type="button"
+          disabled={ disabled }
         >
           Save
         </button>
