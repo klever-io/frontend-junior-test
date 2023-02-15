@@ -7,16 +7,23 @@ function AddToken() {
 
   const [token, setToken] = useState('');
   const [balance, setBalance] = useState('');
-  const [disabled, setDisabled] = useState(true);
+  const [isDisabled, setIsDisabled] = useState(true);
 
   useMemo(() => {
     if (token.length > 0 && balance.length > 0) {
-      setDisabled(false)
+      setIsDisabled(false)
     } else {
-      setDisabled(true)
+      setIsDisabled(true)
     }
 
   }, [token, balance])
+
+  const handleClickSave = () => {
+    const tokenForLocalStorage = JSON.parse(localStorage.getItem('tokens') || '[]');
+    tokenForLocalStorage.push({ tok: token, bal: balance });
+    localStorage.setItem('tokens', JSON.stringify(tokenForLocalStorage));
+    navigate('/')
+  }
 
   return (
     <div>
@@ -55,7 +62,8 @@ function AddToken() {
         </form>
         <button
           type="button"
-          disabled={ disabled }
+          onClick={ handleClickSave }
+          disabled={ isDisabled }
         >
           Save
         </button>
