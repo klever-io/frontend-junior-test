@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Header from '../Components/Header'
 
 function AddToken() {
   const navigate = useNavigate();
+
+  const [token, setToken] = useState('');
+  const [balance, setBalance] = useState('');
 
   return (
     <div>
@@ -22,7 +25,10 @@ function AddToken() {
             <input
               type="text"
               name="token"
-              id="token" 
+              id="token"
+              value={ token }
+              onChange={ ({ target }) => setToken(target.value) }
+              required
             />
           </label>
           <label htmlFor="balance">
@@ -30,7 +36,10 @@ function AddToken() {
             <input
               type="number"
               name="balance"
-              id="balance" 
+              id="balance"
+              value={ balance }
+              onChange={ ({ target }) => setBalance(target.value) }
+              required
             />
           </label>
         </form>
