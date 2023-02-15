@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Header from '../Components/Header'
+import '../CSS/addToken.css'
 
 function AddToken() {
   const navigate = useNavigate();
@@ -38,47 +39,51 @@ function AddToken() {
   return (
     <div>
       <Header />
-      <div>
-        <span>Add Token</span>
-        <button
-          type="button"
-          onClick={ () => navigate('/') }
-        >
-          Back
-        </button>
-        <form>
-          <label htmlFor="token">
+      <div className="add-token-container">
+        <div className="add-top-container">
+          <span id="add-span">Add Token</span>
+          <button
+            id="back-button"
+            type="button"
+            onClick={ () => navigate('/') }
+          >
+            Back
+          </button>
+        </div>
+        <form className="add-form-container">
+          <label htmlFor="token-input">
             Token
             <input
               type="text"
               name="token"
-              id="token"
+              id="token-input"
               value={ token }
               placeholder="Token Name"
               onChange={ ({ target }) => setToken(target.value.toLocaleUpperCase()) }
               required
             />
           </label>
-          <label htmlFor="balance">
+          <label htmlFor="balance-input">
             Balance
             <input
               type="number"
               name="balance"
-              id="balance"
+              id="balance-input"
               value={ balance }
               placeholder="Value"
               onChange={ ({ target }) => setBalance(target.value) }
               required
             />
           </label>
+          <button
+            id="save-button"
+            type="button"
+            onClick={ verifyDuplicateToken }
+            disabled={ isDisabled }
+          >
+            Save
+          </button>
         </form>
-        <button
-          type="button"
-          onClick={ verifyDuplicateToken }
-          disabled={ isDisabled }
-        >
-          Save
-        </button>
       </div>
     </div>
   )
