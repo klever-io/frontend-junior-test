@@ -22,7 +22,17 @@ function AddToken() {
     const tokenForLocalStorage = JSON.parse(localStorage.getItem('tokens') || '[]');
     tokenForLocalStorage.push({ tok: token, bal: balance });
     localStorage.setItem('tokens', JSON.stringify(tokenForLocalStorage));
-    navigate('/')
+    navigate('/');
+  }
+
+  const verifyDuplicateToken = () => {
+    const tokenStorage = JSON.parse(localStorage.getItem('tokens') || '[]');
+    const isDuplicate = tokenStorage.find(({ tok }) => tok === token) ? true : false;
+    if (isDuplicate === true) {
+      alert('This token already exists, choose another name please.');
+    } else {
+      handleClickSave()
+    }
   }
 
   return (
@@ -44,7 +54,8 @@ function AddToken() {
               name="token"
               id="token"
               value={ token }
-              onChange={ ({ target }) => setToken(target.value) }
+              placeholder="Token Name"
+              onChange={ ({ target }) => setToken(target.value.toLocaleUpperCase()) }
               required
             />
           </label>
@@ -55,6 +66,7 @@ function AddToken() {
               name="balance"
               id="balance"
               value={ balance }
+              placeholder="Value"
               onChange={ ({ target }) => setBalance(target.value) }
               required
             />
@@ -62,7 +74,7 @@ function AddToken() {
         </form>
         <button
           type="button"
-          onClick={ handleClickSave }
+          onClick={ verifyDuplicateToken }
           disabled={ isDisabled }
         >
           Save
