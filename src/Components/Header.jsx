@@ -13,15 +13,20 @@ function Header() {
           <img id="klever-logo" src={ KleverLogo } alt="logo Klever" />
         </div>
         <div className="star-container">
-          <img id="shooting-star" src={ Star } alt="shooting star" />
-          <span id="wish-span">Wish Wallet</span>
+          <div className="star-and-wish-container">
+            <img id="shooting-star" src={ Star } alt="shooting star" />
+            <span id="wish-span">Wish Wallet</span>
+          </div>
+          <div>
           { locate === "/" && 
               <button 
+              id="add-button"
               type="button"
             >
               Add Token
             </button> 
           }
+          </div>
         </div>
     </header>
   )
