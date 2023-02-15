@@ -17,14 +17,14 @@ header {
 }
 
 #klever-logo {
-  max-width: 200px;
+  max-width: 175px;
 }
 
 .star-container {
   display: flex;
-  width: 50%;
-  margin-top: 80px;
-  margin-right: 100px;
+  width: 580px;
+  margin-top: 55px;
+  margin-right: 45px;
   justify-content: space-around;
   align-items: center;
 }
@@ -34,11 +34,11 @@ header {
 }
 
 #shooting-star {
-  height: 70px;
+  height: 55px;
 }
 
 #wish-span {
-  font-size: 45px;
+  font-size: 35px;
   margin-left: 10px;
   margin-top: 5px;
   font-family: 'Lato', sans-serif;
