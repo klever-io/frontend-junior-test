@@ -1,7 +1,7 @@
-import React, { useMemo, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import Header from '../Components/Header'
-import '../CSS/addToken.css'
+import React, { useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Header from '../Components/Header';
+import '../CSS/addToken.css';
 
 function AddToken() {
   const navigate = useNavigate();
@@ -12,10 +12,10 @@ function AddToken() {
 
   useMemo(() => {
     if (token.length > 0 && balance.length > 0) {
-      setIsDisabled(false)
+      setIsDisabled(false);
     } else {
-      setIsDisabled(true)
-    }
+      setIsDisabled(true);
+    };
 
   }, [token, balance])
 
@@ -33,7 +33,7 @@ function AddToken() {
       alert('This token already exists, choose another name please.');
     } else {
       handleClickSave()
-    }
+    };
   }
 
   return (
@@ -89,4 +89,4 @@ function AddToken() {
   )
 }
 
-export default AddToken
+export default AddToken;
