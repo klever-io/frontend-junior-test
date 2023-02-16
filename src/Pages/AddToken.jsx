@@ -24,7 +24,15 @@ function AddToken() {
     tokenForLocalStorage.push({ tok: token, bal: balance });
     localStorage.setItem('tokens', JSON.stringify(tokenForLocalStorage));
     navigate('/');
-  }
+  };
+
+  const handleChange = ({ target }) => {
+    const targetValue = target.value;
+    const regex = /^[0-9.,]+$/;
+    const regexValidation =  targetValue.length === 0 ? true : regex.test(targetValue);
+    const maxLengthBalance = 12;
+    if (regexValidation && targetValue.length < maxLengthBalance) setBalance(targetValue);
+  };
 
   const verifyDuplicateToken = () => {
     const tokenStorage = JSON.parse(localStorage.getItem('tokens') || '[]');
@@ -34,7 +42,7 @@ function AddToken() {
     } else {
       handleClickSave()
     };
-  }
+  };
 
   return (
     <div>
@@ -60,18 +68,21 @@ function AddToken() {
               value={ token }
               placeholder="Token Name"
               onChange={ ({ target }) => setToken(target.value.toLocaleUpperCase()) }
+              maxLength="6"
               required
             />
           </label>
           <label htmlFor="balance-input">
             Balance
             <input
-              type="number"
+              type="text"
               name="balance"
               id="balance-input"
               value={ balance }
               placeholder="Value"
-              onChange={ ({ target }) => setBalance(target.value) }
+              onChange={ handleChange }
+              min="1"
+              max="5"
               required
             />
           </label>
