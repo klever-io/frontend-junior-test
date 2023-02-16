@@ -1,0 +1,39 @@
+.token-component-container {
+  display: flex;
+  width: 505px;
+  justify-content: space-between;
+}
+
+#token-name {
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+#balance-value {
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-size: 25px;
+  font-weight: 900;
+  margin-right: 45px;
+}
+
+.name-and-edit-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#edit-icon-button {
+  margin-right: 20px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+}
+
+#edit-icon-button:hover {
+  cursor: pointer;
+  background-color: rgb(26, 28, 46);
+}

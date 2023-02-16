@@ -1,0 +1,27 @@
+.span-token-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 45px;
+  margin-bottom: 20px;
+}
+
+#token-span {
+  margin-right: 300px;
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 15px;
+}
+
+#balance-span {
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 15px;
+}
+
+.token-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
