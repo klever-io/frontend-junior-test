@@ -1,0 +1,15 @@
+.logo {
+  width: 10%;
+}
+
+.shooting-star {
+  display: flex;
+}
+
+.shooting-star > img {
+  width: 60px;
+}
+
+.page-title {
+  color: var(--font-color);
+}
