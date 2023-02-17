@@ -18,6 +18,11 @@ useEffect(() => {
 
 const handleSubmit = () => {
 
+    if (!token || balance <= 0) {
+        alert('Por favor, coloque um valor válido para token e balance');
+        return;
+    }
+
     const data = [{token, balance }];
     const saveData = JSON.parse(localStorage.getItem('table')) || [];
     const updateData = [
