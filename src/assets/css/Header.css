@@ -1,15 +1,39 @@
+header {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem 0.6rem 1rem;
+}
+
 .logo {
-  width: 10%;
+  width: 10vw;
 }
 
 .shooting-star {
+  align-items: center;
+  align-self: flex-start;
   display: flex;
 }
 
 .shooting-star > img {
-  width: 60px;
+  width: 40px;
+}
+
+.shooting-star > p {
+  color: var(--font-color);
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 0.4rem;
+}
+
+.title-and-button {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
 }
 
 .page-title {
   color: var(--font-color);
+  font-size: 1.5rem;
+  font-weight: 600;
 }
