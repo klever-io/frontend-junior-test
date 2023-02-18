@@ -37,7 +37,12 @@ return (
                 <td>{value.token}</td>
                 <td>{value.balance}</td>
                 <td>
-                <Link to={ `/EditToken/${ index }` }>
+                <Link
+                    to={{
+                        pathname: '/EditToken',
+                        state: { token: value.token }
+                        }}
+>
                 edit
                 </Link>
                 </td>
