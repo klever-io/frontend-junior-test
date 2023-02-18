@@ -1,0 +1,14 @@
+.wallet-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-buttons-edit {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
