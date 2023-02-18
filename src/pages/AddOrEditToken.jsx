@@ -11,6 +11,14 @@ function AddOrEditToken() {
     setInputValues({ ...inputValues, [target.name]:target.value });
   }
 
+  const saveToken = () => console.log('saveToken');
+  const removeToken = () => console.log('removeToken');
+
+  const tokenControl = {
+    save: saveToken,
+    remove: removeToken,
+  }
+
   return (
     <>
     <WalletHeader />
@@ -18,6 +26,7 @@ function AddOrEditToken() {
       isEdit={ location.pathname === '/edit-token' }
       value={ inputValues }
       onInputChange={ (e) => handleChange(e) }
+      onButtonClick={ tokenControl }
     />
     </>
   )
