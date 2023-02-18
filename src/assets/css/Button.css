@@ -1,0 +1,20 @@
+.remove-button, .back-button, .default-button {
+  border: 0;
+  border-radius: 6px;
+  color: var(--font-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.5rem 2rem;
+}
+
+.default-button {
+  background-color: var(--default-button-color);
+}
+
+.back-button {
+  background-color: var(--back-color);
+}
+
+.remove-button {
+  background-color: var(--remove-color);
+}
