@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom';
+import logo from '../assets/logo.svg'
+import shooting from '../assets/shooting-star.svg'
 
 export default function AddToken() {
 const [token, setToken] = useState('')
@@ -46,29 +48,33 @@ const handleInputBalance = (e) => {
 
 
     return (
-    <div>
-        <h1> Wish Wallet</h1>
-        <div>
-        <h2>Add Token</h2>
+    <div className='div-root'>
+        <img className='logo-klever' src={logo} alt='logo' />
+        <div className='div-header'>
+            <img className='shooting-star'src={shooting} alt='shooting-star' />
+            <h1 className='title-wallet'> Wish Wallet</h1>
+        </div>
+        <div className='div-title'>
+        <h2 className='second-title'>Add Token</h2>
         <Link to="">
         <button
+        className='button-back'
         type='button'
         >
         Voltar 
         </button>
         </Link>
         </div>
-    <div>
+        <div className='div-label'>
         Token
         <input type="text" onChange={ handleInputToken }  />
-    </div>
-
-    <div>
-    Balance
+        
+        Balance
         <input type="number" onChange={ handleInputBalance } />
-    </div>
-    <div>
-        <button type="button" onClick={ handleSubmit } >
+        </div>
+
+        <div className='div-button'>
+        <button className='button-save' type="button" onClick={ handleSubmit } >
         Salvar
         </button>
     </div>

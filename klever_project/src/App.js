@@ -3,6 +3,7 @@ import './App.css';
 import AddToken from './pages/AddToken';
 import EditToken from './pages/EditToken';
 import Home from './pages/Home';
+import 'bulma/css/bulma.min.css';
 
 function App() {
   return (

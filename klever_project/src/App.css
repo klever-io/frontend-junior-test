@@ -1,38 +1,146 @@
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  align-items: center;
+  background-color: #12152a;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 15px;
+  padding-bottom: 580px;
+}
+
+
+.div-header {
+  display: flex;
+  align-items: baseline;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.logo-klever {
+  height: 30px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 80px;
+}
+
+.shooting-star {
+  height: 40px;
+  background: #82863a;
+  /* margin-left: 70px; */
+} 
+
+.button-home {
+  background-color: #af55b4;
+  border-radius: 8px;
+  color: white;
+  height: 40px;
+  margin: 5px;
+  width: 100px;
+}
+
+.title-wallet {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  height: 21px;
+  letter-spacing: 0.165em;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 182px;
+}
+
+.table-container {
+  width: 200px;
+  color: white;
+  font-size: 23px;
+  margin-left: 50px;
+  margin-top: 30px;
+}
+
+.th-token {
+  color: white;
+  font-size: 23px;
+}
+
+.th-balance {
+  color: white;
+  font-size: 23px;
+}
+
+.button-back {
+  background-color: #646464;
+  border-radius: 8px;
+  color: white;
+  height: 40px;
+  margin: 5px;
+  width: 100px;
+}
+
+.div-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  padding-left: 20px;
+  padding-bottom: 40px;
+}
+
+.second-title {
+  font-weight: bold;
+  font-size: 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.button-save {
+  background-color: #af57b7;
+  border-radius: 8px;
+  color: white;
+  height: 40px;
+  margin: 5px;
+  width: 100px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input {
+  border-radius: 5px;
+  height: 40px;
+  width: 300px;
+}
+
+.div-label {
+  color: white;
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.button-remove {
+  background-color: #922513;
+  border-radius: 8px;
+  color: white;
+  height: 40px;
+  margin: 5px;
+  width: 100px;
+}
+
+.buttons-edit {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.button-edit {
+  color: #af55b4;
+  text-decoration: none;
+  border-radius: 20px;
+}
+
+.div-button {
+  margin-top: 30px;
+}
+
+.table-container td {
+  width: 50%;
+  text-align: center;
+
 }

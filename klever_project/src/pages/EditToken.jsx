@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import logo from '../assets/logo.svg'
+import shooting from '../assets/shooting-star.svg'
 
 export default function EditToken(props) {
   const [token, setToken] = useState('');
@@ -52,25 +54,37 @@ export default function EditToken(props) {
   };
 
   return (
-    <div>
-      <h1>Wish Wallet</h1>
-      <div>
-        <h2>Edit Token</h2>
+    <div className='div-root'>
+      <img className='logo-klever' src={logo} alt='logo' />
+      <div className='div-header'>
+      <img className='shooting-star'src={shooting} alt='shooting-star' />
+      <h1 className='title-wallet'>Wish Wallet</h1>
       </div>
-      <div>
+      <div className='div-title'>
+        <h2 className='second-title'>Edit Token</h2>
+        <Link to="">
+        <button
+        className='button-back'
+        type='button'
+        >
+        Voltar 
+        </button>
+        </Link>
+      </div>
+      <div className='div-label'>
         Token
         <input type="text" value={token} onChange={handleInputToken} />
-      </div>
-      <div>
         Balance
         <input type="number" value={balance} onChange={handleInputBalance} />
       </div>
-      <div>
-        <button type="button" onClick={handleSubmit}>
-          Save
-        </button>
-        <button type="button" onClick={handleDelete}>
+
+      <div className='buttons-edit'>
+      <button className='button-remove' type="button" onClick={handleDelete}>
           Remove
+        </button>
+        
+        <button className='button-save' type="button" onClick={handleSubmit}>
+          Save
         </button>
       </div>
     </div>
