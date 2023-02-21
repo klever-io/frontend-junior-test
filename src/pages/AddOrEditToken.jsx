@@ -13,7 +13,16 @@ function AddOrEditToken() {
   
   const isButtonDisabled = () => inputValues.token === '' || inputValues.balance === '';
 
-  const saveToken = () => console.log('saveToken');
+  const saveToken = () => {
+    if (!JSON.parse(localStorage.getItem('tokenList'))) {
+      localStorage.setItem('tokenList', JSON.stringify([inputValues]));
+    } else {
+      const storageTokens = JSON.parse(localStorage.getItem('tokenList'));
+      const tokenList = [...storageTokens, inputValues];
+      localStorage.setItem('tokenList', JSON.stringify(tokenList));
+    }
+  
+  };
   const removeToken = () => console.log('removeToken');
 
   const tokenControl = {
