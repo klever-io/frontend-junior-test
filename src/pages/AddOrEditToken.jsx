@@ -1,10 +1,11 @@
 import WalletHeader from '../components/WalletHeader';
 import Form from '../components/Form';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 function AddOrEditToken() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [inputValues, setInputValues] = useState({ token: '', balance: '' });
   const [errorMessage, setErrorMessage] = useState({ token: '', balance: '' });
   
@@ -13,7 +14,6 @@ function AddOrEditToken() {
   }
   
   const isButtonDisabled = () => inputValues.token === '' || inputValues.balance === '';
-
 
   const saveToken = () => {
     if (!JSON.parse(localStorage.getItem('tokenList'))) {
@@ -29,12 +29,23 @@ function AddOrEditToken() {
       const tokenList = [...storageTokenList, inputValues];
       localStorage.setItem('tokenList', JSON.stringify(tokenList));
     }
+    navigate('/');
   };
-  
+
+  const editToken = () => console.log('editToken');
   const removeToken = () => console.log('removeToken');
 
+  const saveOrEdit = () => {
+    if (location.pathname === '/add-token') {
+      return saveToken()
+    }
+    if (location.pathname === '/edit-token') {
+      return editToken()
+    }
+  }
+
   const tokenControl = {
-    save: saveToken,
+    save: saveOrEdit,
     remove: removeToken,
   }
 
