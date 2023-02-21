@@ -14,21 +14,25 @@ function Home() {
     }
   }, []);
 
-  const tableHeaders = ['Tokens', 'Balance'];
+  const tableHeaders = [
+    { name: '', key: 'button' },
+    { name: 'Tokens', key: 'token' },
+    { name: 'Balance', key: 'balance' }
+  ];
 
   const goToEdit = (data) => {
     navigate(`/edit-token/${data.token}`);
   }
 
   return (
-    <>
+    <div>
       <WalletHeader isHomePage />
       <Table
         headers={ tableHeaders }
         tableData={ tokenList }
         onEditClick={ goToEdit }
       />
-    </>
+    </div>
   )
 }
 
