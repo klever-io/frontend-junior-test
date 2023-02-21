@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./Button";
 
-function Form({ value, onInputChange, onButtonClick, isEdit, isButtonDisabled }) {
+function Form({ value, onInputChange, onButtonClick, isEdit, isButtonDisabled, errorMessage }) {
   return (
     <form className="wallet-form">
       <label htmlFor="token">
@@ -13,6 +13,7 @@ function Form({ value, onInputChange, onButtonClick, isEdit, isButtonDisabled })
           value={ value.token }
           onChange={ onInputChange }
         />
+        {errorMessage.token && <span>{ errorMessage.token }</span>}
       </label>
       <label htmlFor="balance">
         Balance
@@ -23,6 +24,7 @@ function Form({ value, onInputChange, onButtonClick, isEdit, isButtonDisabled })
           value={ value.balance }
           onChange={ onInputChange }
         />
+        {errorMessage.balance && <span>{ errorMessage.balance }</span>}
       </label>
     <div className={ isEdit ? 'form-buttons-edit' : 'form-buttons'}>
     { isEdit && (
