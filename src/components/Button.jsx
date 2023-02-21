@@ -13,7 +13,7 @@ function Button({ name, kind, onButtonClick, isDisabled }) {
     <button 
       type="button" 
       onClick={ onButtonClick } 
-      className={ setButtonStyle() }
+      className={ isDisabled ? 'disabled-button' : setButtonStyle() }
       disabled={ isDisabled }
     >
      { name }
