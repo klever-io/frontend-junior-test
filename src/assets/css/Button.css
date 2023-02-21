@@ -2,9 +2,9 @@
   border: 0;
   border-radius: 6px;
   color: var(--font-color);
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1rem;
 }
 
 .default-button {
@@ -23,4 +23,14 @@
   background-color: var(--disabled-button);
   color: var(--back-color);
   opacity: 0.4;
+}
+
+.edit-button {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.edit-button > img {
+  width: 15px;
 }

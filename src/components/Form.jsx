@@ -18,7 +18,7 @@ function Form({ value, onInputChange, onButtonClick, isEdit, isButtonDisabled, e
       <label htmlFor="balance">
         Balance
         <input
-          type="text"
+          type="number"
           id="balance"
           name="balance"
           value={ value.balance }

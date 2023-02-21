@@ -13,10 +13,15 @@ header {
   align-items: center;
   align-self: flex-start;
   display: flex;
+  padding: 0;
 }
 
 .shooting-star > img {
   width: 40px;
+}
+
+.form-header {
+  width: 30vw;
 }
 
 .shooting-star > p {
@@ -29,7 +34,16 @@ header {
 .title-and-button {
   align-items: center;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-top: -25px;
+}
+
+.home-title-and-button {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 30vw;
 }
 
 .page-title {

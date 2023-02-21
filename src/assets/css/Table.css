@@ -1,0 +1,31 @@
+table {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.th-balance {  
+  font-size: 0.7rem;
+  text-align: right;
+}
+
+.th-token {
+  font-size: 0.7rem;
+  text-align: left;
+}
+
+.td-balance {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: right;
+}
+
+.td-token {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+.table-button {
+  text-align: center;
+  padding: 0;
+}
