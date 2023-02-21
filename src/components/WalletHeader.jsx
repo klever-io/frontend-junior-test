@@ -28,13 +28,15 @@ function WalletHeader({ isHomePage }) {
   return (
     <section>
       {isHomePage ? (
-        <div className="shooting-star">
-          <img src={shootingStar} alt="Shooting Star" />
-          <p>Wish Wallet</p>
+        <div className="home-title-and-button">
+          <div className="shooting-star">
+            <img src={shootingStar} alt="Shooting Star" />
+            <p>Wish Wallet</p>
+          </div>
           <Button name={defineButtonName} onButtonClick={() => goToPage()} />
         </div>
       ) : (
-        <div>
+        <div className="form-header">
           <div className="shooting-star">
             <img src={shootingStar} alt="Shooting Star" />
             <p>Wish Wallet</p>
