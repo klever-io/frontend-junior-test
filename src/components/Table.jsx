@@ -1,6 +1,13 @@
 import React from "react";
 
-function Table({ headers, tableData }) {
+function Table({ headers, tableData, onEditClick }) {
+  const formatKeyValue = (key) => {
+    if (key === "Tokens") {
+      return key.slice(0, -1).toLowerCase();
+    }
+    return key.toLowerCase();
+  };
+
   return (
     <table>
       <thead>
@@ -14,8 +21,11 @@ function Table({ headers, tableData }) {
         {tableData.map((data, index) => (
           <tr key={`${data}-${index}`}>
             {headers.map((key) => (
-              <td key={`${data[key.toLowerCase()]}-${index}`}>
-                {data[key.toLowerCase()]}
+              <td key={`${data[formatKeyValue(key)]}-${index}`}>
+                {key === "Tokens" && (
+                  <button onClick={() => onEditClick(data)}>Edit</button>
+                )}
+                {data[formatKeyValue(key)]}
               </td>
             ))}
           </tr>
