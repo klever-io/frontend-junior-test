@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Button({ name, kind, onButtonClick }) {
+function Button({ name, kind, onButtonClick, isDisabled }) {
   const setButtonStyle = () => {
     const styleOptions = {
       remove: 'remove-button',
@@ -13,7 +13,8 @@ function Button({ name, kind, onButtonClick }) {
     <button 
       type="button" 
       onClick={ onButtonClick } 
-      className={ setButtonStyle() }
+      className={ isDisabled ? 'disabled-button' : setButtonStyle() }
+      disabled={ isDisabled }
     >
      { name }
     </button>
