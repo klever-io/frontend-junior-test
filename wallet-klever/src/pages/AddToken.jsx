@@ -1,8 +1,11 @@
 import React from 'react';
+import Header from '../components/Header';
 
  function AddToken() {
   return (
-    <div>AddToken</div>
+    <div>
+      <Header />
+    </div>
   )
 }
 export default AddToken;
