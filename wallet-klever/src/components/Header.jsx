@@ -9,4 +9,4 @@ import ShootingStar from '../assets/shooting-star.svg';
     </div>
   )
 }
-export default Header
+export default Header;
