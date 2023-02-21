@@ -6,6 +6,7 @@ import { useState } from 'react';
 function AddOrEditToken() {
   const location = useLocation();
   const [inputValues, setInputValues] = useState({ token: '', balance: '' });
+  const [errorMessage, setErrorMessage] = useState({ token: '', balance: '' });
   
   const handleChange = ({ target }) => {
     setInputValues({ ...inputValues, [target.name]:target.value });
@@ -13,16 +14,23 @@ function AddOrEditToken() {
   
   const isButtonDisabled = () => inputValues.token === '' || inputValues.balance === '';
 
+
   const saveToken = () => {
     if (!JSON.parse(localStorage.getItem('tokenList'))) {
       localStorage.setItem('tokenList', JSON.stringify([inputValues]));
     } else {
-      const storageTokens = JSON.parse(localStorage.getItem('tokenList'));
-      const tokenList = [...storageTokens, inputValues];
+      const storageTokenList = JSON.parse(localStorage.getItem('tokenList'));
+      const validateIfTokenExists = storageTokenList.some((item) => item.token === inputValues.token);
+      if (validateIfTokenExists) {
+        setErrorMessage({ token: 'That token already exists!' });
+        return
+      }
+      setErrorMessage('');
+      const tokenList = [...storageTokenList, inputValues];
       localStorage.setItem('tokenList', JSON.stringify(tokenList));
     }
-  
   };
+  
   const removeToken = () => console.log('removeToken');
 
   const tokenControl = {
@@ -38,6 +46,7 @@ function AddOrEditToken() {
       value={ inputValues }
       onInputChange={ (e) => handleChange(e) }
       onButtonClick={ tokenControl }
+      errorMessage={ errorMessage }
       isButtonDisabled={ isButtonDisabled() }
     />
     </>
