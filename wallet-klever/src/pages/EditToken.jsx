@@ -1,9 +1,32 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Header from '../components/Header';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
  function EditToken() {
   const navigate = useNavigate();
+  const { id } = useParams();
+
+  const [token, setToken] = useState({token: '', balance: ''});
+
+  useEffect(() => {
+    const storedTokens = localStorage.getItem('token');
+    if(storedTokens) {
+      const tokens = JSON.parse(storedTokens);
+      const currentToken = tokens.find((token) => token.id === id)
+      if(currentToken) {
+        setToken(currentToken);
+      }
+    }
+   }
+  , [id]); 
+
+  const handleInputChange = ({ target }) => {
+    const { name, value } = target;
+    setToken(prevState => ({
+      ...prevState,
+      [name]: value
+  }))
+  }
 
   return (
     <>
@@ -18,8 +41,8 @@ import { useNavigate } from 'react-router-dom';
             type='text'
             id='token'
             name='token'
-            // value={token.token}
-            // onChange=
+            value={token.token}
+            onChange={ handleInputChange }
             />
         </label>
         <label htmlFor='balance'>
@@ -28,11 +51,13 @@ import { useNavigate } from 'react-router-dom';
             type='number'
             id='balance'
             name='balance'
-            // value={token.balance}
-            // onChange=
+            value={token.balance}
+            onChange={ handleInputChange }
           />
         </label>
       </form>
+      <button>Save</button>
+      <button>Remove</button>
     </div>
     </>
   )
