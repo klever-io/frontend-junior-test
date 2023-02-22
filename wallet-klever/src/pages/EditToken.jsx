@@ -5,28 +5,45 @@ import { useNavigate, useParams } from 'react-router-dom';
  function EditToken() {
   const navigate = useNavigate();
   const { id } = useParams();
+  // console.log(id);
 
   const [token, setToken] = useState({token: '', balance: ''});
 
   useEffect(() => {
-    const storedTokens = localStorage.getItem('token');
-    if(storedTokens) {
-      const tokens = JSON.parse(storedTokens);
-      const currentToken = tokens.find((token) => token.id === id)
-      if(currentToken) {
-        setToken(currentToken);
-      }
+    const storedTokens = localStorage.getItem('tokens') || '[]';
+    const tokens = JSON.parse(storedTokens);
+    // console.log(tokens);
+    const currentToken = tokens.find(token => token.id === id);
+    // console.log(currentToken);
+    if(currentToken) {
+      setToken(currentToken);
     }
-   }
-  , [id]); 
+  }, [id]);
 
   const handleInputChange = ({ target }) => {
     const { name, value } = target;
     setToken(prevState => ({
       ...prevState,
-      [name]: value
+      [name]: value,
   }))
-  }
+  };
+
+  // if (!initialId) {
+  //   return <div>Invalid token ID.</div>;
+  // }
+
+  const handleSave = () => {
+    const storedTokens = localStorage.getItem('tokens') || '[]';
+    const tokens = JSON.parse(storedTokens);
+    const updatedTokens = tokens.map((previousToken) => {
+      if (previousToken.id === id) {
+          return token;
+      }
+      return previousToken;
+    })
+    localStorage.setItem('tokens', JSON.stringify(updatedTokens));
+    navigate('/');
+  };
 
   return (
     <>
@@ -56,7 +73,7 @@ import { useNavigate, useParams } from 'react-router-dom';
           />
         </label>
       </form>
-      <button>Save</button>
+      <button onClick={handleSave}>Save</button>
       <button>Remove</button>
     </div>
     </>

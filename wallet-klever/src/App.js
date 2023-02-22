@@ -9,7 +9,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/addToken" element={<AddToken />} />
-      <Route path="/editToken/:tokenId" element={<EditToken />} />
+      <Route path="/editToken/:id" element={<EditToken />} />
     </Routes>
   );
 }

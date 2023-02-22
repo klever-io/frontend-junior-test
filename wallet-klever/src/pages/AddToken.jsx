@@ -11,7 +11,7 @@ import { v4 as uuidv4 } from 'uuid';
   const [newToken, setNewToken] = useState({ token: '', balance: ''});
 
   useEffect(() => {
-    const storedTokens = localStorage.getItem('tokens');
+    const storedTokens = localStorage.getItem('tokens') || '[]';
     if (storedTokens) {
       setTokens(JSON.parse(storedTokens))
     }
