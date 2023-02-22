@@ -51,19 +51,24 @@ function AddOrEditToken() {
 
   const editToken = () => {
     const storageTokenList = JSON.parse(localStorage.getItem('tokenList'));
-    const findById = storageTokenList.filter((token) => token.token !== id);
-    const validateIfTokenExists = findById.some(
+    const tokensWithDifferentId = storageTokenList.filter((token) => token.token !== id);
+    const validateIfTokenExists = tokensWithDifferentId.some(
       (item) => item.token === inputValues.token);
     if (validateIfTokenExists) {
       setErrorMessage({ token: 'That token already exists!' });
       return;
     }
-    const tokenList = [...findById, inputValues];
+    const tokenList = [...tokensWithDifferentId, inputValues];
     localStorage.setItem('tokenList', JSON.stringify(tokenList));
     navigate('/');
   }
-  
-  const removeToken = () => console.log('removeToken');
+
+  const removeToken = () => {
+    const storageTokenList = JSON.parse(localStorage.getItem('tokenList'));
+    const tokensWithDifferentId = storageTokenList.filter((token) => token.token !== id);
+    localStorage.setItem('tokenList', JSON.stringify(tokensWithDifferentId));
+    navigate('/');
+  }
 
   const saveOrEdit = () => {
     if (location.pathname === '/add-token') {
@@ -83,7 +88,7 @@ function AddOrEditToken() {
     <>
       <WalletHeader />
       <Form
-        isEdit={ location.pathname === '/edit-token' }
+        isEdit={ location.pathname.includes('/edit-token') }
         value={ inputValues }
         onInputChange={ (e) => handleChange(e) }
         onButtonClick={ tokenControl }
