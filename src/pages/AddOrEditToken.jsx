@@ -24,7 +24,7 @@ function AddOrEditToken() {
   }, [location, id]);
 
   const handleChange = ({ target }) => {
-    setInputValues({ ...inputValues, [target.name]: target.value });
+    setInputValues((value) => target.validity.valid ? {...inputValues, [target.name]:target.value } : value);
   };
 
   const isButtonDisabled = () =>
@@ -35,6 +35,12 @@ function AddOrEditToken() {
     if (!storageTokenList) {
       localStorage.setItem('tokenList', JSON.stringify([inputValues]));
     } else {
+    const regex = new RegExp(/^[0-9]+$/);
+    const match = regex.test(inputValues.balance);
+    if (!match) {
+      setErrorMessage({ balance: 'Only numeric characters!' });
+      return;
+    }
       const validateIfTokenExists = storageTokenList.some(
         (item) => item.token === inputValues.token
       );
