@@ -3,6 +3,8 @@ import userEvent from '@testing-library/user-event';
 import App from '../App';
 import renderWithRouter from './renderWithRouter';
 
+const mockTokensValue = [{ token: 'KLV', balance: '123456' }];
+
 describe('Test the Home page', () => {
   beforeEach(() => {
     Object.defineProperty(window, "localStorage", {
@@ -53,7 +55,7 @@ describe('Test the Add Token Page', () => {
       writable: true,
     });
   });
-  
+
   it('test if add token form elements are present', () => {
     renderWithRouter(<App />, {route: '/add-token'});
     const saveButton = screen.getByRole('button', { name: /save/i });
@@ -66,4 +68,18 @@ describe('Test the Add Token Page', () => {
      expect(saveButton).toBeInTheDocument();
      expect(saveButton).toBeDisabled();
    });
+
+   it('test if token is added to localStorage', () => {
+    renderWithRouter(<App />, {route: '/add-token'});
+    const saveButton = screen.getByRole('button', { name: /save/i });
+    const tokenInput = screen.getByRole('textbox', { name: /token/i });
+    const balanceInput = screen.getByRole('textbox', { name: /balance/i });
+    userEvent.type(tokenInput, mockTokensValue[0].token);
+    userEvent.type(balanceInput, mockTokensValue[0].balance);
+    expect(saveButton).toBeEnabled();
+    userEvent.click(saveButton);
+    expect(window.localStorage.setItem).toHaveBeenCalled();
+    expect(window.localStorage.setItem).toHaveBeenCalledWith('tokenList', JSON.stringify(mockTokensValue));
+    expect(window.location.pathname).toBe('/');
+   })
 })
