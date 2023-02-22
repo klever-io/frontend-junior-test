@@ -35,15 +35,24 @@ import { useNavigate, useParams } from 'react-router-dom';
   const handleSave = () => {
     const storedTokens = localStorage.getItem('tokens') || '[]';
     const tokens = JSON.parse(storedTokens);
-    const updatedTokens = tokens.map((previousToken) => {
-      if (previousToken.id === id) {
+    const updatedTokens = tokens.map((originalToken) => {
+      if (originalToken.id === id) {
           return token;
       }
-      return previousToken;
+      return originalToken;
     })
     localStorage.setItem('tokens', JSON.stringify(updatedTokens));
     navigate('/');
   };
+
+  const handleRemove = () => {
+    const storedTokens = localStorage.getItem('tokens') || '[]';
+    const tokens = JSON.parse(storedTokens);
+    const updatedTokens = tokens.filter(originalToken => originalToken.id !== id);
+    localStorage.setItem('tokens', JSON.stringify(updatedTokens));
+    navigate('/');
+  };
+
 
   return (
     <>
@@ -74,7 +83,7 @@ import { useNavigate, useParams } from 'react-router-dom';
         </label>
       </form>
       <button onClick={handleSave}>Save</button>
-      <button>Remove</button>
+      <button onClick={ handleRemove }>Remove</button>
     </div>
     </>
   )
