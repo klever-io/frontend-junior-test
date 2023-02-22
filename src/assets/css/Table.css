@@ -1,8 +1,8 @@
 table {
   border-collapse: separate;
   border-spacing: 0 1rem;
-  margin-top: 1rem;
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .th-balance {  
@@ -30,4 +30,11 @@ table {
 .table-button {
   padding: 0;
   text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+  table {
+    margin-top: 1rem;
+    width: 100%;
+  }
 }
