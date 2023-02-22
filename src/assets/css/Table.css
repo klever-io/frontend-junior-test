@@ -1,0 +1,49 @@
+table {
+  border-collapse: separate;
+  border-spacing: 0 1rem;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.th-balance {  
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+.th-token {
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.td-balance {
+  overflow: hidden;
+  max-width: 6ch;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: right;
+  padding-left: 16px;
+}
+
+.td-token {
+  overflow: hidden;
+  max-width: 6ch;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+.table-button {
+  padding: 0;
+  text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+  table {
+    margin-top: 1rem;
+    width: 100%;
+  }
+}

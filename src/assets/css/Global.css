@@ -1,0 +1,13 @@
+.App {
+  align-items: center;
+  color: var(--font-color);
+  display: flex;
+  flex-direction: column;
+}
+
+@import url('./Variables.css');
+@import url('./Header.css');
+@import url('./Button.css');
+@import url('./Form.css');
+@import url('./Table.css');
+@import url('./Alert.css');

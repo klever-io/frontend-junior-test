@@ -1,0 +1,49 @@
+.alert-container {
+  background-color: #13152a9b;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.alert-card {
+  background-color: var(--font-color);
+  border-radius: 8px;
+  padding: 2rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 70%;
+  height: fit-content;
+}
+
+.alert-message {
+  color: var(--bg-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.alert-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .alert-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+  }
+}
