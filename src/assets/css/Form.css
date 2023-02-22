@@ -1,3 +1,22 @@
+label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  font-weight: 600;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+input {
+  border: 0;
+  border-radius: 4px;
+  font-family: Montserrat, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.6rem;
+  margin-top: 8px;
+}
+
 .wallet-form {
   display: flex;
   flex-direction: column;
@@ -19,23 +38,4 @@
 .error {
   color: var(--remove-color);
   padding: 10px;
-}
-
-label {
-  display: flex;
-  flex-direction: column;
-  font-size: 0.9rem;
-  font-weight: 600;
-  width: 100%;
-  margin-bottom: 1.5rem;
-}
-
-input {
-  border: 0;
-  border-radius: 4px;
-  font-family: Montserrat, sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  padding: 0.6rem;
-  margin-top: 8px;
 }

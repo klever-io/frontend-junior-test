@@ -1,8 +1,8 @@
 table {
   border-collapse: separate;
   border-spacing: 0 1rem;
-  margin-top: 1rem;
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .th-balance {  
@@ -16,12 +16,21 @@ table {
 }
 
 .td-balance {
+  overflow: hidden;
+  max-width: 6ch;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 1.5rem;
   font-weight: 600;
   text-align: right;
+  padding-left: 16px;
 }
 
 .td-token {
+  overflow: hidden;
+  max-width: 6ch;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 1.5rem;
   font-weight: 600;
   text-align: left;
@@ -30,4 +39,11 @@ table {
 .table-button {
   padding: 0;
   text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+  table {
+    margin-top: 1rem;
+    width: 100%;
+  }
 }

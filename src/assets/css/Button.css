@@ -1,4 +1,7 @@
-.remove-button, .back-button, .default-button, .disabled-button {
+.remove-button,
+.back-button,
+.default-button,
+.disabled-button {
   border: 0;
   border-radius: 6px;
   color: var(--font-color);

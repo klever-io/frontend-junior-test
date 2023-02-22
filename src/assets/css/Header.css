@@ -6,7 +6,7 @@ header {
 }
 
 .logo {
-  width: 10vw;
+  width: 25vw;
 }
 
 .shooting-star {
@@ -21,7 +21,9 @@ header {
 }
 
 .form-header {
-  width: 30vw;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  width: 100%;
 }
 
 .shooting-star > p {
@@ -36,18 +38,52 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 0 20px;
-  margin-top: -25px;
+  margin-top: 1rem;
 }
 
 .home-title-and-button {
   align-items: center;
   display: flex;
-  justify-content: space-between;
-  width: 30vw;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
 }
 
 .page-title {
   color: var(--font-color);
   font-size: 1.25rem;
   font-weight: 600;
+}
+
+@media screen and (min-width: 1024px) {
+  .logo {
+    width: 15vw;
+  }
+
+  .home-title-and-button {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    justify-content: space-between;
+    width: 40vw;
+  }
+
+  .form-header {
+    margin-bottom: 2rem;
+    width: 30vw;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .logo {
+    width: 40vw;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .logo {
+    width: 15vw;
+  }
 }
