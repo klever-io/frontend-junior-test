@@ -39,9 +39,9 @@ import { useNavigate } from 'react-router-dom';
             <tbody>
                 {tokens.map((token) => (
                     <tr key={ token.id }>
+                        <td><button onClick={() => EditTokenClick(token.id)}>Edit Token</button></td>
                         <td>{token.token}</td>
                         <td>{ token.balance }</td>
-                        <td><button onClick={() => EditTokenClick(token.id)}>Edit Token</button></td>
                     </tr>
 
                 ) )
