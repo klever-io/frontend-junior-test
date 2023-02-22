@@ -28,8 +28,13 @@ import { v4 as uuidv4 } from 'uuid';
   const handleSave = (event) => {
     event.preventDefault();
     if (newToken.token.length === 0 || newToken.balance.length === 0) {
-      alert('The inputs Token and Balance cannot be empty')
-  }else {
+      alert('The inputs Token and Balance cannot be empty');
+    }else {
+      const isTokenExists = tokens.some(token => token.token === newToken.token);
+
+      if (isTokenExists) {
+        alert(`Token ${newToken.token} already exists!`);
+    }else {
     const updateToken = {...newToken, id: uuidv4()}  
     const updatedTokens = [...tokens, updateToken ]
       // console.log(updatedTokens);
@@ -39,6 +44,7 @@ import { v4 as uuidv4 } from 'uuid';
         navigate('/');
       };
     };
+  };
   
 
   return (
