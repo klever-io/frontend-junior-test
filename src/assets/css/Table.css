@@ -1,15 +1,17 @@
 table {
+  border-collapse: separate;
+  border-spacing: 0 1rem;
   margin-top: 1rem;
   width: 100%;
 }
 
 .th-balance {  
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   text-align: right;
 }
 
 .th-token {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   text-align: left;
 }
 
@@ -26,6 +28,6 @@ table {
 }
 
 .table-button {
-  text-align: center;
   padding: 0;
+  text-align: center;
 }
