@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import { useNavigate } from 'react-router-dom';
 
@@ -6,9 +6,15 @@ import { useNavigate } from 'react-router-dom';
  function AddToken() {
 
   const navigate = useNavigate();
-  // const [tokens, newTokens] = useState([]);
+  const [tokens, setTokens] = useState([]);
   const [newToken, setNewToken] = useState({ token: '', balance: ''});
-  // const [isDisabled, setIsDisabled] = useState(true);
+
+  useEffect(() => {
+    const storedTokens = localStorage.getItem('tokens');
+    if (storedTokens) {
+      setTokens(JSON.parse(storedTokens))
+    }
+  }, []);
 
   const handleInputChange = ({ target }) => {
     const { name, value } = target;
@@ -16,8 +22,22 @@ import { useNavigate } from 'react-router-dom';
       ...prevState,
       [name]: value,
     }))
-  }
+  };
 
+  const handleSave = (event) => {
+    event.preventDefault();
+    if (newToken.token.length === 0 || newToken.balance.length === 0) {
+      alert('The inputs Token and Balance cannot be empty')
+  }else {
+      const updatedTokens = [...tokens, newToken ]
+      // console.log(updatedTokens);
+      setTokens(updatedTokens)
+        localStorage.setItem('tokens', JSON.stringify(updatedTokens));
+        // console.log(updatedTokens);
+        navigate('/');
+      };
+    };
+  
 
   return (
     <>
@@ -49,7 +69,7 @@ import { useNavigate } from 'react-router-dom';
             />  
         </label>
       </form>
-      <button>
+      <button onClick={ handleSave } >
         Save
       </button>
     </div>

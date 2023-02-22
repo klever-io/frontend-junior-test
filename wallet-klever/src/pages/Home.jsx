@@ -28,13 +28,11 @@ import { useNavigate } from 'react-router-dom';
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        <tr>KLV</tr>
-                        <tr>10,250.50</tr>
-                        <button onClick={() => EditTokenClick()}>Edit Token</button>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>KLV</td>
+                        <td>10,250.50</td>
+                        <td><button onClick={() => EditTokenClick()}>Edit Token</button></td>
+                    </tr>
             </tbody>
         </table>
 
