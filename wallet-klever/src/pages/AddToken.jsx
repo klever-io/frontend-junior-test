@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import { useNavigate } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 
 
  function AddToken() {
@@ -29,7 +30,8 @@ import { useNavigate } from 'react-router-dom';
     if (newToken.token.length === 0 || newToken.balance.length === 0) {
       alert('The inputs Token and Balance cannot be empty')
   }else {
-      const updatedTokens = [...tokens, newToken ]
+    const updateToken = {...newToken, id: uuidv4()}  
+    const updatedTokens = [...tokens, updateToken ]
       // console.log(updatedTokens);
       setTokens(updatedTokens)
         localStorage.setItem('tokens', JSON.stringify(updatedTokens));

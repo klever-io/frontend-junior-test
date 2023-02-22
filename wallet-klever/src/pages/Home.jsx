@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import { useNavigate } from 'react-router-dom';
 
 
  function Home() {
+
+  const [tokens, setTokens] = useState([]);
+
+  useEffect(() => {
+    const storedTokens = localStorage.getItem('tokens') || '[]';
+      setTokens(JSON.parse(storedTokens));
+  }, []);
 
   const navigate = useNavigate();
 
@@ -11,9 +18,11 @@ import { useNavigate } from 'react-router-dom';
     navigate('/addToken');
   }
 
-  const EditTokenClick = () => {
-    navigate(`/editToken`);
+  const EditTokenClick = (id) => {
+    navigate(`/editToken/${id}`);
   }
+
+  
 
   return (
     <div>
@@ -28,11 +37,15 @@ import { useNavigate } from 'react-router-dom';
                 </tr>
             </thead>
             <tbody>
-                    <tr>
-                        <td>KLV</td>
-                        <td>10,250.50</td>
-                        <td><button onClick={() => EditTokenClick()}>Edit Token</button></td>
+                {tokens.map((token) => (
+                    <tr key={ token.id }>
+                        <td>{token.token}</td>
+                        <td>{ token.balance }</td>
+                        <td><button onClick={() => EditTokenClick(token.id)}>Edit Token</button></td>
                     </tr>
+
+                ) )
+                }    
             </tbody>
         </table>
 
