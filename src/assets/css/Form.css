@@ -1,14 +1,41 @@
 .wallet-form {
   display: flex;
   flex-direction: column;
+  padding: 0 20px;
 }
 
 .form-buttons-edit {
   display: flex;
   justify-content: space-between;
+  margin-top: 2rem;
 }
 
 .form-buttons {
   display: flex;
   justify-content: flex-end;
+  margin-top: 1.9rem;
+}
+
+.error {
+  color: var(--remove-color);
+  padding: 10px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  font-weight: 600;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+input {
+  border: 0;
+  border-radius: 4px;
+  font-family: Montserrat, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.6rem;
+  margin-top: 8px;
 }

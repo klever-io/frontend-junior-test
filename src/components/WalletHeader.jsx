@@ -8,11 +8,10 @@ function WalletHeader({ isHomePage }) {
   const navigate = useNavigate();
 
   const defineTitleByLocation = () => {
-    const tokenPageTitle = {
-      '/edit-token': 'Edit Token',
-      '/add-token': 'Add Token',
-    };
-    return tokenPageTitle[location.pathname];
+    if (location.pathname.includes('/edit-token')) {
+      return 'Edit Token';
+    }
+    return 'Add Token';
   };
 
   const defineButtonName = location.pathname === '/' ? 'Add Token' : 'Voltar';

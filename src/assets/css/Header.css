@@ -26,8 +26,8 @@ header {
 
 .shooting-star > p {
   color: var(--font-color);
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 1.9rem;
+  font-weight: 700;
   padding: 0.4rem;
 }
 
@@ -48,6 +48,6 @@ header {
 
 .page-title {
   color: var(--font-color);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
 }
