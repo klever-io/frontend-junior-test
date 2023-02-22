@@ -101,7 +101,7 @@ function AddOrEditToken() {
       {showAlert && (
         <Alert
           message="Are you sure you want to remove this Token?"
-          ok={ () => removeToken }
+          ok={ removeToken }
           cancel={ () => setShowAlert(false) }
         />
       )}

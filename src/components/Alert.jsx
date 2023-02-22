@@ -4,9 +4,13 @@ import Button from './Button';
 function Alert({ ok, cancel, message }) {
   return (
     <div className="alert-container">
-      <p className="alert-message">{ message }</p>
-      <Button onButtonClick={ ok } name="Ok" />
-      <Button onButtonClick={ cancel } name="Cancel" kind="remove" />
+      <div className="alert-card">
+        <h1 className="alert-message">{ message }</h1>
+        <div className="alert-buttons">
+          <Button onButtonClick={ ok } name="Ok" isDisabled={ false } />
+          <Button onButtonClick={ cancel } name="Cancel" kind="remove" />
+        </div>
+      </div>
     </div>
   )
 }
