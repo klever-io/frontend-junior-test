@@ -25,10 +25,10 @@ function Form({
       <label htmlFor="balance">
         Balance
         <input
-          type="number"
           id="balance"
           name="balance"
-          min={0}
+          type="text" 
+          inputMode="numeric"
           pattern="[0-9]*"
           value={value.balance}
           onChange={onInputChange}

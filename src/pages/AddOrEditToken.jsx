@@ -24,7 +24,7 @@ function AddOrEditToken() {
   }, [location, id]);
 
   const handleChange = ({ target }) => {
-    setInputValues((value) => target.validity.valid ? {...inputValues, [target.name]:target.value } : value);
+    setInputValues((value) => target.validity.valid ? {...inputValues, [target.name]: target.value } : value);
   };
 
   const isButtonDisabled = () =>
