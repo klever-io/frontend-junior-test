@@ -16,12 +16,21 @@ table {
 }
 
 .td-balance {
+  overflow: hidden;
+  max-width: 6ch;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 1.5rem;
   font-weight: 600;
   text-align: right;
+  padding-left: 16px;
 }
 
 .td-token {
+  overflow: hidden;
+  max-width: 6ch;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 1.5rem;
   font-weight: 600;
   text-align: left;
