@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import WalletHeader from '../components/WalletHeader';
 import Form from '../components/Form';
+import Alert from '../components/Alert';
 
 function AddOrEditToken() {
   const location = useLocation();
@@ -9,6 +10,7 @@ function AddOrEditToken() {
   const { id } = useParams();
   const [inputValues, setInputValues] = useState({ token: '', balance: '' });
   const [errorMessage, setErrorMessage] = useState({ token: '', balance: '' });
+  const [showAlert, setShowAlert] = useState(false);
 
   useEffect(() => {
     if (location.pathname.includes('/edit-token')) {
@@ -71,6 +73,8 @@ function AddOrEditToken() {
     navigate('/');
   }
 
+  const activateTokenRemovalAlert = () => setShowAlert(true);
+
   const removeToken = () => {
     const storageTokenList = JSON.parse(localStorage.getItem('tokenList'));
     const tokensWithDifferentId = storageTokenList.filter((token) => token.token !== id);
@@ -89,11 +93,18 @@ function AddOrEditToken() {
 
   const tokenControl = {
     save: saveOrEdit,
-    remove: removeToken,
+    remove: activateTokenRemovalAlert,
   };
 
   return (
     <div>
+      {showAlert && (
+        <Alert
+          message="Are you sure you want to remove this Token?"
+          ok={ () => removeToken }
+          cancel={ () => setShowAlert(false) }
+        />
+      )}
       <WalletHeader />
       <Form
         isEdit={ location.pathname.includes('/edit-token') }
