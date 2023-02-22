@@ -31,11 +31,10 @@ function AddOrEditToken() {
     inputValues.token === '' || inputValues.balance === '';
 
   const saveToken = () => {
-    const tokens = JSON.parse(localStorage.getItem('tokenList'));
-    if (!tokens) {
+    const storageTokenList = JSON.parse(localStorage.getItem('tokenList'));
+    if (!storageTokenList) {
       localStorage.setItem('tokenList', JSON.stringify([inputValues]));
     } else {
-      const storageTokenList = JSON.parse(localStorage.getItem('tokenList'));
       const validateIfTokenExists = storageTokenList.some(
         (item) => item.token === inputValues.token
       );
@@ -50,14 +49,27 @@ function AddOrEditToken() {
     navigate('/');
   };
 
-  const editToken = () => console.log('editToken');
+  const editToken = () => {
+    const storageTokenList = JSON.parse(localStorage.getItem('tokenList'));
+    const findById = storageTokenList.filter((token) => token.token !== id);
+    const validateIfTokenExists = findById.some(
+      (item) => item.token === inputValues.token);
+    if (validateIfTokenExists) {
+      setErrorMessage({ token: 'That token already exists!' });
+      return;
+    }
+    const tokenList = [...findById, inputValues];
+    localStorage.setItem('tokenList', JSON.stringify(tokenList));
+    navigate('/');
+  }
+  
   const removeToken = () => console.log('removeToken');
 
   const saveOrEdit = () => {
     if (location.pathname === '/add-token') {
       return saveToken();
     }
-    if (location.pathname === '/edit-token') {
+    if (location.pathname.includes('/edit-token')) {
       return editToken();
     }
   };
