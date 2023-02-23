@@ -4,3 +4,10 @@
   padding: 2rem;
   text-align: center;
 }
+
+.TokenFormsTop {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  justify-content: space-between; 
+}
