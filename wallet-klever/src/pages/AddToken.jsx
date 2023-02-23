@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
 
  function AddToken() {
 
-  const navigate = useNavigate();
+  const history = useHistory();
   const [tokens, setTokens] = useState([]);
   const [newToken, setNewToken] = useState({ token: '', balance: ''});
 
@@ -41,7 +41,7 @@ import { v4 as uuidv4 } from 'uuid';
       setTokens(updatedTokens)
         localStorage.setItem('tokens', JSON.stringify(updatedTokens));
         // console.log(updatedTokens);
-        navigate('/');
+        history.push('/');
       };
     };
   };
@@ -53,7 +53,7 @@ import { v4 as uuidv4 } from 'uuid';
       <Header />
       <div>
         <h1>Add Token</h1>
-        <button onClick={() => navigate('/')}>Back</button>
+        <button onClick={() => history.push('/')}>Back</button>
       </div>
       <form>
         <label htmlFor='token'>

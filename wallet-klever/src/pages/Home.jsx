@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 
  function Home() {
@@ -12,14 +12,14 @@ import { useNavigate } from 'react-router-dom';
       setTokens(JSON.parse(storedTokens));
   }, []);
 
-  const navigate = useNavigate();
+  const history = useHistory();
 
   const AddTokenClick = () => {
-    navigate('/addToken');
+    history.push('/addToken');
   }
 
   const EditTokenClick = (id) => {
-    navigate(`/editToken/${id}`);
+    history.push(`/editToken/${id}`);
   }
 
   

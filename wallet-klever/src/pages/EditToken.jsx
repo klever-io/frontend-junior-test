@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import Header from '../components/Header';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 
  function EditToken() {
-  const navigate = useNavigate();
+  const history = useHistory();
   const { id } = useParams();
   // console.log(id);
 
@@ -42,7 +42,7 @@ import { useNavigate, useParams } from 'react-router-dom';
       return originalToken;
     })
     localStorage.setItem('tokens', JSON.stringify(updatedTokens));
-    navigate('/');
+    history.push('/');
   };
 
   const handleRemove = () => {
@@ -50,7 +50,7 @@ import { useNavigate, useParams } from 'react-router-dom';
     const tokens = JSON.parse(storedTokens);
     const updatedTokens = tokens.filter(originalToken => originalToken.id !== id);
     localStorage.setItem('tokens', JSON.stringify(updatedTokens));
-    navigate('/');
+    history.push('/');
   };
 
 
@@ -59,7 +59,7 @@ import { useNavigate, useParams } from 'react-router-dom';
     <div>
       <Header />
       <h1>Edit Token</h1>
-      <button onClick={() => navigate('/')}>Back</button>
+      <button onClick={() => history.push('/')}>Back</button>
       <form>
         <label htmlFor='token'>
           Token
