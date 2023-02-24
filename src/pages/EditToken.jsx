@@ -1,13 +1,13 @@
-import React from 'react'
-import Header from '../components/Header'
+import React from 'react';
+import Header from '../components/Header';
 
 function EditToken() {
   return (
     <div>
-      <Header/>
+      <Header />
       <div>EditToken</div>
     </div>
-  )
+  );
 }
 
-export default EditToken
+export default EditToken;

@@ -1,14 +1,13 @@
-import React from 'react'
-import Header from '../components/Header'
-
+import React from 'react';
+import Header from '../components/Header';
 
 function AddToken() {
   return (
     <div>
-      <Header/>
+      <Header />
       <div>AddToken</div>
     </div>
-  )
+  );
 }
 
-export default AddToken
+export default AddToken;

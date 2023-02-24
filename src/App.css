@@ -10,19 +10,42 @@
   margin: 50px;
 }
 
-.TokenFormsTop {
+.tokenForms button {
+  padding: 5px;
+  width: 100px;
+  border-radius: 5px;
+}
+
+
+.tokenFormsTop {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between; 
+  width: 100%;
 }
 
-.TokenFormsBot {
+.tokenFormsMid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; 
+  width: 100%;
+}
+
+.tokenFormsBot {
   text-align: start;
+  width: 100%;
 }
 
-.TokenFormsBot input {
+.tokenFormsBot input {
   height: 30px;
   width: 100%;
+}
+
+.tokenFormsBot label {
+  font-weight: 600;
+  font-size: smaller;
 }
 
 .header {
