@@ -1,13 +1,14 @@
 import React from 'react'
 import Header from '../components/Header'
 import TokenForms from '../components/TokenForms'
+import TokensTable from '../components/TokensTable'
 
 function Home() {
   return (
     <div>
       <Header/>
-      <h1>Home</h1>
       <TokenForms />
+      <TokensTable />
     </div>
   )
 }

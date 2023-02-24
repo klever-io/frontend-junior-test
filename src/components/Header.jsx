@@ -3,8 +3,8 @@ import Logo from '../assets/logo.svg';
 
 function Header() {
   return (
-    <div>
-      <img src={ Logo } alt="oi" width="300px"/>
+    <div className='header'>
+      <img src={ Logo } alt="oi" width="200px"/>
     </div>
   )
 }

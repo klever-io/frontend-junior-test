@@ -5,9 +5,55 @@
   text-align: center;
 }
 
+.tokenForms {
+  width: 400px;
+  margin: 50px;
+}
+
 .TokenFormsTop {
   display: flex;
   align-items: center;
-  width: 400px;
   justify-content: space-between; 
+}
+
+.TokenFormsBot {
+  text-align: start;
+}
+
+.TokenFormsBot input {
+  height: 30px;
+  width: 100%;
+}
+
+.header {
+  margin: 50px;
+}
+
+.tokensTable {
+  border-collapse: collapse;
+  width: 400px;
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* .thead {
+  text-align: start;
+}
+
+.tbody {
+  text-align: start;
+} */
+
+
+th {
+  font-weight: normal;
+  padding: 10px;
+  font-weight: 600;
+}
+
+td {
+  font-weight: 600;
+  font-size: x-large;
+  padding: 10px;
 }
