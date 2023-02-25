@@ -85,10 +85,10 @@ import 'bulma/css/bulma.css';
         <label className='label' htmlFor='balance'>Balance</label> 
           <input 
             className='input'
-            type='number'
+            type='number' 
             name='balance'
             id='balance'
-            value={newToken.balance}
+            value={ newToken.balance }
             onChange={ handleInputChange }
             />  
         </div>
