@@ -1,8 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './TokenTable.css';
 import editIcon from '../assets/editIcon.svg';
 
 function TokensTable() {
+  const navigate = useNavigate();
   return (
     <table className="tokensTable">
       <thead className="tokensHeader">
@@ -15,8 +17,12 @@ function TokensTable() {
       <tbody className="tokenBody">
         <tr className="tokenRow">
           <td>
-            <button type="button" className="editButton">
-              <img src={editIcon} alt="" width="45px" />
+            <button
+              type="button"
+              className="editButton"
+              onClick={() => navigate('/edit')}
+            >
+              <img src={editIcon} alt="" width="30px" />
             </button>
           </td>
           <td>
