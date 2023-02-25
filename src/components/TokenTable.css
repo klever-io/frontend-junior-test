@@ -1,0 +1,40 @@
+.tokensTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-weight: 500;
+}
+
+th:first-child {
+  vertical-align: top;
+  width: 10%;
+}
+
+
+.tokensHeader th {
+  text-align: left;
+  padding: 10px;
+}
+
+.tokensHeader th:last-child {
+  text-align: right;
+}
+
+
+.editButton {
+  background-color: transparent;
+  border: none;
+  margin-right: 5px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.tokenBody td {
+  padding: 10px;
+  text-align: left;
+  font-size: 36px;
+}
+
+.tokenBody td:last-child {
+  text-align: right;
+}
+

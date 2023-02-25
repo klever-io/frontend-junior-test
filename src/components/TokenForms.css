@@ -1,0 +1,52 @@
+.tokenForms {
+  width: 400px;
+  margin: 50px;
+}
+
+.tokenForms button {
+  padding: 5px;
+  width: 100px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 600;
+}
+
+
+.tokenFormsTop {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; 
+  width: 100%;
+}
+
+.tokenFormsMid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; 
+  width: 100%;
+}
+
+.tokenFormsBot {
+  text-align: start;
+  width: 100%;
+}
+
+.tokenFormsBot input {
+  height: 30px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+}
+
+.tokenFormsBot label {
+  font-weight: 600;
+  font-size: smaller;
+}
+
+.botButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
