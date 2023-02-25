@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../components/Header';
+import ShootingStar from '../assets/shooting-star1.svg';
+import Logo from '../assets/logo.svg';
 import { useHistory } from 'react-router-dom';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import 'bulma/css/bulma.css';
 
  function Home() {
 
@@ -22,34 +25,43 @@ import { useHistory } from 'react-router-dom';
     history.push(`/editToken/${id}`);
   }
 
-  
-
   return (
     <div>
-      <Header />
-      <button onClick={ AddTokenClick }>Add Token</button>
-        <div>
-        <table>
-            <thead>
+      <div className='center'>
+        <img className='image custom-size' src={ Logo } alt='Logo Klever' />
+      </div>
+      <div className='container'>
+        <img className='image is-48x48' src={ ShootingStar } alt='Shooting-star' />
+        <h1 className='h1-header'>Wish Wallet</h1>
+        <button className='button is-small is-responsive add-color' onClick={ AddTokenClick }>Add Token</button>
+      </div>
+        <div className='container-table'>
+          <table>
+              <thead>
                 <tr>
-                    <th>Tokens</th>
-                    <th>Balance</th>
+                  <th>Tokens</th>
+                  <th>Balance</th>
                 </tr>
             </thead>
             <tbody>
-                {tokens.map((token) => (
-                    <tr key={ token.id }>
-                        <td><button onClick={() => EditTokenClick(token.id)}>Edit Token</button></td>
-                        <td>{token.token}</td>
-                        <td>{ token.balance }</td>
-                    </tr>
+              {tokens.map((token) => (
+                <tr key={ token.id }>
+                    <td>
+                      <div>
+                        <button className='edit-color' onClick={() => EditTokenClick(token.id)}>
+                          <div className='icon'><FontAwesomeIcon icon={faPenToSquare}/></div>
+                        </button>
+                        { token.token }
+                      </div>
+                    </td>
+                    <td>{ token.balance }</td>
+                </tr>
 
-                ) )
-                }    
+              ) )
+              }    
             </tbody>
-        </table>
-
-    </div>
+          </table>
+        </div>
     </div>
   )
 }

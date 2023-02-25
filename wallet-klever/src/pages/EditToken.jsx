@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import Header from '../components/Header';
+import ShootingStar from '../assets/shooting-star1.svg';
+import Logo from '../assets/logo.svg';
 import { useHistory, useParams } from 'react-router-dom';
+import 'bulma/css/bulma.css';
 
  function EditToken() {
   const history = useHistory();
@@ -57,33 +59,61 @@ import { useHistory, useParams } from 'react-router-dom';
   return (
     <>
     <div>
-      <Header />
-      <h1>Edit Token</h1>
-      <button onClick={() => history.push('/')}>Back</button>
+      <div className='center'>
+        <img className='image custom-size' src={ Logo } alt='Logo Klever' />
+      </div>
+      <div className='container'>
+        <img className='image is-48x48' src={ ShootingStar } alt='Shooting-star' />
+        <h1 className='h1-header'>Wish Wallet</h1>
+      </div>
+      <div className='title'>
+      <h1 className='h1-add-token'>Edit Token</h1>
+      <button 
+        className='button is-small back-color'
+        onClick={() => history.push('/')}>
+          Back
+      </button>
+      </div>
       <form>
-        <label htmlFor='token'>
-          Token
+        <div className='field'>
+          <label className='label' htmlFor='token'>Token</label>
+            <div className='control'>
+              <input
+                className='input is-normal'
+                type='text'
+                id='token'
+                name='token'
+                value={token.token}
+                onChange={ handleInputChange }
+              />
+            </div>
+          </div>
+          <div className='field'>
+        <label className='label' htmlFor='balance'>Balance</label>
           <input
-            type='text'
-            id='token'
-            name='token'
-            value={token.token}
-            onChange={ handleInputChange }
-            />
-        </label>
-        <label htmlFor='balance'>
-          Balance
-          <input
+            className='input'
             type='number'
             id='balance'
             name='balance'
             value={token.balance}
             onChange={ handleInputChange }
           />
-        </label>
+        </div>
       </form>
-      <button onClick={handleSave}>Save</button>
-      <button onClick={ handleRemove }>Remove</button>
+      <div className='buttons'>
+        <button 
+          className='button is-small remove-color'
+          onClick={handleRemove}
+        >
+          Remove
+        </button>
+        <button 
+          className='button is-small save2-color'
+          onClick={ handleSave }
+        >
+          Save
+        </button>
+      </div>
     </div>
     </>
   )

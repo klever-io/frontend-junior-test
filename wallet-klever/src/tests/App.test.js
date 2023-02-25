@@ -8,7 +8,7 @@ describe('Home page', () => {
   test('renders home page with add token button', () => {
     
     render(<Home />);
-    const headerText = screen.getByRole('heading', { name: /whish wallet/i })
+    const headerText = screen.getByRole('heading', { name: /wish wallet/i  })
     expect(headerText).toBeInTheDocument();
 
     const starImage = screen.getByRole('img', { name: /shooting-star/i })
