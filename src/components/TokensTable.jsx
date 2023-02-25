@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './TokenTable.css';
 import editIcon from '../assets/editIcon.svg';
+import AssestsContext from '../context/AssetsContext';
 
 function TokensTable() {
   const navigate = useNavigate();
+  const [tableAssets, setTableAssets] = useState([]);
+  const storedAssets = JSON.parse(localStorage.getItem('assets'));
+
+  const { setForm, assets } = useContext(AssestsContext);
+
+  useEffect(() => {
+    setTableAssets(storedAssets);
+  }, [assets.length]);
+
+  const handleEdit = (tok, bal) => {
+    setForm({ token: tok, balance: bal });
+    navigate('/edit');
+  };
+
   return (
     <table className="tokensTable">
       <thead className="tokensHeader">
@@ -15,23 +30,25 @@ function TokensTable() {
         </tr>
       </thead>
       <tbody className="tokenBody">
-        <tr className="tokenRow">
-          <td>
-            <button
-              type="button"
-              className="editButton"
-              onClick={() => navigate('/edit')}
-            >
-              <img src={editIcon} alt="" width="30px" />
-            </button>
-          </td>
-          <td>
-            <span>Token</span>
-          </td>
-          <td>
-            <span>Value</span>
-          </td>
-        </tr>
+        {tableAssets && tableAssets.map(({ token, balance }) => (
+          <tr className="tokenRow" key={token}>
+            <td>
+              <button
+                type="button"
+                className="editButton"
+                onClick={() => handleEdit(token, balance)}
+              >
+                <img src={editIcon} alt="" width="30px" />
+              </button>
+            </td>
+            <td>
+              <span>{token}</span>
+            </td>
+            <td>
+              <span>{balance}</span>
+            </td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );

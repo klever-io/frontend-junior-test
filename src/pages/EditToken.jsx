@@ -6,7 +6,6 @@ function EditToken() {
   return (
     <div>
       <Header />
-      <div>EditToken</div>
       <TokenForms />
     </div>
   );

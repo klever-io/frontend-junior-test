@@ -14,20 +14,30 @@ function TokenForms() {
 
   const validateButton = !(form.token && form.balance);
 
+  useEffect(() => {
+    const storedAssets = JSON.parse(localStorage.getItem('assets'));
+    if (storedAssets && storedAssets.length > 0) {
+      setAssets(storedAssets);
+    }
+  }, [assets.length]);
+
   const handleSave = () => {
-    setAssets(assets.concat(form));
+    const verify = assets.some(({ token }) => token === form.token);
+    if (!verify) {
+      setAssets([assets.concat(form)]);
+      localStorage.setItem('assets', JSON.stringify([...assets, form]));
+    }
     setForm({ token: '', balance: '' });
+    navigate('/');
   };
 
   const handleRemove = () => {
     const remAssets = assets.filter(({ token }) => token !== form.token);
     setAssets(remAssets);
     setForm({ token: '', balance: '' });
+    navigate('/');
+    localStorage.setItem('assets', JSON.stringify(remAssets));
   };
-
-  useEffect(() => {
-    localStorage.setItem('assets', JSON.stringify(assets));
-  }, [assets.length]);
 
   return (
     <div className="tokenForms">
