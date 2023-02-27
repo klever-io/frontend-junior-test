@@ -1,0 +1,144 @@
+@import "../node_modules/bulma/css/bulma.min.css";
+
+.custom-background {
+    background-color: #13152a;
+}
+
+.custom-size {
+    height: 6vmin;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.container {
+    display: flex;
+    justify-content: center; 
+    align-items:baseline;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    margin-right: 120px;
+    color: white;
+}
+
+.shooting-star-size {
+    height: 9vmin;
+    margin-right: 5px;
+}
+
+.h1-header {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 100px;
+}
+
+.button {
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 7px;
+    margin: 10px;
+    width: 70px;
+}
+
+.add-color {
+    background-color: #b436bd;
+}
+
+.container-table {
+    display: grid;
+  justify-content: center; 
+  color: white;
+  grid-template-columns: auto auto; 
+  grid-auto-rows: minmax(50px, auto);
+  text-align: right; 
+  margin-right: 300px;
+
+}
+
+
+.container-table th {
+    color: white;
+    padding: 10px;
+    width: 280px;
+    font-size: 12px;
+}
+
+.container-table td {
+    color: white;
+    padding: 10px;
+    width: 280px;
+    font-size: 25px;
+}
+
+.edit-color {
+    background-color: transparent;
+    border: none;
+}
+
+
+.icon {
+    color: white;
+}
+
+.title {
+    display:flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.h1-add-token {
+    font-weight: bold !important;
+    font-size: 15px;
+    margin-right: 100px;
+    color: white;
+}
+.back-color {
+    background-color: gray;
+}
+
+.field {
+    display:grid;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.label {
+    color: white;
+}
+
+.input {
+    width: calc(100% - 5px);
+}
+.button-save {
+    display:flex;
+    justify-content: center;
+    margin-left: 12rem;
+    margin-top: 20px;
+}
+
+.save-color {
+    background-color: #b436bd;
+}
+
+.buttons {
+    display:flex;
+    justify-content:center;
+    align-items: baseline;
+    gap: 100px;
+    margin-top: 20px;
+}
+
+.save2-color {
+    background-color: #b436bd;
+}
+
+.remove-color {
+    background-color: rgb(126, 18, 18);
+}
+
