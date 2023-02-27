@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './TokenForms.css';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Star from '../assets/shooting-star.svg';
@@ -7,6 +7,7 @@ import AssestsContext from '../context/AssetsContext';
 function TokenForms() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
+  const [showAlert, setShowAlert] = useState(false);
 
   const {
     assets, setAssets, form, setForm,
@@ -16,16 +17,18 @@ function TokenForms() {
 
   const handleInputChange = ({ name, value }) => {
     setForm({ ...form, [name]: value });
+    setShowAlert(false);
   };
 
   const handleSave = () => {
-    const verify = assets.some(({ token }) => token === form.token);
+    const verify = assets.some(({ token }) => token.toUpperCase() === form.token.toUpperCase());
     if (!verify) {
       setAssets([...assets, { ...form }]);
       localStorage.setItem('assets', JSON.stringify([...assets, form]));
+      setForm({ token: '', balance: '' });
+      navigate('/');
     }
-    setForm({ token: '', balance: '' });
-    navigate('/');
+    setShowAlert(true);
   };
 
   const handleRemove = () => {
@@ -44,6 +47,13 @@ function TokenForms() {
     }
   };
 
+  const handleRemoveConfirmation = () => {
+    const confirmed = window.confirm('Are you sure you want to remove this token?');
+    if (confirmed) {
+      handleRemove();
+    }
+  };
+
   return (
     <div className="tokenForms">
 
@@ -55,7 +65,10 @@ function TokenForms() {
         <button
           className="addTokenButton"
           type="button"
-          onClick={() => navigate('/add')}
+          onClick={() => {
+            setForm({ token: '', balance: '' });
+            navigate('/add');
+          }}
         >
           Add Token
         </button>
@@ -79,6 +92,14 @@ function TokenForms() {
         </div>
 
         <div className="tokenFormsBot">
+
+          {showAlert && (
+          <span className="saveAlert">
+            Token already exists.
+          </span>
+          )}
+          <br />
+
           <label htmlFor="token">
             Token
             <input
@@ -89,8 +110,7 @@ function TokenForms() {
               onChange={(e) => handleInputChange(e.target)}
             />
           </label>
-          <br />
-          <br />
+
           <label htmlFor="balance">
             Balance
             <input
@@ -102,8 +122,6 @@ function TokenForms() {
               onKeyDown={(e) => allowedChars(e)}
             />
           </label>
-          <br />
-          <br />
 
           <div className="botButtons">
             {pathname === '/edit'
@@ -112,7 +130,7 @@ function TokenForms() {
                 type="button"
                 className="remButton"
                 disabled={validateButton}
-                onClick={() => handleRemove()}
+                onClick={() => handleRemoveConfirmation()}
               >
                 Remove
               </button>

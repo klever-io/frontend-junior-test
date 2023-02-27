@@ -58,6 +58,7 @@ h5 {
   width: 100%;
   border: none;
   border-radius: 5px;
+  margin-bottom: 50px;
 }
 
 .tokenFormsBot label {
@@ -78,6 +79,11 @@ h5 {
 
 .remButton {
   background-color: #920000de;
+}
+
+.saveAlert {
+  font-size: x-small;
+  color: rgba(255, 0, 0, 0.724);
 }
 
 /* @media (min-width: 768px) {

@@ -25,6 +25,7 @@
         "react/react-in-jsx-scope": "off",
         "import/no-extraneous-dependencies": "off",
         "react/prop-types": "off",
-        "jsx-a11y/control-has-associated-label": "off" 
+        "jsx-a11y/control-has-associated-label": "off",
+        "no-alert": "off"
     }
 }
