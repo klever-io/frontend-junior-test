@@ -14,27 +14,18 @@ function TokenForms() {
 
   const validateButton = !(form.token && form.balance);
 
-  // useEffect(() => {
-  //   const storedAssets = JSON.parse(localStorage.getItem('assets'));
-  //   if (storedAssets && storedAssets.length > 0) {
-  //     setAssets(storedAssets);
-  //   }
-  // }, [assets.length]);
-
   const handleInputChange = ({ name, value }) => {
     setForm({ ...form, [name]: value });
   };
 
   const handleSave = () => {
-    if (assets) {
-      const verify = assets.some(({ token }) => token === form.token);
-      if (!verify) {
-        setAssets([...assets, { ...form }]);
-        localStorage.setItem('assets', JSON.stringify([...assets, form]));
-        setForm({ token: '', balance: '' });
-        navigate('/');
-      }
+    const verify = assets.some(({ token }) => token === form.token);
+    if (!verify) {
+      setAssets([...assets, { ...form }]);
+      localStorage.setItem('assets', JSON.stringify([...assets, form]));
     }
+    setForm({ token: '', balance: '' });
+    navigate('/');
   };
 
   const handleRemove = () => {
@@ -43,6 +34,14 @@ function TokenForms() {
     setForm({ token: '', balance: '' });
     navigate('/');
     localStorage.setItem('assets', JSON.stringify(remAssets));
+  };
+
+  const allowedChars = (e) => {
+    const chars = /[0-9]|\.|Backspace/;
+
+    if (!chars.test(e.key)) {
+      e.preventDefault();
+    }
   };
 
   return (
@@ -80,7 +79,7 @@ function TokenForms() {
         </div>
 
         <div className="tokenFormsBot">
-          <label htmlFor="Token">
+          <label htmlFor="token">
             Token
             <input
               type="text"
@@ -92,7 +91,7 @@ function TokenForms() {
           </label>
           <br />
           <br />
-          <label htmlFor="Balance">
+          <label htmlFor="balance">
             Balance
             <input
               type="text"
@@ -100,6 +99,7 @@ function TokenForms() {
               id="balance"
               value={form.balance}
               onChange={(e) => handleInputChange(e.target)}
+              onKeyDown={(e) => allowedChars(e)}
             />
           </label>
           <br />

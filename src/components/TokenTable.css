@@ -29,7 +29,7 @@ th:first-child {
 }
 
 .tokenBody td {
-  padding: 0px;
+  padding: 10px;
   text-align: left;
   font-size: 36px;
   border: none;
