@@ -42,7 +42,7 @@ function TokensTable() {
               </button>
             </td>
             <td>
-              <span>{token}</span>
+              <span>{token.toUpperCase()}</span>
             </td>
             <td>
               <span>{balance}</span>

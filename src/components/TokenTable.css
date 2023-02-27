@@ -23,18 +23,22 @@ th:first-child {
 .editButton {
   background-color: transparent;
   border: none;
-  margin-right: 5px;
+  margin-right: 15px;
   padding: 0;
   cursor: pointer;
 }
 
 .tokenBody td {
-  padding: 10px;
+  padding: 0px;
   text-align: left;
   font-size: 36px;
+  border: none;
 }
 
 .tokenBody td:last-child {
   text-align: right;
 }
 
+.tokenBody button, .tokenBody image {
+  border: none;
+} 

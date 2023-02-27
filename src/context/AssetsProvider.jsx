@@ -17,8 +17,11 @@ function AssetsProvider({ children }) {
   );
 }
 
-AssestsContext.proptypes = {
-  children: PropTypes.shape.isRequired,
+AssestsContext.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
 };
 
 export default AssetsProvider;

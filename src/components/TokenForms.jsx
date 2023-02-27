@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import './TokenForms.css';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Star from '../assets/shooting-star.svg';
@@ -14,21 +14,27 @@ function TokenForms() {
 
   const validateButton = !(form.token && form.balance);
 
-  useEffect(() => {
-    const storedAssets = JSON.parse(localStorage.getItem('assets'));
-    if (storedAssets && storedAssets.length > 0) {
-      setAssets(storedAssets);
-    }
-  }, [assets.length]);
+  // useEffect(() => {
+  //   const storedAssets = JSON.parse(localStorage.getItem('assets'));
+  //   if (storedAssets && storedAssets.length > 0) {
+  //     setAssets(storedAssets);
+  //   }
+  // }, [assets.length]);
+
+  const handleInputChange = ({ name, value }) => {
+    setForm({ ...form, [name]: value });
+  };
 
   const handleSave = () => {
-    const verify = assets.some(({ token }) => token === form.token);
-    if (!verify) {
-      setAssets([assets.concat(form)]);
-      localStorage.setItem('assets', JSON.stringify([...assets, form]));
+    if (assets) {
+      const verify = assets.some(({ token }) => token === form.token);
+      if (!verify) {
+        setAssets([...assets, { ...form }]);
+        localStorage.setItem('assets', JSON.stringify([...assets, form]));
+        setForm({ token: '', balance: '' });
+        navigate('/');
+      }
     }
-    setForm({ token: '', balance: '' });
-    navigate('/');
   };
 
   const handleRemove = () => {
@@ -48,6 +54,7 @@ function TokenForms() {
         { pathname === '/'
         && (
         <button
+          className="addTokenButton"
           type="button"
           onClick={() => navigate('/add')}
         >
@@ -77,10 +84,10 @@ function TokenForms() {
             Token
             <input
               type="text"
-              name="Token"
-              id="Token"
+              name="token"
+              id="token"
               value={form.token}
-              onChange={(e) => setForm({ ...form, token: e.target.value })}
+              onChange={(e) => handleInputChange(e.target)}
             />
           </label>
           <br />
@@ -89,10 +96,10 @@ function TokenForms() {
             Balance
             <input
               type="text"
-              name="Balance"
-              id="Balance"
+              name="balance"
+              id="balance"
               value={form.balance}
-              onChange={(e) => setForm({ ...form, balance: e.target.value })}
+              onChange={(e) => handleInputChange(e.target)}
             />
           </label>
           <br />
