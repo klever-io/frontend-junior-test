@@ -1,0 +1,106 @@
+.tokenForms {
+  width: 400px;
+  margin: 50px 0 50px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tokenForms button {
+  padding: 5px;
+  width: 110px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 600;
+}
+
+button:hover {
+  border: 0.5px solid rgba(245, 245, 245, 0.604) ;
+}
+
+h5 {
+  height: 1px;
+}
+
+
+.tokenFormsTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+}
+
+.tokenFormsTop img {
+  margin-right: 10px;
+}
+
+.tokenFormsTop h2 {
+  margin: 0;
+  text-align: right;
+}
+
+.tokenFormsMid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; 
+  width: 100%;
+}
+
+.tokenFormsBot {
+  text-align: start;
+  width: 100%;
+}
+
+.tokenFormsBot input {
+  height: 30px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 50px;
+}
+
+.tokenFormsBot label {
+  font-weight: 600;
+  font-size: smaller;
+}
+
+.botButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 32px;
+}
+
+.saveButton, .addTokenButton {
+  background-color: #aa33b5de;
+}
+
+.remButton {
+  background-color: #920000de;
+}
+
+.saveAlert {
+  font-size: x-small;
+  color: rgba(255, 0, 0, 0.724);
+}
+
+/* @media (min-width: 768px) {
+  .tokenForms {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .tokenFormsTop {
+    justify-content: flex-start;
+  }
+
+  .tokenFormsTop button {
+    margin-left: 20px;
+  }
+
+  .tokenFormsMid {
+    justify-content: flex-start;
+  }
+} */
