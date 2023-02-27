@@ -48,11 +48,14 @@ import 'bulma/css/bulma.css';
   };
 
   const handleRemove = () => {
+    if (window.confirm('Are you sure you want to remove this token?')) {
     const storedTokens = localStorage.getItem('tokens') || '[]';
     const tokens = JSON.parse(storedTokens);
     const updatedTokens = tokens.filter(originalToken => originalToken.id !== id);
     localStorage.setItem('tokens', JSON.stringify(updatedTokens));
     history.push('/');
+
+    }
   };
 
 

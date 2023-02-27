@@ -27,6 +27,8 @@ import 'bulma/css/bulma.css';
     }))
   };
 
+  
+
   const handleSave = (event) => {
     event.preventDefault();
     if (newToken.token.length === 0 || newToken.balance.length === 0) {
@@ -88,7 +90,7 @@ import 'bulma/css/bulma.css';
             type='number' 
             name='balance'
             id='balance'
-            value={ newToken.balance }
+            value={ newToken.balance.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) }
             onChange={ handleInputChange }
             />  
         </div>
