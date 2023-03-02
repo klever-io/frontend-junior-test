@@ -16,7 +16,6 @@ module.exports = {
           'disabled-button': '#501c56',
           'remove-button': '#920000',
           'back-button': '#646464',
-          'background': '#13152A',
         },
       }
     },
