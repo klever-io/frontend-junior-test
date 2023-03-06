@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { useRouter } from 'next/router'
 
 import AddTokenButton from './AddTokenButton';
-import BackButton from './BackButton';
 
 import kleverLogo from '../public/assets/logo.svg'
 import shootingStar from '../public/assets/shooting-star.svg'
@@ -14,7 +13,7 @@ function Header() {
     <>
       <div className='flex-col items-center justify-center'>
         {/* Klever's Logo */}
-        <div className='flex items-center justify-center p-5 mt-10 mb-6'>
+        <div className='flex items-center justify-center p-5 mt-10'>
           <Image src={kleverLogo} alt="Klever's logo" className='w-60'/>
         </div>
 
@@ -37,7 +36,7 @@ function Header() {
 
           {/* Add Button */}
           <div className='flex justify-end sm:ml-20'>
-            { router.pathname === '/' ? <AddTokenButton/> : <BackButton/>}
+            { router.pathname === '/' && <AddTokenButton/>}
           </div>
         </div> 
         </div>

@@ -11,8 +11,8 @@ export default function AddTokenButton() {
   return (
     <button
     onClick={goToAddTokenPage}
-    className='p-2 sm:p-3 sm:px-5 rounded-md font-semibold
-    text-white bg-klever-enabled-button'>
+    className='p-2 sm:px-5 rounded-md font-semibold
+    text-white bg-klever-enabled-button hover:opacity-80'>
       Add Token
     </button>
   );

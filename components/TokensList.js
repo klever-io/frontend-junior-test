@@ -16,7 +16,7 @@ const mockArray = [
 ]
 
 export default function TokensList() {
-  const [tokens, setTokens] = useState(mockArray)
+  const [tokens, _setTokens] = useState(mockArray)
 
   // Map of values of Tokens and Balance
   const listTokens = (tokens) => {
