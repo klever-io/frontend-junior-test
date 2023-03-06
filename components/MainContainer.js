@@ -1,4 +1,4 @@
-import Header from "./Header"
+import Header from "./sections/Header"
 
 export default function MainContainer({ children }) {
   return (
