@@ -1,17 +1,20 @@
 import React from 'react'
 import Image from 'next/image';
+import { useRouter } from 'next/router'
 
 import AddTokenButton from './AddTokenButton';
+import BackButton from './BackButton';
 
 import kleverLogo from '../public/assets/logo.svg'
 import shootingStar from '../public/assets/shooting-star.svg'
 
 function Header() {
+  const router = useRouter();
   return (
     <>
       <div className='flex-col items-center justify-center'>
         {/* Klever's Logo */}
-        <div className='flex items-center justify-center p-5 mt-20 mb-10'>
+        <div className='flex items-center justify-center p-5 mt-10 mb-6'>
           <Image src={kleverLogo} alt="Klever's logo" className='w-60'/>
         </div>
 
@@ -34,7 +37,7 @@ function Header() {
 
           {/* Add Button */}
           <div className='flex justify-end sm:ml-20'>
-            <AddTokenButton/>
+            { router.pathname === '/' ? <AddTokenButton/> : <BackButton/>}
           </div>
         </div> 
         </div>
