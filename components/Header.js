@@ -6,6 +6,7 @@ import AddTokenButton from './AddTokenButton';
 
 import kleverLogo from '../public/assets/logo.svg'
 import shootingStar from '../public/assets/shooting-star.svg'
+import Link from 'next/link';
 
 function Header() {
   const router = useRouter();
@@ -13,9 +14,9 @@ function Header() {
     <>
       <div className='flex-col items-center justify-center'>
         {/* Klever's Logo */}
-        <div className='flex items-center justify-center p-5 mt-10'>
+        <Link href='/' className='flex items-center justify-center p-5 mt-10'>
           <Image src={kleverLogo} alt="Klever's logo" className='w-60'/>
-        </div>
+        </Link>
 
         {/* Image, Text and Button */}
         <div className='flex justify-center items-center p-2'>

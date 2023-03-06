@@ -33,7 +33,7 @@ export default function Home() {
                     type='text'
                     value={token}
                     onChange={(e) => setToken(e.target.value)}
-                    className='bg-white rounded py-1 px-2 sm:px-3 md:px-20 2xl:px-28 border-2 focus:outline-none focus:border-transparent'
+                    className='bg-white rounded py-1 px-6 sm:px-3 md:px-20 2xl:px-28 border-2 focus:outline-none focus:border-transparent'
                   />
                 </div>
                 <div className='flex flex-col mt-3'>
@@ -44,7 +44,7 @@ export default function Home() {
                     type='text'
                     value={balance}
                     onChange={(e) => setBalance(e.target.value)}
-                    className='bg-white rounded py-1 px-2 sm:px-3 md:px-20 2xl:px-28 border-2 focus:outline-none focus:border-transparent'
+                    className='bg-white rounded py-1 px-6 sm:px-3 md:px-20 2xl:px-28 border-2 focus:outline-none focus:border-transparent'
                   />
                 </div>
               </div>
