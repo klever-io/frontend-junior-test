@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import TokensList from '../components/TokensList';
 
 export default function HomePage() {
   return (
@@ -9,7 +10,7 @@ export default function HomePage() {
           {/* <link rel="icon" href="/favicon.ico" /> */}
         </Head>
         <main>
-          <div className=''>Hello</div>
+          <TokensList/>
         </main>
     </div>
   );
