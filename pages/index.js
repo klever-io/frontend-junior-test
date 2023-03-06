@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import TokensList from '../components/TokensList';
+import TokensList from '../components/sections/TokensList';
 
 export default function HomePage() {
   return (
