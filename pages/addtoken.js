@@ -50,7 +50,7 @@ export default function Home() {
               </div>
               {/* Submit Button */}
               <div className='flex justify-end items-center'>
-                <button type='submit' className='flex justify-center items-center text-white p-1 sm:px-8 rounded font-semibold mt-6 bg-klever-enabled-button disabled:bg-klever-disabled-button hover:opacity-80' disabled={false}>Save</button>
+                <button type='submit' className='flex justify-center items-center text-white p-1 sm:px-8 rounded font-semibold mt-6 bg-klever-enabled-button hover:bg-klever-enabled-hover-button disabled:bg-klever-disabled-button ' disabled={false}>Save</button>
               </div>
             </form>
           </div>

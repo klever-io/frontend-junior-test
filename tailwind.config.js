@@ -13,6 +13,7 @@ module.exports = {
       colors: {
         klever: {
           'enabled-button': '#AA33B5',
+          'enabled-hover-button': '#9b28a8',
           'disabled-button': '#501c56',
           'remove-button': '#920000',
           'back-button': '#646464',
