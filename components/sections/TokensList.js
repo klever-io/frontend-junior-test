@@ -18,7 +18,7 @@ export default function TokensList() {
   };
 
   // Map of values of Tokens and Balance
-  const listTokens = (tokens) => {sudo sudo sudo dsdsdsdsdsddddcscs       
+  const listTokens = (tokens) => {       
     return tokens.map((token, index) => (
       <div className='flex justify-center items-center p-2'>
         <Link href={`editToken/${index}`}>

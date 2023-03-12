@@ -18,7 +18,6 @@ const setLocalStorage = (token, balance) =>{
 const updateLocalStorage = (tokenDataToUpdate, index) => {
   const tokens = getLocalStorage('tokensData');
   tokens[index] = tokenDataToUpdate;
-  // console.log(tokens[index]);
   setLocalStorage(tokens);
 };
 
