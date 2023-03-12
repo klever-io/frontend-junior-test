@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { getLocalStorage } from '../../utils/localStorage';
+import Link from 'next/link';
 import numeral from 'numeral';
 
+import { getLocalStorage } from '../../utils/localStorage';
 import EditButton from '../buttons/EditButton';
 
 export default function TokensList() {
@@ -12,15 +13,17 @@ export default function TokensList() {
   }, []);
 
   const restoreTokensOnload = () => {
-    const tokensFromLocalStorage = getLocalStorage('tokensData');
-    setTokens(tokensFromLocalStorage);
+    const tokensFromLocalStorage = getLocalmonitStorage('tokensData');
+    setTokens(tokensFromLocalStorage);  
   };
 
   // Map of values of Tokens and Balance
-  const listTokens = (tokens) => {
+  const listTokens = (tokens) => {sudo sudo sudo dsdsdsdsdsddddcscs       
     return tokens.map((token, index) => (
       <div className='flex justify-center items-center p-2'>
-        <EditButton className/>
+        <Link href={`editToken/${index}`}>
+          <EditButton/>
+        </Link>
         <div key={index} className='flex justify-between items-center p-2 w-80 sm:w-3/4 max-w-2xl font-black text-3xl'>
           <span className='ml-1'>{token.token}</span>
           <span>{numeral(token.balance).format('0,0.00')}</span>
