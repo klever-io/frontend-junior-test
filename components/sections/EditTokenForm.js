@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import { updateLocalStorage } from '../../utils/localStorage';
+import { deleteLocalStorage, updateLocalStorage } from '../../utils/localStorage';
 
 export default function EditTokenForm(props) {
   const [token, setToken] = useState(props.token || '');
@@ -20,9 +20,15 @@ export default function EditTokenForm(props) {
     router.push('/');
   };
 
+  const deleteToken = (event) => {
+    event.preventDefault();
+    deleteLocalStorage(indexOfToken);
+    router.push('/');
+  };
+
   return (
     <div className='flex justify-center items-center'>
-        <form onSubmit={handleSubmit} className='w-auto sm:w-full max-w-lg mt-6'>
+        <form className='w-auto sm:w-full max-w-lg mt-6'>
           <div className='flex flex-col items-center'>
             {/* Token Input */}
             <div className='w-full mb-3'>
@@ -51,9 +57,18 @@ export default function EditTokenForm(props) {
               />
             </div>
             {/* Submit Button */}
-            <div className='w-full flex justify-end'>
+            <div className='w-full flex justify-between'>
+            <button
+                type='submit'
+                onClick={deleteToken}
+                className='bg-klever-remove-button hover:brightness-90 text-white font-semibold p-2 sm:px-8 rounded focus:outline-none focus:shadow-outline'
+              >
+                Remove
+              </button>
+
               <button
                 type='submit'
+                onClick={handleSubmit}
                 className='bg-klever-enabled-button hover:bg-klever-enabled-hover-button text-white font-semibold p-2 sm:px-8 rounded disabled:bg-klever-disabled-button focus:outline-none focus:shadow-outline'
                 disabled={!token || !balance}
               >
