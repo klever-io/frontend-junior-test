@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react'
 
 import BackButton from '../../components/buttons/BackButton'
-import TokenForm from '../../components/sections/tokenForm';
+import TokenForm from '../../components/sections/TokenForm';
 import { getLocalStorage } from '../../utils/localStorage'
 
 function tokenId() {

@@ -1,6 +1,6 @@
 
 import BackButton from '../components/buttons/BackButton';
-import TokenForm from '../components/sections/tokenForm';
+import TokenForm from '../components/sections/TokenForm';
 
 export default function AddTokenPage() {
   return (

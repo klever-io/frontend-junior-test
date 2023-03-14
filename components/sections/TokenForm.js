@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import { setLocalStorage, updateLocalStorage, deleteLocalStorage } from '../../utils/localStorage';
+import ErrorMessage from '../ErrorMessage';
 
 export default function TokenForm({ isEditForm = false, initialValues = {} }) {
   const [token, setToken] = useState(initialValues.token || '');
   const [balance, setBalance] = useState(initialValues.balance || '');
+  const [tokenErrorMessage, setTokenErrorMessage] = useState('');
+  const [balanceErrorMessage, setBalanceErrorMessage] = useState('');
+
   const router = useRouter();
 
   const handleSubmit = (event) => {
@@ -28,11 +32,32 @@ export default function TokenForm({ isEditForm = false, initialValues = {} }) {
     const { value } = target;
     const formattedValue = value.toUpperCase();
     setToken(formattedValue);
+    handleTokenErrors(value)
   };
 
   const handleBalanceChange = ({ target }) => {
     const { value } = target;
     setBalance(value);
+    handleBalanceErrors(value)
+  };
+
+  const handleTokenErrors = (value) => {
+    const regexPattern = /^[a-zA-Z]+$/;
+    const isString = regexPattern.test(value);
+    if (value.length < 1) return setTokenErrorMessage('TOKEN_IS_REQUIRED');
+    if (value.length > 0 && value.length < 3) {
+      return setTokenErrorMessage('TOKEN_MUST_HAVE_THREE');
+    }
+    if (!isString) return setTokenErrorMessage('TOKEN_IS_NOT_A_STRING');
+    return setTokenErrorMessage('')
+  };
+
+  const handleBalanceErrors = (value) => {
+    const regexPattern = /^\d+$/;
+    const isNumber = regexPattern.test(value);
+    if (value.length < 1) return setBalanceErrorMessage('BALANCE_IS_REQUIRED');
+    if (!isNumber) return setBalanceErrorMessage('BALANCE_IS_NOT_A_NUMBER');
+    return setBalanceErrorMessage('')
   };
 
   const submitButtonText = isEditForm ? 'Salvar' : 'Add';
@@ -53,8 +78,10 @@ export default function TokenForm({ isEditForm = false, initialValues = {} }) {
               maxLength='3'
               value={token}
               onChange={handleTokenChange}
+              onBlur={ () => handleTokenErrors(token)}
               className='appearance-none block w-full bg-white border border-gray-300 rounded py-2 px-4 leading-tight focus:outline-none focus:border-blue-500'
             />
+          <ErrorMessage error={tokenErrorMessage} />
           </div>
         {/* Balance Input */}
         <div className='w-full mb-6'>
@@ -67,8 +94,10 @@ export default function TokenForm({ isEditForm = false, initialValues = {} }) {
             placeholder='1000'
             value={balance}
             onChange={handleBalanceChange}
+            onBlur={ () => handleBalanceErrors(balance)}
             className='appearance-none block w-full bg-white border border-gray-300 rounded py-2 px-4 leading-tight focus:outline-none focus:border-blue-500'
           />
+          <ErrorMessage error={balanceErrorMessage} />
         </div>
         {/* Submit Button */}
         <div className={`w-full flex ${isEditForm ? 'justify-between' : 'justify-end'}`}>
@@ -86,7 +115,7 @@ export default function TokenForm({ isEditForm = false, initialValues = {} }) {
             type='submit'
             onClick={handleSubmit}
             className='bg-klever-enabled-button hover:bg-klever-enabled-hover-button text-white font-semibold p-2 sm:px-8 rounded disabled:bg-klever-disabled-button focus:outline-none focus:shadow-outline'
-            disabled={!token || !balance}
+            disabled={(token && balance) && (!tokenErrorMessage && !balanceErrorMessage)}
           >
             {submitButtonText}
           </button>
