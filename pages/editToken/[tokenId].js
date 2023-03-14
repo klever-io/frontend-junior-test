@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react'
 
 import BackButton from '../../components/buttons/BackButton'
-import EditTokenForm from '../../components/sections/EditTokenForm';
+import TokenForm from '../../components/sections/tokenForm';
 import { getLocalStorage } from '../../utils/localStorage'
 
 function tokenId() {
@@ -27,10 +27,10 @@ function tokenId() {
   return (
     <div>
       <BackButton />
-      <EditTokenForm
-      token={tokenToEdit.token}
-      balance={tokenToEdit.balance}
+      <TokenForm
+      initialValues={tokenToEdit}
       indexOfToken={tokenId}
+      isEditForm={true}
       />
     </div>
   )
