@@ -11,7 +11,7 @@ export default function AddTokenForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setLocalStorage(token, balance);
+    setLocalStorage({token, balance});
     router.push('/');
   };
 

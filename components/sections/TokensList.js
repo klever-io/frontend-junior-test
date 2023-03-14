@@ -13,7 +13,7 @@ export default function TokensList() {
   }, []);
 
   const restoreTokensOnload = () => {
-    const tokensFromLocalStorage = getLocalmonitStorage('tokensData');
+    const tokensFromLocalStorage = getLocalStorage();
     setTokens(tokensFromLocalStorage);  
   };
 
