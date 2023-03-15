@@ -1,19 +1,36 @@
-import React, { useState } from 'react';
+
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { setLocalStorage, updateLocalStorage, deleteLocalStorage } from '../../utils/localStorage';
+import { setLocalStorage, updateLocalStorage, deleteLocalStorage, getLocalStorage } from '../../utils/localStorage';
 import ErrorMessage from '../ErrorMessage';
 
-export default function TokenForm({ isEditForm = false, initialValues = {} }) {
-  const [token, setToken] = useState(initialValues.token || '');
-  const [balance, setBalance] = useState(initialValues.balance || '');
+export default function TokenForm({ isEditForm = false }) {
+  const [token, setToken] = useState('');
+  const [balance, setBalance] = useState('');
   const [tokenErrorMessage, setTokenErrorMessage] = useState('');
   const [balanceErrorMessage, setBalanceErrorMessage] = useState('');
 
   const router = useRouter();
+  const tokenId = router.query.tokenId
+
+  useEffect(() => {
+    restoreToken()
+  }, [])
+
+  const restoreToken = () => {
+    const tokensFromLocalStorage = getLocalStorage();
+    if (tokensFromLocalStorage && tokensFromLocalStorage[tokenId]) {
+      const restoredToken = tokensFromLocalStorage[tokenId];
+      setToken(restoredToken.token);
+      setBalance(restoredToken.balance);
+    }
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
     const values = { token, balance };
+
     if (isEditForm) {
       updateLocalStorage(values, initialValues.index);
     } else {
@@ -32,32 +49,38 @@ export default function TokenForm({ isEditForm = false, initialValues = {} }) {
     const { value } = target;
     const formattedValue = value.toUpperCase();
     setToken(formattedValue);
-    handleTokenErrors(value)
+    handleTokenErrors(formattedValue);
   };
 
   const handleBalanceChange = ({ target }) => {
     const { value } = target;
     setBalance(value);
-    handleBalanceErrors(value)
+    handleBalanceErrors(value);
   };
 
   const handleTokenErrors = (value) => {
     const regexPattern = /^[a-zA-Z]+$/;
-    const isString = regexPattern.test(value);
-    if (value.length < 1) return setTokenErrorMessage('TOKEN_IS_REQUIRED');
-    if (value.length > 0 && value.length < 3) {
+    if (value.length < 1) {
+      return setTokenErrorMessage('TOKEN_IS_REQUIRED');
+    } else if (value.length < 3) {
       return setTokenErrorMessage('TOKEN_MUST_HAVE_THREE');
+    } else if (!regexPattern.test(value)) {
+      return setTokenErrorMessage('TOKEN_IS_NOT_A_STRING');
+    } else {
+      setTokenErrorMessage('');
+      // handleAlreadyExistingTokens(value);
     }
-    if (!isString) return setTokenErrorMessage('TOKEN_IS_NOT_A_STRING');
-    return setTokenErrorMessage('')
   };
 
   const handleBalanceErrors = (value) => {
     const regexPattern = /^\d+$/;
-    const isNumber = regexPattern.test(value);
-    if (value.length < 1) return setBalanceErrorMessage('BALANCE_IS_REQUIRED');
-    if (!isNumber) return setBalanceErrorMessage('BALANCE_IS_NOT_A_NUMBER');
-    return setBalanceErrorMessage('')
+    if (value.length < 1) {
+      return setBalanceErrorMessage('BALANCE_IS_REQUIRED');
+    } else if (!regexPattern.test(value)) {
+      return setBalanceErrorMessage('BALANCE_IS_NOT_A_NUMBER');
+    } else {
+      setBalanceErrorMessage('');
+    }
   };
 
   const submitButtonText = isEditForm ? 'Salvar' : 'Add';
@@ -115,7 +138,7 @@ export default function TokenForm({ isEditForm = false, initialValues = {} }) {
             type='submit'
             onClick={handleSubmit}
             className='bg-klever-enabled-button hover:bg-klever-enabled-hover-button text-white font-semibold p-2 sm:px-8 rounded disabled:bg-klever-disabled-button focus:outline-none focus:shadow-outline'
-            disabled={(token && balance) && (!tokenErrorMessage && !balanceErrorMessage)}
+            disabled={!((token && balance) && (!tokenErrorMessage && !balanceErrorMessage))}
           >
             {submitButtonText}
           </button>
