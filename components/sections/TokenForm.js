@@ -41,8 +41,13 @@ export default function TokenForm({ isEditForm = false }) {
 
   const handleRemoveToken = (event) => {
     event.preventDefault();
-    deleteLocalStorage(tokenId);
-    router.push('/');
+
+    const confirmed = window.confirm("Are you sure you want to remove this token?");
+
+    if (confirmed) {
+      deleteLocalStorage(tokenId);
+      router.push('/');
+    }
   };
 
   const handleTokenChange = ({ target }) => {
@@ -146,7 +151,7 @@ export default function TokenForm({ isEditForm = false }) {
             type='submit'
             onClick={handleSubmit}
             className='bg-klever-enabled-button hover:bg-klever-enabled-hover-button text-white font-semibold p-2 sm:px-8 rounded disabled:bg-klever-disabled-button focus:outline-none focus:shadow-outline'
-            disabled={!((token && balance) && (!tokenErrorMessage && !balanceErrorMessage))}
+            disabled={(!tokenErrorMessage && !balanceErrorMessage)}
           >
             {submitButtonText}
           </button>
