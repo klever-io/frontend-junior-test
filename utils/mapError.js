@@ -1,4 +1,5 @@
 const errors = {
+  TOKEN_ALREADY_EXISTS: "The token already exists.",
   TOKEN_IS_NOT_A_STRING: "The token must have only letters.",
   BALANCE_IS_NOT_A_NUMBER: "The balance must have only numbers.",
   TOKEN_IS_REQUIRED: "Token field is required.",

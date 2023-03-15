@@ -32,7 +32,7 @@ export default function TokenForm({ isEditForm = false }) {
     const values = { token, balance };
 
     if (isEditForm) {
-      updateLocalStorage(values, initialValues.index);
+      updateLocalStorage(values, tokenId);
     } else {
       setLocalStorage(values);
     }
@@ -41,7 +41,7 @@ export default function TokenForm({ isEditForm = false }) {
 
   const handleRemoveToken = (event) => {
     event.preventDefault();
-    deleteLocalStorage(initialValues.index);
+    deleteLocalStorage(tokenId);
     router.push('/');
   };
 
@@ -59,16 +59,24 @@ export default function TokenForm({ isEditForm = false }) {
   };
 
   const handleTokenErrors = (value) => {
+    const allTokens = getLocalStorage();
     const regexPattern = /^[a-zA-Z]+$/;
-    if (value.length < 1) {
-      return setTokenErrorMessage('TOKEN_IS_REQUIRED');
+    const isSameToken = allTokens.some((token) => token.token === value);
+
+    if (!allTokens) {
+      return;
+    }
+
+    if (!regexPattern.test(value)) {
+      return setTokenErrorMessage('TOKEN_IS_NOT_A_STRING');
     } else if (value.length < 3) {
       return setTokenErrorMessage('TOKEN_MUST_HAVE_THREE');
-    } else if (!regexPattern.test(value)) {
-      return setTokenErrorMessage('TOKEN_IS_NOT_A_STRING');
+    } else if (value.length < 1) {
+      return setTokenErrorMessage('TOKEN_IS_REQUIRED');
+    } else if (isSameToken) {
+      return setTokenErrorMessage('TOKEN_ALREADY_EXISTS');
     } else {
       setTokenErrorMessage('');
-      // handleAlreadyExistingTokens(value);
     }
   };
 
