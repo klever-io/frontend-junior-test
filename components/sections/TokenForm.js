@@ -130,6 +130,7 @@ export default function TokenForm({ isEditForm = false }) {
               type='text'
               placeholder='KLV'
               maxLength='3'
+              autoComplete='off'
               value={token}
               onChange={handleTokenChange}
               onBlur={ () => handleTokenErrors(token)}
@@ -146,6 +147,7 @@ export default function TokenForm({ isEditForm = false }) {
             id='balance'
             type='text'
             placeholder='1000'
+            autoComplete='off'
             value={balance}
             onChange={handleBalanceChange}
             onBlur={ () => handleBalanceErrors(balance)}
