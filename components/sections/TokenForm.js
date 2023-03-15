@@ -90,12 +90,12 @@ export default function TokenForm({ isEditForm = false }) {
       return;
     }
 
-    if (!regexPattern.test(value)) {
+    if (value.length < 1) {
+      return setTokenErrorMessage('TOKEN_IS_REQUIRED');
+    } else if (!regexPattern.test(value)) {
       return setTokenErrorMessage('TOKEN_IS_NOT_A_STRING');
     } else if (value.length < 3) {
       return setTokenErrorMessage('TOKEN_MUST_HAVE_THREE');
-    } else if (value.length < 1) {
-      return setTokenErrorMessage('TOKEN_IS_REQUIRED');
     } else if (isSameToken) {
       return setTokenErrorMessage('TOKEN_ALREADY_EXISTS');
     } else {
