@@ -9,13 +9,31 @@ export default function TokenForm({ isEditForm = false }) {
   const [balance, setBalance] = useState('');
   const [tokenErrorMessage, setTokenErrorMessage] = useState('');
   const [balanceErrorMessage, setBalanceErrorMessage] = useState('');
+  const [buttonIsDisabled, setButtonIsDisabled] = useState(true)
 
   const router = useRouter();
   const tokenId = router.query.tokenId
 
   useEffect(() => {
-    restoreToken()
+    restoreToken();
+    handleButtonDisabled();
   }, [])
+
+  useEffect(() => {
+    handleButtonDisabled()
+  }, [token, balance])
+
+  const handleButtonDisabled = () => {
+    if(token === '' || balance === '') {
+      return setButtonIsDisabled(true);
+    }
+ 
+    if (tokenErrorMessage || balanceErrorMessage) {
+      setButtonIsDisabled(true)
+    } else {
+      setButtonIsDisabled(false)
+    }
+  }
 
   const restoreToken = () => {
     const tokensFromLocalStorage = getLocalStorage();
@@ -151,7 +169,7 @@ export default function TokenForm({ isEditForm = false }) {
             type='submit'
             onClick={handleSubmit}
             className='bg-klever-enabled-button hover:bg-klever-enabled-hover-button text-white font-semibold p-2 sm:px-8 rounded disabled:bg-klever-disabled-button focus:outline-none focus:shadow-outline'
-            disabled={(!tokenErrorMessage && !balanceErrorMessage)}
+            disabled={buttonIsDisabled}
           >
             {submitButtonText}
           </button>
